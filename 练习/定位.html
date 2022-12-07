@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        div{
+            position: relative;
+            width: 950px;
+            height: 355px;
+            margin: 30px auto;
+        }
+        .box1{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 20px;
+            margin: 0;
+        }
+        .box1 ul li{
+            float: left;
+            width: 133.7px;
+            height: 20px;
+            margin-right: 2px;
+            background-color: rgba(0,0,0,.5);
+        }
+        .box1 ul li:hover{
+            background-color: red;
+        }
+        .leftbox,
+        .rightbox{
+            position: absolute;
+            top: 122px;
+            width: 20px;
+            height: 40px;
+            background-color: rgba(0,0,0,.5);
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+        }
+        .leftbox{
+            left: 0;
+        }
+        .rightbox{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img width="950" src="images/jd家电.webp" alt="">
+        <div class="box1">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="leftbox">&lt;</div>
+        <div class="rightbox">&gt;</div>
+    </div> 
+</body>
+</html>

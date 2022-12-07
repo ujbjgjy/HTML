@@ -1,0 +1,58 @@
+h3 {
+    margin: 25px 0 15px 0;
+}
+
+.box_1 {
+    position: relative;
+    width: 520px;
+    height: 180px;
+    margin-bottom: 10px;
+    border: 1px dotted #ff99cc;
+}
+.minor_box {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #ffd8d9;
+}
+.box_1 form {
+    margin: 30px 0 0 24px;
+}
+.box_1 input:nth-of-type(-n+3) {
+    width: 152px;
+    height: 22px;
+    border: 1px solid #666;
+}
+
+.box_2 {
+    position: relative;
+    width: 520px;
+    height: 270px;
+    padding: 30px 0 0 26px;
+    border: 1px dotted #ff99cc;
+}
+.box_2 ul>li {
+    position: relative;
+    margin-bottom: 10px;
+}
+.box_2 ul>li:nth-child(1) {
+    width: 447px;
+    height: 80px;
+    border: 1px dotted #ff99cc;
+}
+.box_2 ul>li:nth-child(2) {
+    width: 447px;
+    height: 50px;
+    border: 1px dotted #ff99cc;
+}
+.box_2 ul>li:nth-child(3) {
+    width: 447px;
+    height: 60px;
+    border: 1px dotted #ff99cc;
+}
+.box_2 ul>li:nth-child(-n+2) input {
+    margin: 20px 0 0 10px;
+}
+.box_2 textarea {
+    margin: 12px 0 0 5px;
+}

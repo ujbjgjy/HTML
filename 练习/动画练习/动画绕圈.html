@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        @keyframes move {
+            0% {
+                /* translate 平移 */
+                transform: translate(0px);
+            }
+            25% {
+                transform: translate(1000px);
+            }
+            50% {
+                transform: translate(1000px,500px)
+            }
+            75% {
+                transform: translate(0px,500px);
+                /* 盒子75%时x=0px,y=500px */
+            }
+            100% {
+                transform: translate(0px,0px);
+            }
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+            animation-name: move;
+            animation-duration: 3s;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

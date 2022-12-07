@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱心动画</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 500px;
+            margin: 50px auto;
+            border: 2px solid black;
+        }
+
+        .left,
+        .right {
+            float: left;
+            width: 300px;
+            height: 500px;
+            border-radius: 42% 42% 0 0;
+            /* 动画名称 */
+            /* 持续时间 */
+            animation-duration: 5s;
+            /* 匀速运动 */
+            animation-timing-function: linear;
+            /* 播放在次数 */
+            animation-iteration-count: infinite;
+            /* infinite 表示永久 */
+        }
+        .left {
+            background-color: purple;
+            animation-name: leftrotating;
+            /* 更改原点位置 */
+            transform-origin: right bottom;
+        }
+        .right {
+            background-color: pink;
+            animation-name: rightrotating;
+            /* 更改原心位置 */
+            transform-origin: left bottom;
+        }
+        /* 定义动画 */
+        /* 1.左边爱心向右旋转 */
+        @keyframes leftrotating {
+            80% {
+                transform: rotate(46deg);
+                background-color: red;
+            }
+            to {
+                transform: rotate(46deg);
+                background-color: red;
+            }
+        }
+        /* 2.右边爱心向左移动 */
+        @keyframes rightrotating {
+            80% {
+                transform: rotate(-46deg);
+                background-color: red;
+            }
+            to {
+                transform: rotate(-46deg);
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

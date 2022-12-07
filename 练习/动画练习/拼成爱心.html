@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼成爱心</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 500px;
+            margin: 50px auto;
+            border: 2px solid black;
+        }
+        .left,
+        .right {
+            float: left;
+            width: 300px;
+            height: 500px;
+            border-radius: 42% 42% 0 0;
+            transition: all 5s;
+        }
+        .left {
+            background-color: pink;   
+            /* 更改原点位置 */
+            transform-origin: right bottom;
+        }
+        .right {
+            background-color: purple;
+            /* 更改原点位置  */
+            transform-origin: left bottom;
+        }
+        .box:hover .left {
+            background-color: red;
+            transform: rotate(46deg);
+        }
+        .box:hover .right {
+            background-color: red;
+            transform: rotate(-46deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div> 
+</body>
+</html>

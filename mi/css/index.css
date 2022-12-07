@@ -1,0 +1,259 @@
+.home {
+    padding-top: 20px;
+    background-color: #f5f5f5;
+    font-family: 'icomoon';
+}
+
+.home_banner_box {
+    height: 120px;
+}
+
+.home_box {
+    margin: 30px 0;
+}
+
+.box_hd {
+    height: 58px;
+}
+
+.box_hd .title {
+    float: left;
+    font-size: 22px;
+    color: #333;
+}
+
+.box_hd .more {
+    float: right;
+}
+
+.more_link a {
+    display: block;
+    height: 58px;
+    line-height: 58px;
+    font-size: 16px;
+    color: #424242;
+}
+
+.more_link strong {
+    display: block;
+    float: right;
+    width: 24px;
+    height: 24px;
+    padding-left: 6px;
+    margin: 17px 0 0 5px;
+    border-radius: 50%;
+    background-color: #b0b0b0;
+    line-height: 24px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.box_hd .more_link a:hover {
+    color: #ff6700;
+}
+
+.more_link a:hover strong {
+    background-color: #ff6700;
+}
+
+/* 列表 */
+.more .tab_list {
+    height: 42px;
+    padding-top: 16px;
+}
+
+.more .tab_list li {
+    float: left;
+    margin-left: 30px;
+}
+
+.tab_list a {
+    display: block;
+    height: 26px;
+    font-size: 16px;
+    color: #424242;
+}
+
+/* .more .tab_list>li:hover a {
+    border-bottom: 2px solid #ff6700;
+    color: #ff6700;
+} */
+
+.more .style_tab_list {
+    border-bottom: 2px solid #ff6700;
+    color: #ff6700;
+}
+
+.box_bd {
+
+    width: 1226px;
+}
+
+.row {
+    width: 1240px;
+}
+
+.bd_promo {
+    float: left;
+    width: 234px;
+}
+
+.bd_promo a {
+    display: block;
+    margin-bottom: 14px;
+}
+
+.bd_promo img {
+    width: 234px;
+}
+
+.list_content {
+    float: left;
+    width: 978px;
+    height: 614px;
+}
+
+.list_item {
+    width: 992px;
+    /* background-color: purple; */
+}
+
+.list_item>li {
+    float: left;
+    width: 234px;
+    height: 300px;
+    margin: 0 0 14px 14px;
+}
+
+.list_item>li>a {
+    display: block;
+    width: 234px;
+    height: 300px;
+    padding: 20px 0;
+    background-color: #fff;
+    text-align: center;
+    transition: box-shadow .8s;
+}
+
+.list_item_img {
+    margin: 0 38px 20px;
+}
+
+.list_item_img img {
+    width: 160px;
+}
+
+.list_item_title {
+    width: 214px;
+    height: 21px;
+    margin: 0 10px 2px;
+    font-size: 14px;
+    color: #333;
+}
+
+.list_item .desc {
+    width: 214px;
+    height: 18px;
+    margin: 0 10px 10px;
+    font-size: 12px;
+    color: #b0b0b0;
+
+}
+
+.list_item .price {
+    width: 214px;
+    height: 21px;
+    margin: 0 10px 14px;
+    font-size: 14px;
+    color: #ff6700;
+}
+
+.list_item_title,
+.list_item .desc {
+    /* 1.先强制一行内显文本  */
+    white-space: nowrap;
+    /* 2.超的部分隐藏  */
+    overflow: hidden;
+    /* 3.文字用省略号替代超出的部分 */
+    text-overflow: ellipsis;
+}
+
+.box_bd .bd_promo a {
+    transition: box-shadow .8s;
+}
+
+.list_item .price .del {
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+/* 加阴影效果 */
+.box_bd .bd_promo a:hover,
+.box_bd .list_item>li:hover>a,
+.list_item_s>li:hover {
+    box-shadow: -1px 5px 18px rgba(0, 0, 0, .1);
+}
+
+/* 里面的小项 */
+.list_item .list_item_s>li {
+    background-color: #fff;
+}
+
+.list_item_s>li {
+    width: 234px;
+    height: 143px;
+    padding-top: 50px;
+    margin-bottom: 14px;
+    /* tansition: all .5s; */
+    transition: box-shadow .8s;
+}
+
+.list_item_s>li a {
+    display: block;
+    width: 234px;
+}
+
+.list_item_s>li a .title_s {
+    margin: -10px 110px 5px 30px;
+    font-size: 14px;
+    color: #333;
+}
+
+.list_item_s>li a .price {
+    margin: 0 110px 0 30px;
+    font-size: 12px;
+    color: #ff6700;
+}
+
+.list_item_s_img {
+    float: right;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.list_item_s_img>img {
+    width: 80px;
+}
+
+.list_item .more>i {
+    display: block;
+    float: right;
+    width: 48px;
+    width: 48px;
+    margin-right: 40px;
+}
+
+.list_item .more>i img {
+    width: 48px;
+}
+
+.list_item .more h2 {
+    margin: 0 110px 0 30px;
+    font-size: 18px;
+    color: #333;
+}
+
+.list_item .more span {
+    font-size: 12px;
+    color: #757575;
+}

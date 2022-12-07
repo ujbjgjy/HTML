@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奔跑的大熊</title>
+    <style>
+        .bg2,
+        .bg1 {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1920px;
+            height: 569px;
+            background: url(images/bg2.png) no-repeat;
+            animation: bg 10s linear infinite;
+        }
+        .bg1 {
+            background: url(images/bg1.png) no-repeat;
+        }
+        .bear {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 100px;
+            background: url(images/bear.png) no-repeat;
+            animation: bear .8s steps(8) infinite, move 2.5s forwards;
+        }
+
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+
+        @keyframes move {
+            100% {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes bg {
+            100% {
+                background-position: -1880px 0;
+            }
+        }
+    </style>
+</head>
+
+<body bgcolor="#ccc">
+    <div class="bg2">
+        <div class="bg1">
+            <div class="bear"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    outline: none;
+}
+
+.delstyle,
+li {
+    list-style: none;
+}
+
+.liststyle {
+    list-style: inside;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #fffcfcf9;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    /*ie6、7专有*/
+    *zoom: 1;
+}
+
+.omis {
+    /* 1.先强制一行内显文本 */
+    white-space: nowrap;
+    /* (默认normal自动换行)  */
+    /* 2. 超的部分隐藏 */
+    overflow: hidden;
+    /* 3. 文字用省略号替代超出的部分 */
+    text-overflow: ellipsis;
+}
+
+.main {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+/* 顶部 */
+.header {
+    height: 71px;
+}
+
+.header .logo {
+    float: left;
+}
+
+.header .search {
+    float: right;
+    margin: 15px 200px 0 17px;
+}
+
+.header .search input {
+    float: left;
+    width: 200px;
+    height: 30px;
+    border: 1px solid black;
+    text-indent: 2em;
+    color: gray;
+}
+
+.header .search button {
+    float: left;
+    width: 50px;
+    height: 32px;
+    border: 1px solid black;
+    background-color: red;
+}
+
+.header ul {
+    float: right;
+    margin-right: 10px;
+}
+
+.header ul li {
+    float: right;
+    line-height: 71px;
+    padding: 0 10px;
+}
+
+/* 顶部 end */
+/* 第一个 */
+.oneheader {
+    position: relative;
+}
+
+.oneheader>ul {
+    float: left;
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    line-height: 50px;
+}
+
+.oneheader>ul li {
+    float: left;
+    margin: 0 20px;
+    width: 10%;
+    text-align: center;
+}
+
+.oneheader>ul li a {
+    color: white;
+}
+
+.oneheader>ul li:hover {
+    background-color: yellow;
+}
+
+.oneheader .qw {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-top: -44px;
+    margin-left: -222px;
+}
+
+.oneheader .adv {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -128px;
+}
+
+.oneheader .adv h6 {
+    margin: 12px 0 20px 55px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.oneheader .adv>ul {
+    margin-bottom: 50px;
+}
+
+.oneheader .adv ul>li {
+    float: left;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.oneheader .adv ul>li a {
+    color: #fff;
+}
+
+.oneheader .adv .phone {
+    position: relative;
+    color: #fff;
+}
+
+.oneheader .adv .phone div {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.oneheader .adv .phone div>span {
+    margin: 0 5px 0 15px;
+}
+
+/* 第一个 end */
+/* 底部 */
+.footer {
+    position: relative;
+    height: 150px;
+    padding-top: 30px;
+    background-color: #656565;
+    color: #fff;
+}
+
+.footer .box {
+    height: 130px;
+}
+
+.footer .leftbox {
+    float: left;
+    margin-left: 60px;
+}
+
+.footer .leftbox ul li {
+    margin-bottom: 30px;
+}
+
+.footer .rightbox {
+    float: right;
+}
+
+.footer .rightbox ul {
+    float: right;
+    margin: 0 60px 0 20px;
+}
+
+.footer .rightbox ul li {
+    margin-bottom: 30px;
+}
+
+.footer .rightbox ul li img {
+    margin-right: 20px;
+}
+
+.footer h6 {
+    text-align: center;
+    font-weight: 400;
+}
+.footer .smallbox {
+    position: absolute;
+    top: -15px;
+    left: 0;
+}
+/* 底部 end */
+/* 内容 */
+/* 内容第一行 */
+.content .above {
+    width: 1280px;
+}
+.content .above ul {
+    width: 100%;
+}
+.content .above ul>li {
+    float: left;
+    width: 320px;
+    margin-right: 60px;
+    padding-bottom: 10px;
+}
+.content .above ul>li ul>li {
+    border-bottom: 1px dotted gray;
+}
+.content .above ul>li a {
+    font-size: 10px;
+}
+.content .above ul>li h4 {
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+}
+.content .above ul>li h4 span {
+    float: right;
+    margin-right: 10px;
+    font-size: 12px;
+    color: gray;
+}
+.content .above ul>li ul>li span {
+    float: right;
+}
+.content .above ul .li3 {
+    margin-right: 0;
+    border: 0;
+    text-align: center;
+}
+.content .above ul .li3 div {
+    float: left;
+    margin-right: 10px;
+}
+.content .above ul .li3 div h4 {
+    border: 0;
+}
+/* 内容第一行 end */
+/* 内容第二行 */
+.content .down {
+    margin-bottom: 20px;
+}
+.content .down .leftbox {
+    float: left;
+    width:  600px;
+}
+
+.content .down .rightbox {
+    float: right;
+    width: 480px;
+    font-size: 12px;
+}
+.content .down .rightbox ul>li {
+    margin-bottom: 20px;
+    background-color: #edf7de;
+    vertical-align: middle;
+}
+.content .down .rightbox ul>li ul {
+    float: right;
+    margin-top: 20px;
+}
+.content .down .rightbox ul>li ul>li {
+    margin: 10px 20px 5px 0;
+}
+.content .down .leftbox {
+    position: relative;
+}
+.content .down .leftbox div {
+    float: left;
+    width: 260px;
+    height: 320px;
+    padding: 20px 10px 0;
+    margin-right: 10px;
+    background-color: #edf7de;
+}
+.content .down .leftbox div{
+    height: 320px;
+}
+.content .down .leftbox div .p2 {
+    line-height: 30px;
+}
+.content .down .leftbox div .p1 {
+    padding: 10px;
+    margin-top: 170px;
+    border: 1px dotted gray;
+    font-size: 12px;
+}
+.content .down .leftbox .smallbox1 {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 55px;
+    height: 80px;
+    padding: 0;
+    background-color: red;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+} 
+.content .down .leftbox .smallbox2 {
+    position: absolute;
+    top: 170px;
+    left: 40px;
+    width: 60px;
+    height: 20px;
+    padding: 0;
+    background-color: black;
+    font-size: 10px;
+    color: #fff;
+    line-height: 20px;
+} 
+/* 内容第二行 end */
+/* 内容 end */

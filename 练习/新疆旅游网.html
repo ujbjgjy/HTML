@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新疆旅游网</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            /*ie6、7专有*/
+            *zoom: 1;
+        }
+
+        .main {
+            width: 1176px;
+            margin: 0 auto;
+        }
+
+        .titleber {
+            display: inline-block;
+            width: 100%;
+            height: 35px;
+            margin: 1px 0;
+            background: url(images/新疆旅游网/button1.jpg) repeat-x;
+            line-height: 34px;
+            text-indent: 2em;
+        }
+        .titleber::before {
+            content: "";
+            float: left;
+            display: block;
+            width: 10px;
+            height: 8px;
+            margin-top: 24px;
+            background: url(images/新疆旅游网/icon2.gif) no-repeat;
+        }
+
+        /* 内容部分 */
+        .content ul {
+            height: 35px;
+            background-color: #ccdde8;
+        }
+
+        .content .nav ul>li {
+            float: left;
+            margin-left: 25px;
+        }
+
+        .content .nav ul>li a {
+            font-size: 24px;
+        }
+
+        .content .box {
+            margin-top: 2px;
+        }
+
+        .content .box aside {
+            background-color: #fff;
+            margin: 0 2px;
+        }
+
+        .content .box .leftaside {
+            float: left;
+            width: 310px;
+        }
+
+        .content .box .rightaside {
+            float: right;
+            width: 245px;
+        }
+
+        .content .box article {
+            float: left;
+            width: 612px;
+            background-color: #fff;
+        }
+
+        .content .box article div:first-child {
+            margin-bottom: 2px;
+        }
+
+        .content .box article div:nth-child(2) img:nth-child(2) {
+            margin-left: 30px;
+        }
+
+        .content .box article div:nth-child(2) img {
+            width: 126px;
+            margin: 0 5px;
+        }
+
+        .content .box article div:last-child span {
+            font-size: 25px;
+            line-height: 39px;
+        }
+
+        .content .box article div:last-child img {
+            margin: 0 10px;
+        }
+
+        .content .box .leftaside div:first-child {
+            width: 300px;
+            height: 215px;
+            margin: 2px auto;
+            background-color: #5ea6eb;
+        }
+
+        .content .box .leftaside div:first-child p {
+            font-size: 22px;
+        }
+
+        .content .box .leftaside div:last-child {
+            background-color: #5ea6eb;
+            text-align: center;
+        }
+
+        .content .box .rightaside div:last-child,
+        div:nth-child(4) {
+            background-color: #5ea6eb;
+        }
+
+        .content .box .rightaside div:last-child h2,
+        div:nth-child(4) h2 {
+            border-bottom: 1px dotted black;
+            text-indent: .5em;
+        }
+
+        /* 内容 end */
+        /* 底部 */
+        footer {
+            height: 56px;
+            margin: 1px 0;
+            background-color: #5ea6eb;
+        }
+
+        footer {
+            height: 32px;
+            border: 4px solid #fff;
+        }
+
+        footer h6 {
+            text-align: center;
+            font-weight: 400;
+            font-size: 10px;
+        }
+
+        footer h6 span {
+            color: #fff;
+        }
+
+        /* 底部 end */
+    </style>
+</head>
+
+<body bgcolor="#6600ff">
+    <div class="main">
+
+        <!-- 底部 end -->
+        <!-- 顶部 -->
+        <header>
+            <img width="100%" src="images/新疆旅游网/banner.jpg" alt="">
+        </header>
+        <!-- 顶部 end -->
+        <!-- 内容 -->
+        <div class="content clearfix">
+            <div class="nav">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">走进新疆</a></li>
+                    <li><a href="#">民族概览</a></li>
+                    <li><a href="#">吃在新疆</a></li>
+                    <li><a href="#">路线选择</a></li>
+                    <li><a href="#">特色线路</a></li>
+                    <li><a href="#">户外控险</a></li>
+                    <li><a href="#">精彩游记</a></li>
+                    <li><a href="#">付款方式</a></li>
+                    <li><a href="#">给我留言</a></li>
+                </ul>
+            </div>
+            <div class="box clearfix">
+                <!-- 左侧边 -->
+                <aside class="leftaside clearfix">
+                    <div>
+                        <img width="100%" src="images/新疆旅游网/weather.jpg" alt="">
+                        <p>
+                            乌鲁木齐晴转阴25℃-35℃ <br>
+                            喀什阵雨转多云25℃-32℃ <br>
+                            吐鲁番多云转阴20℃-28℃ <br>
+                            库尔勒阵雨转阴21℃-28℃ <br>
+                            克拉玛依雷阵雨26℃-30℃ <br>
+                        </p>
+                    </div>
+                    <div class="titleber">
+                        <h2>今日推荐</h2>
+                    </div>
+                    <div>
+                        <img height="172" src="images/新疆旅游网/tuijian1.jpg" alt="">
+                        <h4>香木河</h4>
+                        <img height="172" src="images/新疆旅游网/tuijian2.jpg" alt="">
+                        <h4>白哈巴</h4>
+                        <img height="172" src="images/新疆旅游网/tuijian3.jpg" alt="">
+                        <h4>乔戈里峰</h4>
+                    </div>
+                </aside>
+
+                <!-- 内容中间部分 -->
+                <article class="clearfix">
+                    <div>
+                        <img width="100%" src="images/新疆旅游网/ghost.jpg" alt="">
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/新疆旅游网/picture_h1.gif" alt="">
+                        </div>
+                        <img src="images/新疆旅游网/beauty1.jpg" alt="">
+                        <img src="images/新疆旅游网/beauty2.jpg" alt="">
+                        <img src="images/新疆旅游网/beauty3.jpg" alt="">
+                        <img src="images/新疆旅游网/beauty4.jpg" alt="">
+                    </div>
+                    <div>
+                        <div>
+                            <img src="images/新疆旅游网/route_h1.gif" alt="">
+                        </div>
+                        <img src="images/新疆旅游网/icon1.gif" alt=""><span>果子沟一赛里木湖一那拉提大草原一霍尔果斯口岸</span> <br>
+                        <img src="images/新疆旅游网/icon1.gif" alt=""><span>喀纳斯一禾木河一克拉玛依一乌伦古湖一喀纳斯</span> <br>
+                        <img src="images/新疆旅游网/icon1.gif" alt=""><span>乌鲁木齐一奎屯一乔尔玛一那拉提一巴音布鲁克</span> <br>
+                        <img src="images/新疆旅游网/icon1.gif" alt=""><span>库尔勒一博斯腾湖一将军戈壁一吉木萨尔一天池</span> <br>
+                    </div>
+                </article>
+                <!-- 右侧边 -->
+                <aside class="rightaside clearfix">
+                    <div class="titleber">
+                        <h2>新疆地图</h2>
+                    </div>
+                    <div>
+                        <img width="240" src="images/新疆旅游网/map1.jpg" alt=""> <br>
+                        <img width="240" src="images/新疆旅游网/map2.jpg" alt=""> <br>
+                    </div>
+                    <div class="titleber">
+                        <h2>特色美食</h2>
+                    </div>
+                    <div>
+                        <h2>大盘鸡</h2>
+                        <h2>窝窝馕</h2>
+                        <h2>芝麻馕</h2>
+                        <h2>哈密瓜</h2>
+                        <h3>&nbsp;</h3>
+                    </div>
+                    <div class="titleber">
+                        <h2>新疆住宿</h2>
+                    </div>
+                    <div>
+                        <h2>马航国际酒店</h2>
+                        <h2>亚中亚大酒店</h2>
+                        <h2>银都大饭店</h2>
+                        <h2>如意大饭店</h2>
+                        <h2>友好大酒店</h2>
+                        <h2>王朝宾馆</h2>
+                        <h2>神望宾馆</h2>
+                        <h3>&nbsp;</h3>
+                    </div>
+                </aside>
+                <!-- 内容 end -->
+            </div>
+        </div>
+        <!-- 底部 -->
+        <footer>
+            <h6>网页爱好者@版权所有 2015-2016</h6>
+            <h6>联系我们<span>lovehtml@gmail.com</span></h6>
+        </footer>
+    </div>
+</body>
+
+</html>

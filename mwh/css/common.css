@@ -1,0 +1,134 @@
+.w {
+    width: 704px;
+    margin: 0 auto;
+}
+
+/* 头部 开始 */
+.header {
+    height: 154px;
+}
+
+.header .bg {
+    height: 120px;
+    background: url(../images/banner.jpg) no-repeat;
+}
+
+.header ul li {
+    float: left;
+    width: 100px;
+    height: 32px;
+    background: url(../images/button1.jpg) no-repeat;
+    text-align: center;
+}
+
+.header a {
+    color: #0000ee;
+}
+.header a:hover {
+    color: red;
+}
+/* 头部 end */
+/* 内容部分 */
+.content {
+    height: 882px;
+    margin-top: 10px;
+}
+
+.content .aside {
+    float: left;
+    width: 180px;
+    height: 880px;
+    margin-right: 1px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.aside .dt form {
+    margin-left: 22px;
+}
+
+.aside .dt label {
+    font-size: 12px;
+}
+
+.aside .dt input {
+    width: 80px;
+    border-bottom: 1px solid black;
+}
+
+.aside .dt button {
+    width: 28px;
+    height: 18px;
+    border: 1px solid black;
+    background-color: #ffeff0;
+    font-size: 12px;
+}
+
+.aside .dt form a {
+    font-size: 12px;
+    color: #666;
+}
+
+.dd>ul {
+    margin-left: 23px;
+}
+
+.dd>ul>li {
+    width: 136px;
+    margin: 20px 0 23px 0;
+}
+
+.dd h3 {
+    height: 20px;
+    border: 1px solid #ff0000;
+    background-color: #ffd1d1;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.dd>ul>li li {
+    border-bottom: 1px dotted black;
+}
+
+.dd>ul>li li a {
+    font-size: 12px;
+    color: #666;
+}
+
+.dd>ul>li li::before {
+    display: inline-block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    margin-right: 5px;
+    background-image: url(../images/icon1.gif);
+    vertical-align: middle;
+}
+
+/* 内容 end */
+/* 底部部分 */
+.footer {
+    float: right;
+    padding-bottom: 30px;
+    background-color: #fff;
+}
+
+.footer li {
+    padding: 5px 0;
+}
+
+.footer .left {
+    float: left;
+    margin-left: 36px;
+}
+
+.footer .right {
+    float: right;
+    margin-right: 38px;
+}
+
+.footer a {
+    font-size: 14px;
+    color: #666;
+}
+/* 底部 end */

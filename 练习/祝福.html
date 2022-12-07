@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祝福墙</title>
+    <style>
+        .bigbox{
+            width: 800px;
+            height: 500px;
+            border: 2px  dashed black;
+            /* dashed */
+        }
+        div>div{
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            background-color: Lightblue;
+        }
+        .box2{
+            left: 20px;
+            top: 20px;
+            background-color: blue;
+        }
+        .box3{
+            left: 60px;
+            top: 40px;
+            background-color: pink;
+        }
+        .box4{
+            left: 90px;
+            top: 60px;
+            background-color: purple;
+        }
+        div>div:hover{
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="box1">123</div>
+        <div class="box2">123</div>
+        <div class="box3">123</div>
+        <div class="box4">123</div>
+    </div>
+</body>
+</html>

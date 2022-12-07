@@ -1,0 +1,30 @@
+body {
+    width: 520px;
+}
+table {
+    width: 520px;
+    height: 152px;
+    background-color: #fff;
+    text-align: center;
+}
+table,
+tr,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td input {
+    width: 30px;
+    height: 20px;
+    border: 1px solid #666;
+}
+ul {
+    float: right;
+    text-align: right;
+}
+ul li {
+    margin: 10px 0;
+}
+ul li:last-child img {
+    width: 20px
+}

@@ -1,0 +1,20 @@
+/* 主页内容 */
+.home {
+    float: right;
+    width: 520px;
+}
+.home>ul>li {
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+.home>ul>li:nth-child(-n+3) li{
+    float: left;
+}
+.home>ul>li:nth-child(2) .goods img,
+.home>ul>li:nth-child(3) .goods img {
+    margin: 0 10px;
+}
+.goods h3 {
+    font-size: 14px;
+    text-align: center;
+}

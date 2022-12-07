@@ -1,0 +1,241 @@
+/* 左浮动盒子 */
+.fl {
+    float: left;
+}
+/* 右浮动盒子 */
+.fr {
+    float: right;
+}
+.style_red {
+    color: #c81623;
+}
+.w {
+    width: 1200px;
+    margin: 0 auto; 
+}
+/* 快捷导航栏部分 */
+.section {
+    height: 31px;
+    background-color: #f1f1f1;
+    line-height: 31px;
+}
+.section .fl ul>li {
+    float: left;
+    margin-right: 14px;
+    
+}
+.section .fr ul>li {
+    float: left;
+}
+.section .fr ul>li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    margin: 9px 14px 0;
+    background-color: #666;
+}
+.arrow-icon::after {
+    font-family: 'icomoon';
+    content: '\e906';
+    margin-left: 10px;
+}
+/* 快捷导航栏部分 end */
+/* 头部模块 start */
+.header {
+    position: relative;
+    height: 106px;
+}
+.logo {
+    position: absolute;
+    top: 26px;
+    left: 0;
+    background: url(../images/logo.png) no-repeat;
+}
+.logo a {
+    display: block;
+    width: 175px;
+    height: 56px;
+    font-size: 0;
+}
+.search {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    width: 538px;
+    height: 36px;
+    margin-left: -269px;
+    border: 2px solid #b1191a;
+}
+.search input {
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+.search button {
+    float: right;
+    width: 80px;
+    height: 33px;
+    background-color: #b1191a;
+    color: #fff;
+}
+.htowords {
+    position: absolute;
+    top: 66px;
+    left: 347px;
+}
+.htowords a {
+    margin: 0 12px;
+}
+.shopcar {
+    position: absolute;
+    top: 27px;
+    right: 64px;
+    width: 140px;
+    height: 36px;
+    border: 1px solid #dfdfdf;
+    background-color: #fff;
+    line-height: 34px;
+    text-align: center;
+}
+.shopcar::before {
+    font-family: 'icomoon';
+    content: '\e93a';
+    margin-right: 6px;
+    color: #b1191a;
+}
+.shopcar::after {
+    font-family: 'icomoon';
+    content: '\e908';
+    margin-left: 16px;
+}
+.count {
+    position: absolute;
+    top: -12px;
+    left: 106px;
+    padding: 0 5px;
+    border-radius: 8px 8px 8px 0;
+    background-color: #e60012;
+    line-height: 18px;
+    color: #fff;
+}
+/* 头部模块 end */
+/* 导航模块 start */
+.nav {
+    height: 48px;
+    border-bottom: 2px solid #b1191a;
+}
+.nav .dropdown {
+    float: left;
+    width: 209px;
+    height: 48px;
+}
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    background-color: #b1191a;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+/* .dd {
+    display: none;
+} */
+.dd ul>li {
+    height: 31px;
+    background-color: #c81623;
+    line-height: 31px;
+}
+.dd ul>li a {
+    display: block;
+    padding-left: 12px;
+    margin-left: 2px;
+    font-size: 14px;
+    color: #fff;
+}
+.dd ul>li:hover a {
+    background-color: #fff;
+    color: #c81623;
+}
+.nav .navtems {
+    float: left;
+    margin-left: 12px;
+}
+.navtems ul>li {
+    float: left;
+    height: 45px;
+    line-height: 45px;
+}
+.navtems a {
+    display: block;
+    padding: 0 31px;
+    font-size: 16px;
+}
+/* 导航模块 end */
+/* 底部模块 statr */
+.footer {
+    height: 417px;
+    padding-top: 30px;
+    background-color: #f5f5f5;
+}
+.mod_service {
+    height: 80px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ededed;
+}
+.mod_service ul>li {
+    float: left;
+    width: 240px;
+    padding-left: 36px;
+}
+.mod_service ul>li h5 {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+.mod_service ul>li:nth-child(1) h5 {
+    background: url(../images/icons.png) no-repeat -252px -2px;
+}
+.mod_service ul>li:nth-child(2) h5 {
+    background: url(../images/icons.png) no-repeat -255px -54px;
+}
+.mod_service ul>li:nth-child(3) h5 {
+    background: url(../images/icons.png) no-repeat -256px -105px;
+}
+.mod_service ul>li:nth-child(4) h5 {
+    background: url(../images/icons.png) no-repeat -258px -157px;
+}
+.mod_service ul>li:nth-child(5) h5 {
+    background: url(../images/icons.png) no-repeat -255px -209px;
+}
+.mod_service .service_txt {
+    margin-top: 5px;
+}
+.mod_help {
+    height: 185px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ededed;
+}
+.mod_help dl {
+    float: left;
+    width: 200px;
+    padding-left: 20px;
+}
+dl dt {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #333;
+}
+.mod_copyright {
+    padding-top: 20px;
+    text-align: center;
+}
+.mod_copyright .links 
+{
+    margin-bottom: 5px;
+}
+.mod_copyright .links a {
+    margin: 0 5px;
+}
+/* 底部模块 end */

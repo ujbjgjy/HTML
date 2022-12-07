@@ -1,0 +1,5 @@
+div {
+  width: 300px;
+  height: calc(300px/2);
+  background-color: skyblue;
+}
