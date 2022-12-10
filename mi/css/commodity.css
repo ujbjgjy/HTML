@@ -1,0 +1,350 @@
+.nav_tab_list {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    left: 0;
+    width: 234px;
+    height: 460px;
+    padding: 20px 0;
+    border: 1px solid #ff6a00;
+    background-color: #fff;
+}
+
+.nav .nav_dt:first-child:hover .nav_tab_list {
+    display: block;
+}
+
+.nav_tab_list .nav_list_title {
+    position: relative;
+    display: block;
+    height: 42px;
+    padding-left: 30px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #424242;
+}
+
+.nav_tab_list .nav_list_title::after {
+    content: '\e908';
+    position: absolute;
+    left: 180px;
+    font-family: 'icomoon';
+    color: #e0e0e0;
+}
+
+.nav_tab_list .nav_list_title:hover {
+    background-color: #ff6a00;
+}
+
+.nav_title_dd {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    top: 0;
+    left: 234px;
+    width: 998px;
+    height: 460px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #b0b0b0 #b0b0b0 #b0b0b0 transparent;
+    background-color: #fff;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .3);
+}
+
+.nav_title_dd .col {
+    float: left;
+}
+
+.nav_title_dd .col>li {
+    width: 248px;
+    height: 76.4px;
+    padding-left: 20px;
+    background-color: #fff;
+    line-height: 76px;
+}
+
+.nav_title_dd a {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.nav_title_dd .col>li {
+    /* 1.先强制一行内显文本 默认normal自动换行 */
+    white-space: nowrap;
+    /* 2. 超的部分隐藏 */
+    overflow: hidden;
+    /* 3. 文字用省略号替代超出的部分 */
+    text-overflow: ellipsis;
+}
+
+.nav_title_dd a:hover {
+    color: #ff6a00;
+}
+
+.nav_title_dd .col>li img {
+    width: 40px;
+}
+
+.nav_list_dt:hover .nav_title_dd {
+    display: block;
+}
+/* nav部分 end */
+/* commodity-nav-bar */
+.commodity-nav-bar {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 6px 5px rgba(0, 0, 0, .1);
+}
+.commodity-nav-bar h2 {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    color: #424242;
+}
+.commodity-nav-bar .left {
+    float: left;
+    margin: 21px 0 5px 0;
+    font-size: 12px;
+}
+.commodity-nav-bar .left a {
+    color: #616161;
+}
+.commodity-nav-bar .separator {
+    margin: 0 8px;
+    font-size: .5em;
+    color: #424242;
+}
+.commodity-nav-bar .right {
+    float: right;
+    margin-top: 17px;
+    color: #e0e0e0;
+}
+.commodity-nav-bar .right a {
+    font-size: 14px;
+    color: #616161;
+}
+.commodity-nav-bar a:hover {
+    color: #ff6a00;
+}
+/* 产品部分 start */
+.product-box {
+    display: flex;
+    padding: 32px 0 12px;
+}
+.product-left {
+    position: relative;
+    overflow: hidden;
+    width: 606px;
+    height: 2000px;
+}
+
+.product-left-img {
+    width: calc(560px * 4);
+    height: 560px;
+    animation: move 10s infinite;
+}
+
+.product-left-img img {
+    float: left;
+    width: 560px;
+}
+@keyframes move {
+    23% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-560px);
+    }
+    47% {
+        transform: translateX(-560px);
+    }
+    50% {
+        transform: translateX(-1120px);
+    }
+    73% {
+        transform: translateX(-1120px);
+    }
+    75% {
+        transform: translateX(-1680px);
+    }
+    100% {
+        transform: translateX(-1680px);
+    }
+}
+/* 左右箭头 */
+.product-button-left,
+.product-button-right {
+    position: absolute;
+    top: 260px;
+    width: 41px;
+    height: 69px;
+    line-height: 69px;
+    font-family: 'icomoon';
+    font-size: 41px;
+    color: #dadada;
+}
+.product-button-left:hover,
+.product-button-right:hover {
+    background-color: rgba(0,0,0,.6);
+ }
+.product-button-left {
+    left: 0;
+}
+.product-button-right {
+    right: 46px;
+}
+/* 长条 */
+.product-left ul {
+    position: absolute;
+    top: 530px;
+    left: 50%;
+    transform: translateX(-70%);
+}
+.product-left ul>li {
+    float: left;
+    width: 50px;
+    height: 3px;
+    margin: 0 5px;
+    background-color: rgba(0,0,0,.1);
+}
+.product-left ul>li:first-child {
+    background-color: rgba(0,0,0,.3);
+}
+
+
+.product-right {
+    flex: 1;
+    margin-left: 20px;
+}
+.product-right h2 {
+    height: 36px;
+    font-size: 24px;
+    color: #212121;
+}
+.product-right .sale-desc {
+    height: 50px;
+    padding-top: 8px;
+    font-size: 14px;
+    color: #b0b0b0;
+}
+.product-right .company-info {
+    height: 21px;
+    margin-top: 14px;
+    font-size: 14px;
+    color: #ff6a00;
+}
+.product-right .price-info {
+    height: 40px;
+    padding: 12px 0 10px;
+    font-size: 18px;
+    color: #ff6a00;
+}
+.product-right .line {
+    margin-top: 12px;
+    border-top: 1px solid #e0e0e0;
+}
+.product-address {
+    position: relative;
+    padding: 30px 50px;
+    margin: 20px 0;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+}
+.product-address i::before {
+    content: "\e916";
+    position: absolute;
+    top: 28px;
+    left: 26px;
+    font-family: 'icomoon';
+    font-size: 16px;
+    color: #999;
+}
+.address-info span {
+    margin-right: 14px;
+    font-size: 14px;
+    color: #333;
+}
+.address-info .edit {
+    font-size: 14px;
+    color: #ff6700; 
+}
+.product-desc {
+    font-size: 14px;
+    color: #ff6700;
+}
+.option-box {
+    margin-bottom: 30px;
+}
+.option-title {
+    font-size: 18px;
+    color: #333;
+}
+.option-item {
+    margin-top: 10px;
+    width: 292px;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+    transform: all .2s;
+    line-height: 42px;
+    text-align: center;
+}
+.option-item:first-child {
+    border-color: #ff6700;
+}
+.option-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: #757575;
+}
+.option-item:first-child a {
+    color: #ff6700;    
+}
+.option-item:hover {
+    border-color: #ff6700;
+}
+.option-item:hover a{
+    color: #ff6700;
+}
+/* 服务模块 */
+.service-item-box {
+    margin-bottom: 30px;
+}
+.service-item-box .title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+.service-item-box .title a {
+    display: block;
+    float: right;
+    padding-top: 5px;
+    font-size: 14px;
+    color: #ff6700;
+}
+.service-item-box ul {
+    width: 100%;
+}
+.service-item-box li {
+    display: flex;
+    /* 将上边框覆盖掉 */
+    padding: 30px 0;
+    margin-top: -1px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    /* 当鼠标指针经过li时变成小手 */
+    cursor: pointer;
+}
+/* 产品部分 end */

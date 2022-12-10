@@ -85,12 +85,6 @@
     display: block;
 }
 
-/* .box {
-    width: 1000px;
-    height: 500px;
-    background-color: pink;
-} */
-
 /* 服务中心内容部分 start */
 .service_content_bg {
     background-color: #f5f5f5;
@@ -125,34 +119,34 @@
 }
 @keyframes move {
     18% {
-        transform: translate(0%);
+        transform: translateX(0);
     }
     20% {
-        transform: translate(-20%);
+        transform: translateX(-20%);
     }
     38% {
-        transform: translate(-20%);
+        transform: translateX(-20%);
     }
     40% {
-        transform: translate(-40%);
+        transform: translateX(-40%);
     }
     58% {
-        transform: translate(-40%);
+        transform: translateX(-40%);
     }
     60% {
-        transform: translate(-60%);
+        transform: translateX(-60%);
     }
     78% {
-        transform: translate(-60%);
+        transform: translateX(-60%);
     }
     80% {
-        transform: translate(-80%);
+        transform: translateX(-80%);
     }
     98% {
-        transform: translate(-80%);
+        transform: translateX(-80%);
     }
     100% {
-        transform: translate(-100%);
+        transform: translateX(-60%);
     }
 }
 .promotion img {

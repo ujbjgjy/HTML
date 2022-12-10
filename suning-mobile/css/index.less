@@ -1,0 +1,104 @@
+// 引入公共样式
+@import "common";
+//以750px布局为准
+@fontsize: 50;
+
+body {
+    min-width: 320px;
+    //当屏幕是750,字体大小是50px，在*15最大宽度为750px
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+}
+input {
+    outline: none;
+}
+
+.search-content {
+    display: flex;
+    //定位的盒子不用margin来居中
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: calc(88rem/@fontsize);
+    background-color: #ffc001;
+    font-size: calc(25rem/@fontsize);
+    .classify {
+        width: calc(44rem/@fontsize);
+        height: calc(70rem/@fontsize);
+        margin: calc(11rem/@fontsize) calc(25rem/@fontsize) calc(7rem/@fontsize) calc(24rem/@fontsize);
+        background: url(../images/classify.png) no-repeat;
+        background-size: calc(44rem/@fontsize);
+    }
+
+    .login {
+        width: calc(75rem/@fontsize);
+        height: calc(70rem/@fontsize);
+        margin: calc(10rem/@fontsize);
+        line-height: calc(70rem/@fontsize);
+        text-align: center;
+        color: #fff;
+    }
+
+    .search {
+        flex: 1;
+        input {
+            width: 100%;
+            height: calc(66rem/@fontsize);
+            padding-left: calc(40rem/@fontsize);
+            margin-top: calc(10rem/@fontsize);
+            background-color: #fff2cc;
+            border: 0;
+            border-radius: calc(33rem/@fontsize);
+        }
+    }
+}
+
+.banner {
+    width: calc(750rem/@fontsize);
+    height: calc(368rem/@fontsize);
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.ad {
+    display: flex;
+    a {
+        flex: 1;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(750rem/@fontsize);
+    margin-top: calc(10rem/@fontsize);
+    a {
+        flex: 20%;
+        text-align: center;
+        img {
+            display: block;
+            width: calc(82rem/@fontsize);
+            height: calc(82rem/@fontsize);
+            margin: calc(10rem/@fontsize) auto;
+        }
+        span {
+            font-size: calc(25rem/@fontsize);
+            color: #333;
+        }
+    }
+}

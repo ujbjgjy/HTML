@@ -3,6 +3,7 @@
     width: 1226px;
     margin: 0 auto;
 }
+
 /* 快捷导航模块 start */
 .sectionbg {
     background-color: #333;
@@ -36,7 +37,7 @@
     display: none;
     position: absolute;
     left: -20px;
-    z-index: 1;
+    z-index: 2;
     width: 115px;
     height: 135px;
     padding-top: 10px;
@@ -191,7 +192,7 @@
     top: 0;
     left: 50%;
     height: 100px;
-    margin-left: -613px;
+    margin-left: -613px !important;
 }
 
 .nav .nav_dt {
@@ -220,7 +221,7 @@
 .nav_dd {
     display: none;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 100px;
     left: 0;
     width: 1226px;
@@ -336,42 +337,50 @@
     height: 68px;
     background-color: pink;
 }
+
 .main .arrow_left {
     left: 234px;
     background: url(../images/箭头左.png) no-repeat 5px center;
     background-size: 95%;
 }
+
 .main .arrow_right {
     right: 0;
     background: url(../images/箭头右.png) no-repeat -5px center;
     background-size: 95%;
 }
+
 .main .arrow_left:hover {
     background: url(../images/箭头左_bg.png) no-repeat 5px center;
     background-size: 95%;
-    background-color: rgba(127, 127, 127,.8)
+    background-color: rgba(127, 127, 127, .8)
 }
+
 .main .arrow_right:hover {
     background: url(../images/箭头右_bg.png) no-repeat -5px center;
     background-size: 95%;
-    background-color: rgba(127, 127, 127,.8)
+    background-color: rgba(127, 127, 127, .8)
 }
+
 .yuandian {
     position: absolute;
     top: 435px;
     right: 20px;
 }
+
 .yuandian div {
     float: left;
     width: 10px;
     height: 10px;
     margin-left: 10px;
     border-radius: 50%;
-    border: 2px solid rgba(127, 127, 127,.5);
+    border: 2px solid rgba(127, 127, 127, .5);
 }
+
 .yuandian div:nth-child(odd) {
-    background-color: rgba(127, 127, 127,.8);
+    background-color: rgba(127, 127, 127, .8);
 }
+
 /* 头部的两个箭头 */
 
 .main_tab_list {
@@ -424,7 +433,7 @@
 }
 
 .title_dd .col>li {
-    width: 248px;
+    width: 247px;
     height: 76.4px;
     padding-left: 20px;
     background-color: #fff;
@@ -540,10 +549,11 @@
     width: 316px;
     height: 170px;
     margin-left: 10px;
+    transition: all .5s;
 }
 
 .base_right ul>li:hover {
-    box-shadow: 0 1px 15px rgba(0, 0, 0, .3);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, .1);
 }
 
 .base_right img {
@@ -725,12 +735,13 @@
 }
 
 /* 网站信息 */
-.site_infobg {
+.site_info_bg {
     background-color: #f5f5f5;
 }
+
 .site_info {
     height: 266px;
-    padding-top: 30px;
+    padding: 30px 0;
 }
 
 .site_info .site_logo {
@@ -763,12 +774,15 @@
 .info_links img {
     height: 28px;
 }
+
 .info_links {
     margin-top: 10px;
 }
+
 .info_links a:last-child {
     position: absolute;
 }
+
 .info_links a:last-child::after {
     content: '';
     position: absolute;
@@ -786,121 +800,255 @@
     animation-iteration-count: infinite;
     /* infinite 表示永久 */
 }
+
 @keyframes info_img {
     to {
         background: url(../images/site_info_5_1.png) no-repeat;
         background-size: 75.3px 28px;
     }
 }
+
 .slogan {
-    width: 1226px; 
+    width: 1226px;
     height: 19px;
     margin-top: 30px;
     font-size: 12px;
     text-align: center;
     color: #c7c7c7;
 }
+
 /* 底部模块 end */
 /* 工具栏模块 start */
+/* 当页宽<1458px时缩小 */
+@media screen and (min-width: 1458px) {
+    .tool_item {
+        font-size: 10px;
+    }
+
+    /* 从第二个开始选择 */
+    .tool_item:nth-child(n+2) .tool_item_dd {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 1458px) {
+    .tool_item {
+        font-size: 0;
+    }
+
+    .tool_item::before {
+        content: "hehe";
+        display: none;
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+}
+
 .tool_bar {
     position: fixed;
-    z-index: 3;
-    bottom: 100px;
-    right: 0;
-    width: 27px;
-    height: 205px;
-    background-color: transparent;
+    bottom: 70px;
+    right: 10px;
 }
-.tool_bar a {
+
+.tool_item {
     display: block;
     position: relative;
-    width: 27px;
-    height: 42px;
-    padding-top: 3px;
-}
-.tool_bar a .icon {
-    width: 20px;
-    height: 30px;
-    margin: 0 auto;
-    background: #fff no-repeat;
-    background-size: 20px;
-}
-.tool_bar ul>li:nth-child(1) .icon {
-    background-image: url(../images/tool_bar_1_0.png);
-}
-.tool_bar ul>li:nth-child(2) .icon {
-    background-image: url(../images/tool_bar_2_0.png);
-}
-.tool_bar ul>li:nth-child(3) .icon {
-    background-image: url(../images/tool_bar_3_0.png);
-}
-.tool_bar ul>li:nth-child(4) .icon {
-    background-image: url(../images/tool_bar_4_0.png);
-}
-.tool_bar ul>li:nth-child(5) .icon {
-    background-image: url(../images/tool_bar_5_0.png);
-}
-/* 更换图片 */
-.tool_bar ul>li:nth-child(1) a:hover .icon {
-    background-image: url(../images/tool_bar_1_1.png);
-}
-.tool_bar ul>li:nth-child(2) a:hover .icon {
-    background-image: url(../images/tool_bar_2_1.png);
-}
-.tool_bar ul>li:nth-child(3) a:hover .icon {
-    background-image: url(../images/tool_bar_3_1.png);
-}
-.tool_bar ul>li:nth-child(4) a:hover .icon {
-    background-image: url(../images/tool_bar_4_1.png);
-}
-.tool_bar ul>li:nth-child(5) a:hover .icon {
-    background-image: url(../images/tool_bar_5_1.png);
-}
-/* 悬浮之后出来的图片 */
-.tool_bar ul>li:first-child a::before {
-    content: '扫码领取新人百元礼包';
-    position: absolute;
-    top: 0;
-    left: -125px;
-    width: 75px;
-    padding: 125px 20px 10px ;
-    background: #fff url(../images/二维码.png) no-repeat center 20px;
-    background-size: 90px;
+    width: calc(57em / 10 + 27px);
+    height: calc(50em / 10 + 42px);
+    margin-top: -1px;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
     text-align: center;
 }
-/* 小三角 */
-.tool_bar ul>li:first-child a::after {
-    content: '';
+
+.tool_item:first-child .tool_item_dd {
+    position: absolute;
+    top: 0;
+    left: -143px;
+    width: 128px;
+    height: 190px;
+    padding: 16px 15px 0;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    font-size: 14px;
+    color: #757575;
+}
+
+/* 后5个 */
+.tool_item:nth-child(n+2) .tool_item_dd {
+    position: absolute;
+    top: 0;
+    left: -90px;
+    width: 75px;
+    height: 30px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    font-size: 14px;
+    color: #757575;
+}
+/* 选出最后一个 */
+.tool_item:last-child {
+    margin-top: 15px;
+}
+
+/* 右边小三角制作 */
+.tool_item_dd::after {
+    content: "";
     position: absolute;
     top: 10px;
-    left: -10px;
+    right: -12.5px;
     width: 0;
     height: 0;
-    border: 10px solid transparent;
-	border-left-color: #fff;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
 }
-.tool_bar ul>li:first-child a::before, 
-.tool_bar ul>li:first-child a::after {
+/* 三角边框 */
+.tool_item_dd::before {
+    content: "";
+    position: absolute;
+    top: 11.5px;
+    right: -5.5px;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-top: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+    transform: rotate(45deg);
+}
+
+.tool_item:hover .tool_text {
+    color: #ff6700;
+}
+.tool_item .tool_item_dd {
     display: none;
 }
-.tool_bar ul>li:first-child:hover a::before {
+.tool_item:hover .tool_item_dd {
     display: block;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .3)
 }
+
+.tool_itme_dd_text {
+    padding: 10px;
+}
+
+.tool_item_dd img {
+    width: 98px;
+}
+
+.tool_item_icon {
+    display: block;
+    position: relative;
+    width: calc(10em / 10 + 20px);
+    height: calc(18em / 10 + 30px);
+    padding-top: calc(10em / 10 + 8px);
+    margin: 0 auto calc(8em / 10);
+}
+
+.tool_item_icon img {
+    width: 100%;
+}
+
+.tool_text {
+    font-size: calc(14em/10);
+    color: #757575;
+    transition: color .3s;
+}
+
+
+/* 变换图片 */
+.tool_item:hover:nth-child(1) .tool_item_icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff url(../images/tool_bar_1_1.png) no-repeat 0 calc(10em / 10 + 8px);
+    background-size: 100%;
+    transition: all 1s;
+}
+
+.tool_item:hover:nth-child(2) .tool_item_icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff url(../images/tool_bar_2_1.png) no-repeat 0 calc(10em / 10 + 8px);
+    background-size: 100%;
+    transition: all 1s;
+}
+
+.tool_item:hover:nth-child(3) .tool_item_icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff url(../images/tool_bar_3_1.png) no-repeat 0 calc(10em / 10 + 8px);
+    background-size: 100%;
+    transition: all 1s;
+}
+
+.tool_item:hover:nth-child(4) .tool_item_icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/tool_bar_4_1.png) no-repeat 0 calc(10em / 10 + 8px);
+    background-size: 100%;
+    transition: all 1s;
+}
+
+.tool_item:hover:nth-child(5) .tool_item_icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/tool_bar_5_1.png) no-repeat 0 calc(10em / 10 + 8px);
+    background-size: 100%;
+    transition: all 1s;
+}
+
+.tool_item:hover:nth-child(6) .tool_item_icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/tool_bar_6_1.png) no-repeat 0 calc(10em / 10 + 8px);
+    background-size: 100%;
+    transition: all 1s;
+}
+
 /* 返回顶部 */
 .goto_top {
     top: 10px;
     width: 27px;
-    height: 42px; 
+    height: 42px;
     padding-top: 5px;
     background-color: transparent;
 }
+
 .goto_top a {
     display: block;
     width: 27px;
     height: 42px;
     padding-top: 3px;
 }
+
 .goto_top a .icon {
     width: 20px;
     height: 30px;
@@ -908,10 +1056,12 @@
     background: #fff url(../images/tool_bar_6_0.png) no-repeat;
     background-size: 20px;
 }
+
 .goto_top a:hover .icon {
     width: 20px;
     height: 30px;
     background: #fff url(../images/tool_bar_6_1.png) no-repeat;
     background-size: 20px;
 }
+
 /* 工具栏模块 end */
