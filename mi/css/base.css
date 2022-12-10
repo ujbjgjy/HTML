@@ -1,15 +1,16 @@
 /* 声明图标字体 */
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?ry6ryg');
-  src:  url('../fonts/icomoon.eot?ry6ryg#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?ry6ryg') format('truetype'),
-    url('../fonts/icomoon.woff?ry6ryg') format('woff'),
-    url('../fonts/icomoon.svg?ry6ryg#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?c0z17o');
+  src:  url('../fonts/icomoon.eot?c0z17o#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?c0z17o') format('truetype'),
+    url('../fonts/icomoon.woff?c0z17o') format('woff'),
+    url('../fonts/icomoon.svg?c0z17o#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
+
 /* 把我们所有标签的内外边距清零 */
 * {
     margin: 0;
