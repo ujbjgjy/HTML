@@ -1,0 +1,96 @@
+.account-main {
+    display: flex;
+}
+
+.account-content {
+    flex: 1;
+}
+
+.acciunt-header {
+    padding: 20px;
+}
+
+.acciunt-header .title {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #333;
+}
+
+.acciunt-header .title .icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background: url(../images/logo.png) no-repeat;
+    background-size: 100%;
+}
+
+.account-nav {
+    float: right;
+}
+
+.account-nav-item {
+    display: inline-block;
+    height: 40px;
+    margin: 0 10px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #838383;
+    transition: all .3s;
+}
+.account-nav-item:hover {
+    color: #ff6700;
+}
+
+.account-nav-divider {
+    display: inline-block;
+    height: 14px;
+    margin: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+/* 右边小三角 */
+.account-nav-item em {
+    display: inline-block;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #838383 transparent transparent;
+    transform-origin: center 20%;
+    transition: all .3s;
+}
+.account-nav-item:last-child {
+    position: relative;
+}
+.account-nav-item:last-child:hover .account-nav-dd {
+    display: block;
+}
+.account-nav-item:last-child:hover em {
+    transform: rotate(180deg);
+    border-top-color: #ff6700;
+ }
+.account-nav-dd {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -5px;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.3);
+}
+.account-nav-dd div {
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #838383;
+    transition: all .3s;
+}
+.account-nav-dd div:hover {
+    background-color: #f5f5f5;
+}
