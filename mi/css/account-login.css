@@ -1,0 +1,108 @@
+.ant-tabs-nav-list a:first-child {
+    position: relative;
+    font-weight: 600;
+    color: #333;
+}
+.ant-tabs-nav-list a:first-child::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 64px;
+    width: 44px;
+    height: 3px;
+    background-color: #ff5c00;
+    animation: move .3s forwards;
+}
+@keyframes move {
+    100% {
+        transform: translateX(-64px);
+    }
+}
+.accpunt-form-content {
+    width: 360px;
+    padding: 20px 2px 0;
+}
+.accpunt-form-content .name-password {
+    width: 100%;
+    height: 60px;
+    padding: 16px 20px 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    font-size: 17px;
+    color: rgba(0, 0, 0, .4);
+}
+.accpunt-form-content .name-password:focus {
+    border: #ff5c00 solid 1px;
+    outline: #ffdecc solid 2px;
+}
+.accpunt-terms {
+    width: 100%;
+    height: 25px;
+    margin-top: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+.accpunt-terms span {
+    color: #333;
+}
+.accpunt-terms .terms-input {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border: #ddd solid 1px;
+    transform: translateY(3px);
+}
+.accpunt-login-button {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    margin: 20px 0 10px;
+    background-color: #ff5c00;
+    opacity: .4;
+    line-height: 60px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+.accpunt-login-button:hover {
+    opacity: .3;
+}
+.accpunt-more {
+    height: 23px;
+    margin-bottom: 10px;
+}
+.accpunt-more a {
+    display: block;
+    width: 85px;
+    height: 23px;
+    font-size: 17px;
+    color: #ff5c00;
+}
+.accpunt-more a:first-child {
+    float: left;
+}
+.accpunt-more a:last-child {
+    float: right;
+}
+.accpunt-more a:hover {
+    opacity: .9;
+}
+.account-other {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 17px;
+    color: #aaa;
+}
+.account-other-list {
+    height: 52px;
+    margin-top: 5px;
+    text-align: center;
+}
+.account-other-list img {
+    width: 46px;
+    margin: 0 12px;
+}

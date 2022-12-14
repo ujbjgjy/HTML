@@ -12,10 +12,13 @@
     <link rel="stylesheet" href="css/base.css">
     <!-- 引入小米账号公共样式 -->
     <link rel="stylesheet" href="css/account-common.css">
+    <!-- 引入小米登录样式 -->
+    <link rel="stylesheet" href="css/account-login.css">
 </head>
 
 <body>
     <div class="account-main">
+        <div class="account-banner"></div>
         <div class="account-content">
             <header class="acciunt-header clearfix">
                 <div class="title">
@@ -35,8 +38,46 @@
                     </a>
                 </div>
             </header>
+            <div class="account-container">
+                <div class="account-card">
+                    <a href="index.html" class="qrcode-wrap">
+                        <img src="images/qr-code.png" alt="">
+                        <div class="dd">
+                            扫码登录
+                        </div>
+                    </a>
+                    <div class="ant-tabs">
+                        <div class="ant-tabs-nav">
+                            <div class="ant-tabs-nav-list">
+                                <a href="#">登录</a>
+                                <a href="#">注册</a>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="#" class="account-form">
+                        <div class="accpunt-form-content">
+                            <input class="name-password" type="text" placeholder="邮箱/手机号码/小米ID"> 
+                            <input class="name-password" type="text" placeholder="密码"> 
+                            <div class="accpunt-terms"><input class="terms-input" type="checkbox">已经阅读并同意小米帐号 <span>用户协议</span> 和 <span>隐私政策</span></div>
+                            <div class="accpunt-login-button">登录</div>
+                            <div class="accpunt-more">
+                                <a href="#">忘记密码?</a>
+                                <a href="#">手机号登录</a>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="account-other">其他方式登录</div>
+                    <div class="account-other-list">
+                        <img src="images/支付宝.png" alt="">
+                        <img src="images/微信.png" alt="">
+                        <img src="images/QQ.png" alt="">
+                        <img src="images/微博.png" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <a class="account-copyright">小米公司版权所有-京1CP备10046444-京公网安备11010802020134号-京ICP证110507号</a>
 </body>
 
 </html>
