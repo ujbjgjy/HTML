@@ -1,0 +1,266 @@
+.nav_tab_list {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: 0;
+    width: 234px;
+    height: 460px;
+    padding: 20px 0;
+    border: 1px solid #ff6a00;
+    background-color: #fff;
+}
+
+.nav .nav_dt:first-child:hover .nav_tab_list {
+    display: block;
+}
+
+.nav_tab_list .nav_list_title {
+    position: relative;
+    display: block;
+    height: 42px;
+    padding-left: 30px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #424242;
+}
+
+.nav_tab_list .nav_list_title::after {
+    content: '\e908';
+    position: absolute;
+    left: 180px;
+    font-family: 'icomoon';
+    color: #e0e0e0;
+}
+
+.nav_tab_list .nav_list_title:hover {
+    background-color: #ff6a00;
+}
+
+.nav_title_dd {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    top: 0;
+    left: 234px;
+    width: 998px;
+    height: 460px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #b0b0b0 #b0b0b0 #b0b0b0 transparent;
+    background-color: #fff;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .3);
+}
+
+.nav_title_dd .col {
+    float: left;
+}
+
+.nav_title_dd .col>li {
+    width: 248px;
+    height: 76.4px;
+    padding-left: 20px;
+    background-color: #fff;
+    line-height: 76px;
+}
+
+.nav_title_dd a {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.nav_title_dd .col>li {
+    /* 1.先强制一行内显文本 默认normal自动换行 */
+    white-space: nowrap;
+    /* 2. 超的部分隐藏 */
+    overflow: hidden;
+    /* 3. 文字用省略号替代超出的部分 */
+    text-overflow: ellipsis;
+}
+
+.nav_title_dd a:hover {
+    color: #ff6a00;
+}
+
+.nav_title_dd .col>li img {
+    width: 40px;
+}
+
+.nav_list_dt:hover .nav_title_dd {
+    display: block;
+}
+
+/* nav部分 end */
+
+/* 主体部分 start */
+.page-main {
+    padding: 38px 0;
+    background-color: #f5f5f5;
+}
+
+.buy-top {
+    height: 97px;
+    padding-bottom: 28px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.join-goods {
+    float: left;
+}
+
+.join-goods .goods-img {
+    float: left;
+    width: 64px;
+    height: 64px;
+}
+
+.join-goods .goods-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.join-goods .goods-info {
+    float: left;
+    margin-left: 20px;
+}
+
+.join-goods .goods-info h3 {
+    margin-top: 3px;
+    font-size: 24px;
+    color: #424242;
+}
+
+.join-goods .goods-info .name {
+    margin-right: 15px;
+    font-size: 14px;
+    color: #757575;
+}
+
+.actions {
+    float: right;
+}
+
+.actions a {
+    display: inline-block;
+    width: 182px;
+    height: 40px;
+    margin: 5px 0 0 12px;
+    border: 1px solid #b0b0b0;
+    line-height: 38px;
+    text-align: center;
+    font-size: 14px;
+    transition: all .4s;
+}
+
+.actions a:first-child:hover {
+    background-color: #fff;
+}
+
+.actions a:last-child {
+    background-color: #ff6700;
+    border: 0;
+    color: #fff;
+}
+
+.actions a:last-child:hover {
+    background-color: #f25807;
+}
+
+.cart-recommend {
+    margin-top: 88px;
+}
+
+.recommend-title {
+    position: relative;
+    height: 50px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 30px;
+    color: #757575;
+}
+
+.recommend-title span {
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 372px;
+    width: 482px;
+    height: 40px;
+    background-color: #f5f5f5;
+    line-height: 40px;
+    text-align: center;
+}
+
+.recommend-list {
+    width: 1240px;
+}
+
+.recommend-item {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 234px;
+    height: 300px;
+    background-color: #fff;
+    margin: 14px 14px 0 0;
+}
+
+.recommend-item .recommend_links {
+    display: block;
+    width: 234px;
+    height: 260px;
+    text-align: center;
+}
+
+.recommend-item .recommend_links img {
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin: 40px auto 20px;
+}
+
+.recommend_name {
+    width: 214px;
+    height: 18px;
+    margin: 0 10px 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.recommend_price {
+    width: 234px;
+    height: 21px;
+    margin-bottom: 10px;
+    color: #ff6700;
+}
+
+.recommend_itps {
+    width: 234px;
+    height: 21px;
+    font-size: 14px;
+    color: #757575;
+}
+.recommend-list .gouwuche {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 120px;
+    height: 30px;
+    margin-left: -60px;
+    border: 1px solid #ff6700;
+    background-color: #fff;
+    line-height: 28px;
+    text-align: center;
+    color: #ff6700;
+    transition: all .5s;
+}
+.recommend-list>li:hover .gouwuche {
+    transform: translateY(-42px);
+}
+.recommend-list .gouwuche:hover {
+    background-color: #ff6700;
+    color: #fff;
+}
+/* 主体部分 end */

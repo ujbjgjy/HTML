@@ -1,0 +1,485 @@
+.shopping-header {
+    height: 102px;
+    background-color: #fff;
+    border-bottom: 2px solid #ff6700;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+.header-logo {
+    float: left;
+    width: 93px;
+    margin-top: 26px;
+}
+.header-logo a {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../images/logo.png) no-repeat;
+    background-size: 48px;
+    font-size: 0;
+}
+.header-title {
+    float: left;
+    height: 48px;
+    margin-top: 26px;
+}
+.header-title h2 {
+    float: left;
+    line-height: 48px;
+    font-size: 28px;
+    color: #424242;
+}
+.header-title p {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin: 20px 0 0 15px;
+    color: #757575;
+}
+.topbar-info {
+    float: right;
+    height: 40px;
+    margin-top: 30px;
+    line-height: 40px;
+}
+.user {
+    float: left;
+    position: relative;
+}
+.user i {
+    font-family: 'icomoon';
+    font-size: 24px;
+    line-height: 24px;
+    vertical-align: -5px;
+}
+.user-name {
+    display: block;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    color: #757575;
+}
+.user-name-dd {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 1;
+    width: 110px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+.user-name-dd  a{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    text-align: center;
+    color: #424242;
+}
+.user-name:hover {
+    color: #ff6700;
+}
+.user-name-dd a:hover {
+    background-color: #f5f5f5;
+    color: #ff6700;
+}
+.user:hover .user-name-dd {
+    display: block;
+}
+.topbar-info .link-order {
+    float: right;
+    width: 70px;
+    padding: 0 5px;
+    text-align: center;
+    color: #757575;
+}
+.topbar-info .link-order:hover {
+    color: #ff6700;
+}
+/* 头部部分 end */
+
+/* 主体部分 start */
+.page-main {
+    padding: 38px 0;
+    background-color: #f5f5f5;
+}
+
+/* 购买列表 start */
+.cart-goods-list {
+    font-family: 'icomoon';
+    background-color: #fff;
+}
+.cart-goods-head {
+    height: 71px;
+    line-height: 70px;
+    padding-right: 26px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #424242;
+}
+.cart-goods-list div[class^="col"] {
+    float: left;
+    box-sizing: content-box;
+}
+.col-check {
+    width: 110px;
+}
+.col-check i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 15px 0 24px;
+    line-height: 18px;
+    background-color: #ff6700;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: 0;
+    cursor: pointer;
+    color: #fff;
+}
+.col-img {
+    width: 120px;
+}
+.col-img img {
+    width: 80px;
+    height: 80px;
+}
+.col-name {
+    width: 380px;
+}
+.col-price {
+    width: 140px;
+    padding-right: 18px;
+    text-align: center;
+    color: #424242;
+}
+.col-num {
+    width: 150px;
+    text-align: center;
+    color: #424242;
+}
+.col-total {
+    width: 120px;
+    padding-right: 81px;
+    text-align: right;
+}
+.col-action {
+    width: 80px;
+    text-align: center;
+}
+/* goods-body */
+.goods-item {
+    padding: 15px 26px 15px 0;
+}
+.item-table div[class^="col"] {
+    height: 87px;
+    line-height: 87px;
+}
+.item-table .col-name {
+    font-size: 18px;
+    color: #424242;
+}
+.item-table .col-price {
+    font-size: 16px;
+    color: #424242;
+}
+.item-table .col-total {
+    font-size: 16px;
+    color: #ff6700;
+}
+.item-table .col-num .cheange-goods-num {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    margin-top: 23.5px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    line-height: 38px;
+    text-align: center;
+}
+.item-table .col-num .cheange-goods-num input {
+    display: block;
+    width: 74px;
+    height: 38px;
+    margin-left: 38px;
+    text-align: center;
+}
+.item-table .col-num .cheange-goods-num a {
+    position: absolute;
+    top: 0;
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #757575;
+}
+.item-table .col-num .cheange-goods-num a:hover {
+    background-color: #e0e0e0;   
+}
+.item-table .col-num .cheange-goods-num a:first-child {
+    left: 0;
+}
+.item-table .col-num .cheange-goods-num a:last-child {
+    right: 0;
+}
+.item-table .col-action a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-top: -24px;
+    font-size: 16px;
+    line-height: 20px;
+    border-radius: 50%;
+}
+.item-table .col-action a:hover {
+    background-color: #e53935;
+    color: #fff;
+}
+.item-sub-box {
+    position: relative;
+    padding-top: 15px;
+    margin: 0 0 -2px 100px;
+}
+.extend-buy {
+    height: 48px;
+    padding-left: 20px;
+    margin-bottom: -1px;
+    border: 1px solid #e0e0e0;
+    line-height: 48px;
+    font-size: 14px;
+    color: #424242;
+    cursor: pointer;
+}
+.extend-buy i {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+    background-color: #ff6700;
+    border-radius: 50%;
+    line-height: .7;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+}
+.extend-buy span {
+    color: #ff6700;
+}
+.extend-buy a {
+    margin-left: 20px;
+    color: #ff6700;
+}
+.cart-bar {
+    height: 50px;
+    margin-top: 20px;
+    background-color: #fff;
+    line-height: 50px;
+    text-align: right;
+}
+.section-left {
+    float: left;
+}
+.section-left a {
+    margin-left: 32px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #757575;
+}
+.section-left span {
+    padding-left: 16px;
+    margin-left: 16px;
+    border-left: 1px solid #eee;
+}
+.section-left span i {
+    margin: 0 3px;
+    color: #ff6700;
+}
+.total-price {
+    padding-left: 13px;
+    color: #ff6700;
+}
+.total-price em {
+    font-size: 30px;
+}
+.total-price a {
+    display: inline-block;
+    width: 200px;
+    height: 48px;
+    margin-left: 50px;
+    background-color: #ff6700;
+    vertical-align: top;
+    line-height: 48px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+.total-price a:hover {
+    background-color: #f25807;
+}
+/* 购买列表 end */
+
+.buy-top {
+    height: 97px;
+    padding-bottom: 28px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.join-goods {
+    float: left;
+}
+
+.join-goods .goods-img {
+    float: left;
+    width: 64px;
+    height: 64px;
+}
+
+.join-goods .goods-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.join-goods .goods-info {
+    float: left;
+    margin-left: 20px;
+}
+
+.join-goods .goods-info h3 {
+    margin-top: 3px;
+    font-size: 24px;
+    color: #424242;
+}
+
+.join-goods .goods-info .name {
+    margin-right: 15px;
+    font-size: 14px;
+    color: #757575;
+}
+
+.actions {
+    float: right;
+}
+
+.actions a {
+    display: inline-block;
+    width: 182px;
+    height: 40px;
+    margin: 5px 0 0 12px;
+    border: 1px solid #b0b0b0;
+    line-height: 38px;
+    text-align: center;
+    font-size: 14px;
+    transition: all .4s;
+}
+
+.actions a:first-child:hover {
+    background-color: #fff;
+}
+
+.actions a:last-child {
+    background-color: #ff6700;
+    border: 0;
+    color: #fff;
+}
+
+.actions a:last-child:hover {
+    background-color: #f25807;
+}
+
+.cart-recommend {
+    margin-top: 88px;
+}
+
+.recommend-title {
+    position: relative;
+    height: 50px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 30px;
+    color: #757575;
+}
+
+.recommend-title span {
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 372px;
+    width: 482px;
+    height: 40px;
+    background-color: #f5f5f5;
+    line-height: 40px;
+    text-align: center;
+}
+
+.recommend-list {
+    width: 1240px;
+}
+
+.recommend-item {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 234px;
+    height: 300px;
+    background-color: #fff;
+    margin: 14px 14px 0 0;
+}
+
+.recommend-item .recommend_links {
+    display: block;
+    width: 234px;
+    height: 260px;
+    text-align: center;
+}
+
+.recommend-item .recommend_links img {
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin: 40px auto 20px;
+}
+
+.recommend_name {
+    width: 214px;
+    height: 18px;
+    margin: 0 10px 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.recommend_price {
+    width: 234px;
+    height: 21px;
+    margin-bottom: 10px;
+    color: #ff6700;
+}
+
+.recommend_itps {
+    width: 234px;
+    height: 21px;
+    font-size: 14px;
+    color: #757575;
+}
+.recommend-list .gouwuche {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 120px;
+    height: 30px;
+    margin-left: -60px;
+    border: 1px solid #ff6700;
+    background-color: #fff;
+    line-height: 28px;
+    text-align: center;
+    color: #ff6700;
+    transition: all .5s;
+}
+.recommend-list>li:hover .gouwuche {
+    transform: translateY(-42px);
+}
+.recommend-list .gouwuche:hover {
+    background-color: #ff6700;
+    color: #fff;
+}
+/* 主体部分 end */
