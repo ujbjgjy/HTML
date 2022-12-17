@@ -1,0 +1,232 @@
+body {
+    background-color: #f3f4f7;
+}
+
+.community-header {
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 0 30px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.community-header img {
+    width: 36px;
+    height: 36px;
+}
+
+.community-header .nav {
+    flex: 1;
+    height: 60px;
+    margin: 0 20px;
+}
+
+.community-header .nav a {
+    display: inline-block;
+    height: 60px;
+    padding: 0 16px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #0e151c;
+}
+
+.community-header .nav a:first-child {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.community-header .nav a:hover {
+    opacity: .6;
+}
+
+.community-header button {
+    width: 64px;
+    height: 28px;
+    background-color: #0e151c;
+    border-radius: 19px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* 主体部分 */
+.community-main {
+    width: 1032px;
+    margin: 0 auto;
+}
+
+.left-box {
+    float: left;
+    width: 712px;
+}
+
+.main-poster-wrap {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.main-poster {
+    width: 200%;
+    animation: move 10s infinite;
+}
+
+.main-poster img {
+    float: left;
+    width: 50%;
+}
+
+@keyframes move {
+    45% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    95% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.left-box-content {
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.l-item-wrap {
+    width: 100%;
+    padding: 36px 36px 0;
+    background-color: #fff;
+}
+
+.l-item {
+    position: relative;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e6e7e8;
+}
+
+.l-item-top {
+    height: 46px;
+    padding-bottom: 10px;
+}
+
+.l-item-top .head-portrait {
+    float: left;
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+}
+
+.l-item-top .head-portrait::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background: url(../images/角标.svg) no-repeat;
+    background-size: 12px;
+}
+
+.l-item-top .head-portrait img {
+    width: 36px;
+    border-radius: 36px;
+}
+
+.l-item-top-name {
+    float: left;
+    margin-left: 8.75px;
+    font-size: 14px;
+    color: #0e151c;
+}
+
+.l-item-top-name img {
+    width: 42px;
+    height: 14px;
+    margin: 0 4px;
+}
+
+.l-item-top-name p {
+    font-size: 12px;
+    color: #6e7377;
+}
+
+.l-item-top-btn {
+    float: right;
+    width: 56px;
+    height: 28px;
+    padding: 0 8.5px;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #0e151c;
+}
+
+.l-item .topping {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    width: 36px;
+    height: 20px;
+    padding: 1px 6px;
+    margin-right: 4px;
+    background-color: #ffebe9;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #fe3e29;
+}
+
+.l-item .text {
+    margin-bottom: 10px;
+    /* 1.先强制一行内显文本 */
+    white-space: nowrap;
+    /* (默认normal自动换行) */
+    /* 2. 超的部分隐藏 */
+    overflow: hidden;
+    /* 3. 文字用省略号替代超出的部分 */
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #6e7377;
+}
+
+.l-item .text span {
+    display: block;
+    font-size: 15px;
+    color: #0e151c;
+}
+.l-item .text span i {
+    margin-right: 41px;
+}
+.l-item .text a {
+    color: #0d84ff;
+}
+.l-item .notice {
+    display: block;
+    width: 402px;
+    height: 226px;
+    border-radius: 7px;
+}
+.l-item-bottom {
+    height: 28px;
+    margin-top: 16px;
+}
+
+
+/* 右边盒子 */
+.right-box {
+    float: right;
+    width: 300px;
+    height: 500px;
+    background-color: skyblue;
+}

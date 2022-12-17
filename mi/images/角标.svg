@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>角标</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="文章详情" transform="translate(-143.000000, -1085.000000)">
+            <g id="Group-3" transform="translate(72.000000, 1014.000000)">
+                <g id="角标" transform="translate(72.000000, 72.000000)">
+                    <circle id="Oval" stroke="#FFFFFF" stroke-width="2" fill="#FF6F48" cx="18" cy="18" r="18"></circle>
+                    <g id="V" transform="translate(17.800000, 19.900000) scale(-1, 1) translate(-17.800000, -19.900000) translate(6.800000, 9.900000)"></g>
+                    <g id="编组-2" transform="translate(7.200000, 11.700000)" fill="#FFFFFF">
+                        <g id="编组-12" transform="translate(0.167832, 0.000000)">
+                            <path d="M14.2657343,13.0909091 L10.7412587,13.0909091 L10.7412587,5.29332486 C10.7412587,4.34169575 9.96981093,3.57024793 9.01818182,3.57024793 L3.69230769,3.57024793 L3.69230769,3.57024793 L3.69230769,13.0909091 L0.167832168,13.0909091 L0.167832168,0 L10.8195804,0 C12.7228386,-7.93712072e-16 14.2657343,1.54289563 14.2657343,3.44615385 L14.2657343,13.0909091 L14.2657343,13.0909091 Z" id="路径"></path>
+                            <rect id="矩形备份-3" x="16.6153846" y="0" width="3.69230769" height="13.0909091"></rect>
+                            <rect id="矩形备份-2" x="5.53846154" y="5.37062937" width="3.35664336" height="7.72027972"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
