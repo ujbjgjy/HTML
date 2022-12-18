@@ -5,23 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>所有产品-小米商城</title>
-    <!-- 网站说明 -->
-    <meta name="description" content="所有产品-小米商城" />
-    <!-- 关键字 -->
-    <meta name="keywords" content="所有产品-小米商城" />
+    <title>个人中心</title>
     <!-- 引入标签图标 -->
     <link rel="shortuct icon" href="favicon.ico" type="image/x-icon/">
     <!-- 引入初始化样式文件 -->
     <link rel="stylesheet" href="css/base.css">
     <!-- 引入公共样式 -->
     <link rel="stylesheet" href="css/common.css">
-    <!-- 引入产品列表样式 -->
-    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/common_my.css">
+    <!-- 引入此页样式 -->
+    <link rel="stylesheet" href="css/personal.css">
 </head>
 
 <body>
-    <!-- 顶部部分 start -->
     <!-- 快捷导航模块 start -->
     <section id="goto_top" class="sectionbg">
         <section class="section w">
@@ -53,13 +49,13 @@
             </div>
             <div class="fr">
                 <ul>
-                    <li><a href="account-login.html" target="_self">登录</a>|</li>
-                    <li><a href="account-register.html" target="_self">注册</a>|</li>
+                    <li><a href="account-login.html">登录</a>|</li>
+                    <li><a href="account-register.html">注册</a>|</li>
                     <li><a class="xiaoxi" href="#">消息通知</a></li>
                     <li>
                         <div class="gouwu">
                             <div class="gouwu_dt">
-                                <a href="shopping.html" target="_blank"><span></span>购物车(0)</a>
+                                <a href="购物车.html" target="_blank"><span></span>购物车(0)</a>
                             </div>
                             <div class="gouwu_dd">
                                 <h3>购物车中还没有商品，赶紧选购吧！</h3>
@@ -81,7 +77,7 @@
                     </h1>
                 </div>
                 <div class="search">
-                    <input type="search" placeholder="手机"> <a class="sec" href="search.html"></a>
+                    <input type="search" placeholder="手机"> <a class="sec" target="_blank" href="search.html"></a>
                 </div>
             </header>
         </div>
@@ -1407,577 +1403,109 @@
                 </div>
             </div>
             <div class="nav_dt">
-                <h3 class="dt_list"><a href="service.html" target="_blank">服务中心</a></h3>
+                <h3 class="dt_list"><a href="service.html">服务中心</a></h3>
             </div>
             <div class="nav_dt">
-                <h3 class="dt_list"><a href="社区" target="_blank">社区</a></h3>
+                <h3 class="dt_list"><a href="community.html" target="_blank">社区</a></h3>
             </div>
         </div>
     </div>
     <!--box_nav 的盒子-->
     <!-- nav模块 end -->
-    <!-- 顶部部分 end -->
-    <div class="search_container">
-        <div class="breadcrumbs w">
-            <a href="index.html">首页</a><span>&gt;</span><a href="">全部结果</a>
-        </div>
-        <div class="search_filter">
-            <div class="filter_wrap w">
-                <dl class="filter_list">
-                    <dt>分类:</dt>
-                    <dd><a href="#" style="color: #ff6700;">全部</a></dd>
-                    <dd><a href="#">红米手机</a></dd>
-                    <dd><a href="#">小米手机</a></dd>
-                    <dd><a href="#">黑鲨手机</a></dd>
-                </dl>
+
+    <!-- 页面主体部分 start -->
+    <div class="page-main">
+        <div class="w clearfix">
+            <div class="breadcrumbs">
+                <a href="index.html">首页</a><span>/</span><a href="#">个人中心</a>
             </div>
-        </div>
-        <!-- 商品列表主要部分 start -->
-        <div class="search_main w clearfix">
-            <div class="order_list_box">
-                <ul class="order_list">
-                    <li><a href="#" style="color: #ff6700;">综合</a></li>
-                    <li><a href="#">新品</a></li>
-                    <li><a href="#">销量</a></li>
-                    <li><a href="#">价格&uarr;</a></li>
-                </ul>
-                <ul class="type_list">
-                    <li class="type_list_label">
-                        <span>收货地</span>
-                        <a href="#">
-                            北京 北京市
-                            <div class="address_dd">
-                                <div class="input">
-                                    <input type="search" name="" id="" placeholder="输入街道、乡镇、小区或商圈名称">
-                                </div>
-                                <div class="address_links">手动选择地址&gt;</div>
-                                <h3>我有收货地址</h3>
-                                <p>现在<span class="btn">登录</span>，可据收货地址快速定位</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li><a href="#"><input type="checkbox" name="" id="">促销</a></li>
-                    <li><a href="#"><input type="checkbox" name="" id="">分期</a></li>
-                    <li><a href="#"><input type="checkbox" name="" id="">仅看有货</a></li>
-                </ul>
+            <div class="user-address-menu">
+                <div class="menu-box">
+                    <h3 class="title">订单中心</h3>
+                    <ul class="list">
+                        <li><a href="order.html">我的订单</a></li>
+                        <li><a href="#">评价晒单</a></li>
+                        <li><a href="#">话费充值订单</a></li>
+                        <li><a href="#">以旧换新</a></li>
+                    </ul>
+                </div>
+                <div class="menu-box">
+                    <h3 class="title">订单中心</h3>
+                    <ul class="list">
+                        <li><a href="personal.html" class="style_color">我的个人中心</a></li>
+                        <li><a href="#">消息通知</a></li>
+                        <li><a href="#">购买资格</a></li>
+                        <li><a href="#">现全账户</a></li>
+                        <li><a href="#">小米礼品卡</a></li>
+                        <li><a href="#">现全券</a></li>
+                        <li><a href="#">喜欢的商品</a></li>
+                        <li><a href="#">优惠券</a></li>
+                        <li><a href="#">收货地址</a></li>
+                        <li><a href="#">红包</a></li>
+                    </ul>
+                </div>
+                <div class="menu-box">
+                    <h3 class="title">售后服务</h3>
+                    <ul class="list">
+                        <li><a href="#">服务记录</a></li>
+                        <li><a href="#">申请服务</a></li>
+                        <li><a href="#">领取快递报销</a></li>
+                    </ul>
+                </div>
+                <div class="menu-box">
+                    <h3 class="title">账号管理</h3>
+                    <ul class="list">
+                        <li><a href="#">个人信息</a></li>
+                        <li><a href="#">修改密码</a></li>
+                        <li><a href="#">注销服务</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- 商品内容 -->
-            <div class="goods_list clearfix">
-                <ul class="row clearfix" style="width:1240px;">
-                    <li class="goods_item">
-                        <a href="商品详情&评价.html" target="_blank">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_1.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi Note 11T Pro 12GB+256GB</h2>
-                            <p class="price">2099元<del>2399元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_1.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_1_1.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_1_1.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_1_1.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_1.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/fenqi.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_2.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi 10A 4GB+64GB</h2>
-                            <p class="price">699元</p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_2.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_2.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_2.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_3.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi K50 至尊版 8GB+128GB</h2>
-                            <p class="price">2099元<del>2399元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_3.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_3.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_3.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_3.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/juan.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_4.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi Note 11 5G 4GB+128GB</h2>
-                            <p class="price">1199元</p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_4.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_4.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_4.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_4.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_5.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi Note 12 5G 4GB+128GB</h2>
-                            <p class="price">1199元</p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_5.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_5.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_5.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_5.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <!-- <img src="upload/search/fenqi.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                                <img src="upload/search/juan.png" alt="">
-                                <img src="upload/search/zeng.png" alt=""> -->
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_6.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi Note 12 Pro 6GB+128GB</h2>
-                            <p class="price">1699元</p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_6.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_6.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_6.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_6.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_7.png" alt="">
-                            </div>
-                            <h2 class="title">Xiaomi MIX 4 8GB+128GB</h2>
-                            <p class="price">4199元</p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_7.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_7.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_7.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_7.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_8.png" alt="">
-                            </div>
-                            <h2 class="title">Xiaomi MIX Aipha 黑色</h2>
-                            <p class="price">19999元</p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_8.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/fenqi.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_9.png" alt="">
-                            </div>
-                            <h2 class="title">MIX FOLO折叠手机 12GB+256GB</h2>
-                            <p class="price">6999元<del>7999元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_9.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_9.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_9.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/zeng.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_10.png" alt="">
-                            </div>
-                            <h2 class="title">Xiaomi MIX Fold 2 12GB+256GB</h2>
-                            <p class="price">8999元</p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_10.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_10.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_10.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/zeng.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_11.png" alt="">
-                            </div>
-                            <h2 class="title">Xiaomi 12 Pro天玑版 8GB+128GB</h2>
-                            <p class="price">2999元<del>3999元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_11.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_11.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/fenqi.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_12.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi K50 8GB+128GB</h2>
-                            <p class="price">2099元<del>2399元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_12.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_12.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_12.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_12.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/juan.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                                <img src="upload/search/fenqi.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_13.png" alt="">
-                            </div>
-                            <h2 class="title">Xiaomi 12 8GB+128GB</h2>
-                            <p class="price">3699元</p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_13.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_13.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_13.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/juan.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_14.png" alt="">
-                            </div>
-                            <h2 class="title">Xiaomi 11青春活力版 8GB+128GB</h2>
-                            <p class="price">1799元<del>1999元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_14.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_14.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/juan.png" alt="">
-                                <img src="upload/search/zeng.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_15.png" alt="">
-                            </div>
-                            <h2 class="title">Xiaomi 11</h2>
-                            <p class="price">2999元 起</p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_15.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <!-- <img src="upload/search/jiajiago.png" alt=""> -->
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_16.png" alt="">
-                            </div>
-                            <h2 class="title">Xiaomi 12S Pro 12GB+256GB</h2>
-                            <p class="price">5099元<del>5399元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_16.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_16.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_16.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_16.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_17.png" alt="">
-                            </div>
-                            <h2 class="title">黑鲨5 RS 8GB+256GB</h2>
-                            <p class="price">2499元<del>3299元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_17.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_17.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <!-- <img src="upload/search/fenqi.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                                <img src="upload/search/juan.png" alt="">
-                                <img src="upload/search/zeng.png" alt=""> -->
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_18.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi Note 11 4G 4GB+128GB</h2>
-                            <p class="price">939元<del>999元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_18.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_18.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_19.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi K50 至尊版 8GB+128GB</h2>
-                            <p class="price">1899元<del>2099元</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_19.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_19.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_19.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <img src="upload/search/jiajiago.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="goods_item">
-                        <a href="#">
-                            <div class="goods_img">
-                                <img src="upload/search/goods_item_20.png" alt="">
-                            </div>
-                            <h2 class="title">Redmi Note 12 Pro+ 8GB+256GB</h2>
-                            <p class="price">2099元 起<del>2199元起</del></p>
-                            <div class="thumbs">
-                                <ul class="thumbs_list">
-                                    <li><img src="upload/search/goods_item_20.png" alt=""></li>
-                                    <li><img src="upload/search/goods_item_20.png" alt=""></li>
-                                </ul>
-                            </div>
-                            <div class="flags">
-                                <!-- <img src="upload/search/fenqi.png" alt="">
-                                <img src="upload/search/jiajiago.png" alt="">
-                                <img src="upload/search/juan.png" alt="">
-                                <img src="upload/search/zeng.png" alt=""> -->
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- 页面导航栏 -->
-                <div class="pagenav">
-                    <span href="#" class="numbers first"></span>
-                    <span class="numbers">1</span>
-                    <a href="#" class="numbers">2</a>
-                    <a href="#" class="numbers">3</a>
-                    <a href="#" class="numbers last"></a>
+            <div class="user-box">
+                <div class="user-content">
+                    <div class="portal clearfix">
+                        <div class="user-card">
+                            <h2>2745383708</h2>
+                            <p>晚上好～</p>
+                            <a href="#">修改个人信息 ></a>
+                            <img src="images/avatar.jpg" alt="" class="avatar">
+                        </div>
+                        <div class="user-actions">
+                            <div>账户安全：<span>普通</span></div>
+                            <div>绑定手机：<span>136******84</span></div>
+                            <div>绑定邮箱：<span>未绑定</span></div>
+                        </div>
+                    </div>
+                    <div class="portal-sub">
+                        <ul class="info-list clearfix">
+                            <li>
+                                <h3>待支付的订单：<span class="num">0</span></h3>
+                                <a href="#">查看待支付订单<i></i></a>
+                                <img src="images/portal-icon-1.png" alt="">
+                            </li>
+                            <li>
+                                <h3>待收货的订单：<span class="num">0</span></h3>
+                                <a href="#">查看待支付订单<i></i></a>
+                                <img src="images/portal-icon-2.png" alt="">
+                            </li>
+                            <li>
+                                <h3>待评价商品数：<span class="num">0</span></h3>
+                                <a href="#">查看待支付订单<i></i></a>
+                                <img src="images/portal-icon-3.png" alt="">
+                            </li>
+                            <li>
+                                <h3>喜欢的商品：<span class="num">0</span></h3>
+                                <a href="#">查看待支付订单<i></i></a>
+                                <img src="images/portal-icon-4.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- 商品列表主要部分 end -->
-        <!-- 猜你喜欢部分 -->
-        <div class="search_favourite w">
-            <h2 class="favourite_title">
-                <span>猜你喜欢</span>
-            </h2>
-            <div class="search_recommend">
-                <ul class="recommend_list clearfix">
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_1.png" alt="">
-                            <div class="recommend_name">Redmi Note 11 5G</div>
-                            <div class="recommend_price">1199元</div>
-                            <div class="recommend_itps">89.4万人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_2.png" alt="">
-                            <div class="recommend_name">小米手环7</div>
-                            <div class="recommend_price">249元</div>
-                            <div class="recommend_itps">48.8万人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_3.png" alt="">
-                            <div class="recommend_name">小米巨能写中性笔10支装</div>
-                            <div class="recommend_price">9.99元</div>
-                            <div class="recommend_itps">236.7万人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_4.png" alt="">
-                            <div class="recommend_name">小米WiFi放大器 Pro</div>
-                            <div class="recommend_price">69元</div>
-                            <div class="recommend_itps">80.1万人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_5.png" alt="">
-                            <div class="recommend_name">CyberDog 仿生四足机器人</div>
-                            <div class="recommend_price">9999元</div>
-                            <div class="recommend_itps">712人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_6.png" alt="">
-                            <div class="recommend_name">小米口袋照片打印机</div>
-                            <div class="recommend_price">349元</div>
-                            <div class="recommend_itps">4.2万人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_7.png" alt="">
-                            <div class="recommend_name">小米米家液晶小黑板</div>
-                            <div class="recommend_price">49元</div>
-                            <div class="recommend_itps">78万人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_8.png" alt="">
-                            <div class="recommend_name">小米记录仪2 标准版</div>
-                            <div class="recommend_price">379元</div>
-                            <div class="recommend_itps">2.2万人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_9.png" alt="">
-                            <div class="recommend_name">知吾煮汤 米家定制</div>
-                            <div class="recommend_price">99元</div>
-                            <div class="recommend_itps">35.万人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                    <li>
-                        <a href="#" class="recommend_links">
-                            <img src="upload/search/recommend_list_10.png" alt="">
-                            <div class="recommend_name">是ikun就买它</div>
-                            <div class="recommend_price">5坤元</div>
-                            <div class="recommend_itps">2000万人好评</div>
-                        </a>
-                        <a href="#" class="gouwuche">加入购物车</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="recommend_pagination">
-                <i></i><i></i>
-            </div>
-        </div>
     </div>
+    <!-- 页面主体部分 end -->
+
     <!-- 底部摸块 start -->
     <footer class="footer clearfix">
         <div class="container w">
@@ -2094,6 +1622,59 @@
         </div>
     </footer>
     <!-- 底部摸块 end-->
+    <!-- 工具栏模块 start -->
+    <div class="tool_bar">
+        <a href="#" class="tool_item">
+            <i class="tool_item_icon">
+                <img src="images/tool_bar_1_0.png" alt="">
+            </i>
+            <span class="tool_text">手机APP</span>
+            <div class="tool_item_dd">
+                <img src="images/二维码.png" alt="">
+                <p class="tool_itme_dd_text">
+                    挡码领取新人百元礼包
+                </p>
+            </div>
+        </a>
+        <a href="personal.html" class="tool_item">
+            <i class="tool_item_icon">
+                <img src="images/tool_bar_2_0.png" alt="">
+            </i>
+            <span class="tool_text">个人中心</span>
+            <div class="tool_item_dd">
+                个人中心
+            </div>
+        </a>
+        <a href="#" class="tool_item">
+            <i class="tool_item_icon">
+                <img src="images/tool_bar_3_0.png" alt="">
+            </i>
+            <span class="tool_text">售后服务</span>
+            <div class="tool_item_dd">
+                售后服务
+            </div>
+        </a>
+        <a href="#" class="tool_item">
+            <i class="tool_item_icon">
+                <img src="images/tool_bar_4_0.png" alt="">
+            </i>
+            <span class="tool_text">人工客服</span>
+            <div class="tool_item_dd">
+                人工客服
+            </div>
+        </a>
+        <a href="shopping.html" class="tool_item">
+            <i class="tool_item_icon">
+                <img src="images/tool_bar_5_0.png" alt="">
+            </i>
+            <span class="tool_text">购物车</span>
+            <div class="tool_item_dd">
+                购物车
+            </div>
+        </a>
+        <a href="#goto_top" class="tool_item" style="background-color: transparent; border: 0;"></a>
+    </div>
+    <!-- 工具栏模块 end-->
 </body>
 
 </html>

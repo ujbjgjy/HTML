@@ -1,0 +1,134 @@
+.nav_tab_list {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: 0;
+    width: 234px;
+    height: 460px;
+    padding: 20px 0;
+    border: 1px solid #ff6a00;
+    background-color: #fff;
+}
+
+.nav .nav_dt:first-child:hover .nav_tab_list {
+    display: block;
+}
+
+.nav_tab_list .nav_list_title {
+    position: relative;
+    display: block;
+    height: 42px;
+    padding-left: 30px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #424242;
+}
+
+.nav_tab_list .nav_list_title::after {
+    content: '\e908';
+    position: absolute;
+    left: 180px;
+    font-family: 'icomoon';
+    color: #e0e0e0;
+}
+
+.nav_tab_list .nav_list_title:hover {
+    background-color: #ff6a00;
+}
+
+.nav_title_dd {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    top: 0;
+    left: 234px;
+    width: 998px;
+    height: 460px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #b0b0b0 #b0b0b0 #b0b0b0 transparent;
+    background-color: #fff;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .3);
+}
+
+.nav_title_dd .col {
+    float: left;
+}
+
+.nav_title_dd .col>li {
+    width: 248px;
+    height: 76.4px;
+    padding-left: 20px;
+    background-color: #fff;
+    line-height: 76px;
+}
+
+.nav_title_dd a {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.nav_title_dd .col>li {
+    /* 1.先强制一行内显文本 默认normal自动换行 */
+    white-space: nowrap;
+    /* 2. 超的部分隐藏 */
+    overflow: hidden;
+    /* 3. 文字用省略号替代超出的部分 */
+    text-overflow: ellipsis;
+}
+
+.nav_title_dd a:hover {
+    color: #ff6a00;
+}
+
+.nav_title_dd .col>li img {
+    width: 40px;
+}
+
+.nav_list_dt:hover .nav_title_dd {
+    display: block;
+}
+
+/* nav部分 end */
+.page-main {
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+.breadcrumbs {
+    height: 40px;
+    line-height: 40px;
+    color: #757575;
+}
+
+.breadcrumbs span {
+    margin: 0 6px;
+}
+
+.breadcrumbs a:hover {
+    color: #ff6700;
+}
+.user-address-menu {
+    float: left;
+    width: 234px;
+    padding: 36px 0;
+    background-color: #fff;
+}
+.menu-box {
+    margin: 0 48px 12px;
+}
+.menu-box .title {
+    line-height: 52px;
+    font-size: 16px;
+    color: #333;
+}
+.menu-box .list li {
+    padding: 6px 0;
+}
+.menu-box .list li a {
+    font-size: 14px;
+    color: #757575;
+}
