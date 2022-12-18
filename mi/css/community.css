@@ -4,6 +4,8 @@ body {
 
 .community-header {
     display: flex;
+    position: fixed;
+    z-index: 3;
     align-items: center;
     top: 0;
     left: 0;
@@ -11,7 +13,7 @@ body {
     height: 60px;
     padding: 0 30px;
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, .95)
 }
 
 .community-header img {
@@ -54,12 +56,13 @@ body {
 
 /* 主体部分 */
 .community-main {
-    width: 1032px;
+    display: flex;
+    justify-content: space-between;
+    width: 1052px;
     margin: 0 auto;
 }
 
 .left-box {
-    float: left;
     width: 712px;
 }
 
@@ -205,28 +208,309 @@ body {
     font-size: 15px;
     color: #0e151c;
 }
+
 .l-item .text span i {
     margin-right: 41px;
 }
+
 .l-item .text a {
     color: #0d84ff;
 }
+
 .l-item .notice {
     display: block;
     width: 402px;
     height: 226px;
     border-radius: 7px;
 }
+
 .l-item-bottom {
     height: 28px;
     margin-top: 16px;
 }
 
+.l-item .isomorph {
+    display: inline-block;
+    height: 28px;
+    padding: 0 10px 0 6px;
+    margin-right: 10px;
+    border: 1px solid #e6e7e8;
+    border-radius: 14px;
+    line-height: 28px;
+    font-size: 13px;
+    color: #0e151c;
+}
+
+.l-item .isomorph img {
+    width: 16px;
+    height: 16px;
+    margin-top: -3px;
+    margin: 0 4px;
+}
+
+.l-item .quantity-date {
+    display: inline-block;
+    font-size: 14px;
+    color: #c6c7c9;
+}
+
+.l-item .quantity-date i {
+    margin: 0 5px;
+}
+
+.l-item-more {
+    float: right;
+    line-height: 28px;
+    font-size: 14px;
+    color: #9fa1a4;
+}
+
+.l-item-more span:first-child {
+    margin-right: 20px;
+}
+
+.l-item-more img {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+}
 
 /* 右边盒子 */
 .right-box {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.Listcard {
+    width: 300px;
+    height: 346px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.Listcard-title {
+    height: 44px;
+}
+
+.Listcard-title h3 {
+    float: left;
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0e151c;
+}
+
+.Listcard-title .more {
     float: right;
+    height: 44px;
+    line-height: 44px;
+    font-size: 12px;
+    color: #0e151c;
+    opacity: .7;
+}
+
+.Listcard-title .more img {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+.Listcard-list {
+    margin-top: 10px;
+}
+
+.Listcard-item {
+    height: 41px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #0e151c;
+    /* 1.先强制一行内显文本 */
+    white-space: nowrap;
+    /* 2. 超的部分隐藏 */
+    overflow: hidden;
+    /* 3. 文字用省略号替代超出的部分 */
+    text-overflow: ellipsis;
+}
+
+.Listcard-item span {
+    margin-right: 10px;
+    color: #9fa1a4;
+}
+
+.Listcard-item:nth-child(-n+3) span {
+    color: #fe3e29;
+}
+
+.r-more-function {
+    width: 300px;
+    height: 149px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.r-more-function h3 {
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0e151c;
+}
+
+.r-more-function ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 75px;
+    margin-top: 10px;
+}
+
+.r-more-function ul>li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    height: 55px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.r-more-function ul>li img {
+    width: 32px;
+    height: 32px;
+}
+
+.r-more-function ul>li p {
+    /* 不进行换行 */
+    white-space: nowrap;
+    font-size: 13px;
+    color: #0e151c;
+}
+
+.rightColumn {
+    position: sticky;
+    top: 80px;
     width: 300px;
     height: 500px;
-    background-color: skyblue;
+}
+
+.r-recommend {
+    width: 300px;
+    height: 240px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.r-recommend .title {
+    height: 44px;
+}
+
+.r-recommend .title h3 {
+    float: left;
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0e151c;
+}
+
+.r-recommend .title .more {
+    display: block;
+    float: right;
+    line-height: 44px;
+    font-size: 12px;
+    color: #878b8e;
+}
+
+.r-recommend-content {
+    display: flex;
+    width: 100%;
+    /* 换行 */
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.r-recommend-content .item {
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 62px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.r-recommend-content .item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 6px;
+    border-radius: 15px;
+}
+
+.r-recommend-content .item p {
+    width: 55px;
+    font-size: 12px;
+    color: #0e151c;
+    /* 1.先强制一行内显文本 */
+    white-space: nowrap;
+    /* 2. 超的部分隐藏 */
+    overflow: hidden;
+    /* 3. 文字用省略号替代超出的部分 */
+    text-overflow: ellipsis;
+}
+
+.DownCard {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 84px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.DownCard_logo {
+    width: 44px;
+    height: 44px;
+}
+.DownCard_logo img {
+    width: 44px;
+    height: 45px;
+    border-radius: 15px;
+}
+.DownCard_right {
+    margin-left: 16px;
+}
+.DownCard_right h3 {
+    margin-bottom: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0e151c;
+}
+.DownCard_right p {
+    font-size: 12px;
+    color: #0e151c;
+    opacity: .8;
+}
+.DownCard_rightimg {
+    margin-left: 40.25px;
+}
+.DownCard_rightimg img {
+    width: 25px;
+    height: 25px;
+}
+.User_Protocol p {
+    height: 16px;
+    margin-bottom: 3px;
+    font-size: 12px;
+    color: #0e151c;
+    opacity: .6;
+    cursor: pointer;
 }
