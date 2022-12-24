@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+        var arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 7, 5, 6, 4, 7, 9];
         //从第一个元素开始比较
-        //多少趟数
-        for (var i = 0; i < arr.length; i++) {
+        //多少趟数 假设是10个数，要和剩余的9个数比较，执行9趟
+        for (var i = 0; i < arr.length - 1; i++) {
             // 元素交换的次数
             //arr.length-i，减去已经交换的趟数
             var flag = true;//假设为是有序的无需排序

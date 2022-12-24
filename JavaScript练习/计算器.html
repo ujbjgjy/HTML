@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <script>
+        //只作两个数的加减乘除
+        alert('菜单\n0.exit\n1.Add;\n2.reduce\n3.ride;\n4.except;\n');
+        var receive = 1;
+        while (receive) {
+            receive =  parseInt(prompt('请选择的进行的操作'));
+            switch (receive) {
+                case 1:
+                    var num1 = parseInt(prompt('请输入数值1\n'));
+                    var num2 = parseInt(prompt('请输入数值2\n'));
+                    alert(num1 + num2);
+                    break;
+                case 2:
+                    var num1 = parseInt(prompt('请输入数值1\n'));
+                    var num2 = parseInt(prompt('请输入数值2\n'));
+                    alert(num1 - num2);
+                    break;
+                case 3:
+                    var num1 = parseInt(prompt('请输入数值1\n'));
+                    var num2 = parseInt(prompt('请输入数值2\n'));
+                    alert(num1 * num2);
+                    break;
+                case 4:
+                    var num1 = parseInt(prompt('请输入数值1\n'));
+                    var num2 = parseInt(prompt('请输入数值2\n'));
+                    alert(num1 / num2);
+                    break;
+                case 0:
+                    alert('退出');
+                    break;
+                default:
+                    alert('错误')
+            }
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -7,11 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var arr = [];
-        for (var i = 0; i < 100; i++) {
-            arr[i]=i;
+        var a = 0;
+        function test(a) {
+            a = 713;
+            return a;
         }
-        console.log(arr);
+        if (1) {
+            return 0;
+        }
+        else {
+            return 0;
+        }
+        a = test(a);
+        console.log(a);
     </script>
 </head>
 
