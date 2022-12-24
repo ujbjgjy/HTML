@@ -8,9 +8,9 @@
     <title>Document</title>
     <script>
         var arr = [2, 6, 1, 77, 52, 25, 7];
-        var max = 0;
+        var max = arr[0];// 要从数组中取值以仿有负数
         //先得出数组里面所有的值，在依次比较
-        for (var i = 0; i < arr.length; i++) {
+        for (var i = 1; i < arr.length; i++) {
             if (max < arr[i]) {
                 max = arr[i];
             }

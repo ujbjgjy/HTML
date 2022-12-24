@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字</title>
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var const_ = 10;
+        var rand = getRandom(1, 100);
+        alert('请输入1~100的数字(包含1和100)');
+        while (const_) {
+            var num = parseInt(prompt('请输入数值:>'));
+            if (num < rand) {
+                alert('小于');
+            }
+            else if (num > rand) {
+                alert('大于');
+            }
+            else {
+                alert('恭喜你答对了!');
+                exit(0);
+            }
+        }
+        if(const_) {
+            alert('挑战失败');
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
