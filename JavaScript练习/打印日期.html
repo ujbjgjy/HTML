@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日期</title>
+    <script>
+        var date = new Date();
+        var year = date.getFullYear(); // 年
+        var month = date.getMonth(); // 月
+        var date_ = date.getDate();
+        var day = date.getDay(); // 周几
+        var hours = date.getHours(); //时
+        var minutes = date.getMinutes(); // 分
+        var seconds = date.getSeconds();
+        var week = ['日', '一', '二', '三', '四', '五', '六'];
+        minutes < 10 ? minutes = '0' + minutes : '';
+        seconds < 10 ? seconds = '0' + seconds : '';
+        var str =year + '年' + (month + 1) + '月' + date_ + '日' + '星期' + week[date.getDay()] + hours + ':' + minutes + ':' + seconds; 
+        console.log(str);
+        document.write(str);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

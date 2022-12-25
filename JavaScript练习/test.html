@@ -7,19 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var a = 0;
-        function test(a) {
-            a = 713;
-            return a;
-        }
-        if (1) {
-            return 0;
-        }
-        else {
-            return 0;
-        }
-        a = test(a);
-        console.log(a);
+        var str = '关景阳是大帅b' + "<br>";
+        document.write(str);
+        var date = new Date();
+        console.log(date);
+        date = new Date('2003-7-13 0:0:0');
+        document.write(date);
+        var time = date.getTime();
+        console.log(time);
     </script>
 </head>
 

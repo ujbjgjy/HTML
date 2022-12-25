@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <script>
+        function countdown(time) {
+            var nowtime = +new Date(); //返回现在的时间戳
+            var inputime = +new Date(time); //Date有参数返回输入的时间
+            // 用户输入的时间-现在的时间在除以1000得到秒
+            var times = (inputime - nowtime) / 1000; //当前时间距离用户输入时间还有多秒
+            // 得到天数
+            var d = parseInt(times / 60 / 60 / 24);
+            d = d < 10 ? '0' + d : d;
+            // 得到小时，先把秒换算为小时，去掉所有天数，剩下的小时为当天的小时
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h
+            // 得到分数, 先把秒换算为分
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            // 得到秒数
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+        var inputime = +new Date('2022-12-25 20:00');
+        console.log(countdown(inputime));
+    </script>
+</head>
+<body>
+</body>
+</html>

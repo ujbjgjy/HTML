@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+    <script>
+        // 用字面量创建对象
+        //  1. 创建
+        var obj1 = {
+            // 属性
+            uname: '张三',
+            sex: '男',
+            age: 18,
+            // 方法
+            sayHi: function() {
+                console.log('hello');
+            }
+        }
+        //  2. 调用
+        console.log(onj1.uname);
+        for(var k in obj1) {
+            console.log(k); // 输出变量名
+            console.log(obj1[k]);
+        }
+        console.log('**************');
+        // 用 new Object 创建对象
+        var obj2 = new Object();
+        obj2.uname = '张三';
+        obj2.sayHi = function() {
+            console.log('hello');
+        }
+        console.log(obj2.uname);
+        console.log('**************');
+        // 用 构造函数 创建对象
+        //  构造函数名字首字母一般大写
+        //  构造函数的创建方式和函数大体一样
+        function Fun(uname, age, sex,) {
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sayHi = function(sayhi) {
+                console.log(sayhi);
+            }
+        }
+        // 调用 构造函数，不需要return就可以返回结果
+        var zhangsan = new Fun('张三',18,'男');
+        zhangsan.sayHi('hello');
+        for(var k in zhangsan) {
+            console.log(zhangsan[k]);
+        }
+        zhangsan.address = '狗熊岭';
+        zhangsan.name = '熊大';
+        console.log(zhangsan.address);
+        console.log(zhangsan.name);
+    </script>
+</head>
+<body>
+</body>
+</html>

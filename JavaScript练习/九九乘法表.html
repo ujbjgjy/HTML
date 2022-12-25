@@ -11,12 +11,14 @@
         var str = '';
         for (var i = 1; i <= 9; i++) { // 控制行
             for (var j = 1; j <= i; j++) { // 控制列 第一次1列
-                str += j + '*' + i + '=' + j * i + '\t';
+                str += j + '*' + i + '=' + j * i + '\t' + "&nbsp;";
                 //str 要+= 不能是 '=' 赋值
+                j * i < 10 ? str += "&nbsp;" : ''; 
             }
-            str += '\n'; // 一行打印完成进行换行
+            str += '\n' + "<br>"; // 一行打印完成进行换行
         }
         console.log(str); //控制台输出str
+        document.write(str);
     </script>
 </head>
 
