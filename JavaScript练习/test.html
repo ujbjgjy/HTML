@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>test</title>
     <script>
-        var str = '关景阳是大帅b' + "<br>";
-        document.write(str);
-        var date = new Date();
-        console.log(date);
-        date = new Date('2003-7-13 0:0:0');
-        document.write(date);
-        var time = date.getTime();
-        console.log(time);
+        function Reverse(arr) {
+            var tmp = [];
+            for (var i = arr.length-1; i >= 0; i--) {
+                tmp[tmp.length] = arr[i];
+            }
+            return tmp;
+        }
+        var arr = [9, 8, 7, 4, 5, 6, 3, 2, 1];
+        arr = Reverse(arr);
+        console.log(arr);
     </script>
 </head>
 
