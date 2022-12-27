@@ -78,6 +78,125 @@
         var arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         console.log(binarySearch(arr2, 10));
         console.log(arr2[binarySearch(arr2, 8)]);
+        console.log('******* 简单数据类型 *******');
+        // 简单数据类型
+        //  1.typeof 检测是什么类型的数据
+        var num;
+        console.log(typeof num); 
+        num = 1;
+        console.log(typeof num);
+        num = 'ujbj';
+        console.log(typeof num); 
+        num = true;
+        console.log(typeof num);
+        num = null;
+        console.log(typeof num);
+        //  2. 数据类型转换
+        //   1. 转为字符串类型
+        num = 12356789;
+        console.log(num.toString());
+        num = num.toString();
+        console.log(typeof num);
+        num = 123456789;
+        console.log(String(num));
+        num = String(num);
+        console.log(num);
+        //   2. 转为数字类型
+        num = '713';
+        console.log(parseInt(num));
+        num = parseInt(num);
+        console.log(typeof num);
+        num = '713';
+        console.log(Number(num));
+        num = Number(num);
+        console.log(typeof num);
+        //   3. 转换为布尔型
+        num = '';
+        console.log(Boolean(num));
+        num = 1;
+        console.log(Boolean(num));
+        console.log('******* 数组 *******');
+        // 数组
+        //  1. length
+        var arr = [1, 2, 3];
+        arr.length = 6;
+        console.log(arr[3] = 4);
+        console.log(arr[4] = 5);
+        console.log(arr[5] = 6);
+        console.log(arr[6] = 7);
+        console.log(arr.length);
+        // 2. 添加数组元素
+        arr = [];
+        for (var i = 0; i < 10; i++) {
+            arr.push(i);// 1 1 2
+            arr.unshift(i); // 2 1 1 2
+        }
+        console.log(arr);
+        for (var i = 0; i < 9; i++) {
+            arr.pop();
+            arr.shift();
+        }
+        console.log(arr);
+        console.log('******* 对象 *******');
+        // 对象
+        //  1. 对象字面量
+        var obj = {
+            uname: '张三',
+            age: 18,
+            fun: function(str) {
+                console.log(str);
+            }
+        }
+        for(var k in obj) {
+            console.log(k);
+        }
+        obj.fun('12345 上山打老虎');
+        //  2. 用new Object 创建对象
+        var obj2 = new Object();
+        obj2.uname = '张三.法外狂徒';
+        obj2.fun = function() {
+            console.log('hello');
+        }
+        console.log(obj2.uname);
+        obj2.fun();
+        //  3. 构造函数
+        function Fun() {
+            this.name = '张三.法外狂徒';
+            this.age = 18;
+            this.fun = function(str) {
+                console.log(str);
+            }
+        }
+        var obj3 = new Fun();
+        console.log(obj3.name);
+        console.log(obj3.age);
+        obj3.fun('关景阳是大帅b');
+        console.log('******* 内置对象 ******');
+        // 内置对象
+        //  1. Math
+        console.log(Math.PI);
+        //   随机值 random()
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        num = getRandom(0, 10);
+        console.log(num);
+        //   倒计时
+        function getTimes(inputTimes) {
+            var nowtime = +new Date();
+            var time = (inputTimes - nowtime) / 1000; // 得到秒
+            var d = parseInt(time / 60 / 60 / 24); // 天
+            d = d < 10 ? '0' + d : d;
+            var h = parseInt(time / 60 / 60 % 24); // 时 减去所有天数剩的就是小时
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(time / 60 % 60); // 分 减去所有的小时
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(time % 60); // 秒 减去所有的分
+            s = s < 10 ? '0' + s : m;
+            return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+        var inputTimes = +new Date('2022-12-27 20:30');
+        console.log(getTimes(inputTimes));
     </script>
 </head>
 
