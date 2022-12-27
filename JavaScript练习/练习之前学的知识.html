@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script>
+        // 函数的使用
+        //  1. 用函数封装九九乘法表
+        function rideTable(num) {
+            var str = '';
+            for (var i = 1; i <= num; i++) {
+                for (var j = 1; j <= i; j++) {
+                    str += j + '*' + i + '=' + j * i + '\t';
+                }
+                str += '\n';
+            }
+            return str;
+        }
+        console.log(rideTable(9));
+        //  2. 用函数封装冒泡排序
+        function bubblingSort(arr) {
+            if (!Array.isArray(arr)) {
+                return -1;
+            }
+            for (var i = 0; i < arr.length - 1; i++) { // 趟数 数组长度-1 
+                var flag = true; // 假设是有序的
+                for (var j = 0; j < arr.length - i - 1; j++) { // 对比一回 减少一次趟数
+                    if (arr[j] > arr[j + 1]) {
+                        var tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                        flag = false;
+                    }
+                }
+                if (flag == true) {
+                    break;
+                }
+            }
+            return arr;
+        }
+        var arr = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+        bubblingSort(arr);
+        console.log(arr);
+        console.log('******** 二分查找 ********');
+        //  3. 二分查找 必须有序
+        //   在有序的前提下，先取中间数，如果小就取左边中间值，如果大就取右边中间值...
+        function binarySearch(arr, num) {
+            // 中间值 = 左下标 + 右下标 / 2; (0 + 8) / 2 = 4 ,0+9 / 2= 4
+            var mid = 0;
+            var left = 0;
+            var right = arr.length - 1;
+            // 奇数两边下标相等偶数则是大于，大于代表查完了，等于则代表还有一个中间数没查
+            while (left <= right) {
+                mid = Math.floor((left + right) / 2);
+                // 中间值如果小于num 则中间值做数组左下标
+                if (arr[mid] < num) {
+                    left = mid + 1; // 左边的所有值包括中间值都小于num
+                }
+                // 中间如果大于num 则中间值做数组右下标
+                else if (arr[mid] > num) {
+                    right = mid - 1; // 右边的所有值包括中间值都大于num
+                }
+                // 如果俩边中都不是 就是等于中间值了
+                else {
+                    // 返回数组下标
+                    return mid;
+                }
+            }
+            if (left > right) {
+                console.log('没有这个数');
+                return -1;
+            }
+            return mid;
+        }
+        var arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log(binarySearch(arr2, 10));
+        console.log(arr2[binarySearch(arr2, 8)]);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
