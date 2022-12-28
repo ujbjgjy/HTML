@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>Document</title>
     <script>
-        var str = 'abc';
-        str = str.toUpperCase();
+        var str = 'adeffeffefwddfegfg';
+        // 它只会替换第一个'f'
+        while(str.indexOf('f') != -1) {
+            str = str.replace('f', '&');
+        }
         console.log(str);
-        str = str.toLowerCase();
-        console.log(str);
-    </script>
+    </script>   
 </head>
-
 <body>
 </body>
-
 </html>
