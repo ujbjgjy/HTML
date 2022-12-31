@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环背景精灵图</title>
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 264px;
+            height: 132px;
+            margin: 300px auto;
+        }
+        ul li {
+            float: left;
+            width: 65px;
+            height: 44px;
+            background: url(../练习/images/sprite.png) no-repeat center 0;
+            border-right: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+        ul li:nth-child(4n) {
+            border-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // 获取所有的li
+        var lis = document.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            var index = i * 44;
+            lis[i].style.backgroundPosition = 'center -'+ index +'px';
+        }
+    </script>
+</body>
+</html>

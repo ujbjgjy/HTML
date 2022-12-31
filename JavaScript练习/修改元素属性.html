@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改元素属性</title>
+    <style>
+        img {
+            display: block;
+            width: 500px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button id="lz">荔汁</button>
+    <button id="yb">油饼</button>
+    <img src="../练习/images/ikun/ikun17.jpg" alt="" title="你让我拿什么荔枝">
+    <script>
+        var lz = document.getElementById('lz');
+        var yb = document.getElementById('yb');
+        var img = document.querySelector('img');
+        lz.onclick = function() {
+            img.src = '../练习/images/ikun/ikun17.jpg';
+            img.title = '你让我拿什么荔枝';
+        }
+        yb.onclick = function() {
+            img.src = '../练习/images/ikun/ikun14.jpg';
+            img.title = '油饼食不食';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码隐藏显示</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            height: 60px;
+            margin: 100px auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .box input {
+            width: 370px;
+            height: 60px;
+            padding: 0;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            position: absolute;
+            top: 20px;
+            right: 27px;
+            width: 30px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for=""><img src="../练习/images/闭眼.png" alt="" id="btn"></label>
+        <input type="password" name="" id="input">
+    </div>
+    <script>
+        var input = document.getElementById('input');
+        var btn = document.getElementById('btn');
+        var flag = 1;
+        console.dir(btn);
+        console.dir(document.getElementsByTagName('div'));
+        btn.onclick = function () {
+            if (flag == 1) {
+                input.type = 'text';
+                flag = 0;
+            }
+            else {
+                input.type = 'password';
+                flag = 1;
+            }
+        }
+    </script>
+</body>
+
+</html>

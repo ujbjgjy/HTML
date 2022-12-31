@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关闭二维码案例</title>
+    <style>
+        .box {
+            position: relative;
+            width: 100px;
+            height: 150px;
+            padding: 5px 10px 0;
+            background-color: skyblue;
+            box-sizing: border-box;
+        }
+
+        .box img {
+            display: block;
+            width: 80px;
+            margin-top: 20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 0;
+            right: -10px;
+            font-style: normal;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <i class="close-btn">X</i>
+        关闭二维码
+        <img src="../练习/images/二维码.png" alt="">
+    </div>
+    <script>
+        // 1. 获取元素
+        var box = document.querySelector('.box');
+        var btn = document.querySelector('.box').querySelector('.close-btn');
+        // 2. 事件
+        btn.onclick = function() {
+            box.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
