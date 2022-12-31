@@ -7,19 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
     <script>
-        function Person(names) {
-            this.name = names;
+        var num = 1;
+        var str = '1';
+        if (num == str) {
+            console.log('相等');
         }
-        function fun(x) {
-            console.log(x.name);
-            x.name = '大帅b';
-            console.log(x.name);
+        else {
+            console.log('不相等');
         }
-        var p = new Person('ujbj');
-        console.log(p.name);
-        // 传参 传入对象
-        fun(p);
-        console.log(p.name);
+        console.log('num:' + typeof num);
+        console.log('str:' + typeof str);
     </script>
 </head>
 

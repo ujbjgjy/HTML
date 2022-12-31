@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排他思想</title>
+</head>
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>
+        var btn = document.querySelectorAll('button');
+        // 将所有btn加上事件
+        for (var i = 0; i < btn.length; i++) {
+            // 当点击的时候要把之前点击生成的样式，全清除
+            btn[i].onclick = function () {
+                for (var j = 0; j < btn.length; j++) {
+                    btn[j].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'skyblue';
+            }
+        }
+    </script>
+</body>
+</html>
