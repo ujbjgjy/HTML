@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单全选取消全选</title>
+    <style>
+        table {
+            width: 600px;
+            margin: 200px auto;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        tr,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        th {
+            height: 40px;
+            background-color: #cdeffa;
+        }
+
+        td {
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="" id=""></th>
+                <th>商品</th>
+                <th>价钱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // 要操作的元素有 全选和取消全选的元素 和下面单独的点击的元素
+        var cex_all = document.querySelector('thead').querySelector('input');
+        var cexs = document.querySelector('tbody').querySelectorAll('input');
+        // 当点击cex_all 时全部选择/取消
+        cex_all.onclick = function () {
+            // this.checked 当选中时是true取消是false
+            console.log(this.checked);
+            for (var i = 0; i < cexs.length; i++) {
+                cexs[i].checked = this.checked;
+            }
+        }
+        // 当点击cexs时来选中/取消 cex_all
+        //  当点击cexs每个元素时都要判断是否全选,每个元素都绑定事件
+        for (var i = 0; i < cexs.length; i++) {
+            // 当我点击它们当中的某一个元素
+            cexs[i].onclick = function () {
+                var flag = true; // 假如全选的情况下
+                // 如果下面的循环没能改变这个flag的话就是全部选择了
+                for (var i = 0; i < cexs.length; i++) {
+                    // 如果有一个元素是没选中
+                    if (!cexs[i].checked) {
+                        // 改成假
+                        flag = false;
+                        break;
+                    }
+                }
+                cex_all.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

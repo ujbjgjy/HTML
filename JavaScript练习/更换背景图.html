@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更换背景图</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .clearfix::after {
+            visibility: hidden;
+            clear: both;
+            display: block;
+            content: '';
+            height: 0;
+        }
+        .clearfix {
+            *zoom: 1;
+        }
+        body {
+            background: url(../练习/images/壁纸_1.jpg) no-repeat;
+            background-size: 100%;
+        }
+        .box {
+            width: 800px;
+            margin: 300px auto;
+            border: 5px solid skyblue;
+        }
+        .box img {
+            float: left;
+            width: 200px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <img src="../练习/images/壁纸_1.jpg" alt="">
+        <img src="../练习/images/壁纸_2.jpg" alt="">
+        <img src="../练习/images/壁纸_3.jpg" alt="">
+        <img src="../练习/images/壁纸_4.jpg" alt="">
+    </div>
+    <script>
+        var img = document.querySelectorAll('img');
+        for (var i = 0; i < img.length; i++) {
+            img[i].onclick = function () {
+                console.log(this.src);
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+</html>

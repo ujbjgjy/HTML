@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格隔行变色</title>
+    <style>
+        table {
+            width: 800px;
+            margin: 200px auto;
+            text-align: center;
+            border-collapse: collapse;
+            color: #d8cdfa;
+        }
+
+        tr { 
+            height: 40px;
+        }
+
+        thead {
+            background-color: #effacd;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #ccc;
+        }
+        .bg {
+            background-color: #d9facd;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>名字</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>住址</th>
+                <th>电话</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>熊大</td>
+                <td>男</td>
+                <td>18</td>
+                <td>狗熊岭</td>
+                <td>142432534</td>
+            </tr>
+            <tr>
+                <td>熊大</td>
+                <td>男</td>
+                <td>18</td>
+                <td>狗熊岭</td>
+                <td>142432534</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>24</td>
+                <td>监狱</td>
+                <td>12313424</td>
+            </tr>
+            <tr>
+                <td>熊二</td>
+                <td>男</td>
+                <td>17</td>
+                <td>狗熊岭</td>
+                <td>12432534</td>
+            </tr>
+            <tr>
+                <td>铁锤</td>
+                <td>女</td>
+                <td>8</td>
+                <td>山东</td>
+                <td>12244</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        console.dir(trs);
+        // 给每个tbody里的行绑定事件
+        for (var i = 0; i < trs.length; i++) {
+            // 当鼠标经过行时变色
+            trs[i].onmouseover = function() {
+                this.className = 'bg';
+            }
+            // 当鼠标离开时颜色清空
+            trs[i].onmouseout = function () {
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

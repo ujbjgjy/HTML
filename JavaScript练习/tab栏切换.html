@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab栏切换</title>
+    <style>
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tab {
+            width: 752px;
+            margin: 200px auto;
+        }
+
+        .tab_list {
+            height: 60px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+        }
+
+        .tab_list li {
+            float: left;
+            width: 150px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .current {
+            background-color: red;
+            color: #fff;
+        }
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价(5000)</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">
+                商品介绍
+            </div>
+            <div class="item">
+                规格与包装
+            </div>
+            <div class="item">
+                售后保障
+            </div>
+            <div class="item">
+                商品评价
+            </div>
+            <div class="item">
+                手机社区
+            </div>
+        </div>
+    </div>
+    <script>
+        var lis = document.querySelector('.tab_list').querySelectorAll('li');
+        var tab_con = document.querySelector('.tab_con');
+        var item = tab_con.querySelectorAll('.item');
+        console.dir(item);
+        console.dir(lis);
+        // 要点击5个所以要给每添加事件
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index',i);
+            lis[i].onclick = function () {
+                // 要清除之前点击时添加的样式
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                // 写入样式
+                this.className = 'current';
+                // 点击时还要显示相应的列表
+                //  首先要清除之前点击后显示的列表
+                for (var j = 0; j < item.length; j++) {
+                    item[j].style.display = 'none';
+                }
+                // 谁调用就获取谁的属性，不能再用i了用此的i改把程序执行完了，变成5个
+                console.log(this.getAttribute('index'));
+                item[this.getAttribute('index')].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
