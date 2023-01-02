@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态生表格</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        table {
+            width: 800px;
+            margin: 200px auto;
+            text-align: center;
+        }
+
+        th,
+        td {
+            height: 45px;
+        }
+
+        .style_color {
+            background-color: #39d2d0;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>名字</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>地址</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        // 隔行添加了颜色
+        function interlaced_color() {
+            var trs = document.querySelectorAll('tr');
+            for (var j = 0; j < trs.length; j++) {
+                trs[j].className = '';
+            }
+            for (var i = 0; i < trs.length; i += 2) {
+                trs[i].className = 'style_color';
+            }
+        }
+        // 写入信息
+        var datas = [
+            {
+                names: '熊大',
+                sex: '男',
+                age: 12,
+                address: '狗熊岭'
+            },
+            {
+                names: '熊二',
+                sex: '男',
+                age: 11,
+                address: '狗熊岭'
+            },
+            {
+                names: '翠花',
+                sex: '男',
+                age: 13,
+                address: '山东'
+            },
+            {
+                names: '铁锤',
+                sex: '女',
+                age: 23,
+                address: '黑龙江'
+            },
+            {
+                names: '张三',
+                sex: '男',
+                age: 34,
+                address: '北京'
+            }
+        ];
+        // 生成行，在行内生成单元格，单元格在写入内容
+        // 获取父节点
+        var tby = document.querySelector('tbody');
+        var i = 0;
+        for (i = 0; i < datas.length; i++) {
+            // 创建节点
+            var tr = document.createElement('tr');
+            // 添加节点
+            console.dir(tr);
+            console.dir(tby);
+            tby.appendChild(tr);
+            // 在每个tr添加单元格，怎么确定有添加多少个单元格，
+            //  通过字面量对象有多少属性来获取
+            // 遍历对象
+            // 获取所有tr 
+            var tr = document.querySelector('tbody').querySelectorAll('tr');
+            for (var k in datas[i]) {
+                // 创建节点
+                var td = document.createElement('td');
+                // 给td写入内容
+                // 使用for in时不能写成 元素.k 要写成 元素[k]
+                // datas是个数组，每个元素是个对象元素，要获得datas里的元素，要写成data[i]
+                td.innerHTML = datas[i][k]; // datas[i]表示对象，[k]表示面的属性
+                // 添加节点
+                tr[i].appendChild(td);
+            }
+        }
+        interlaced_color()
+        // 添加删除单元格
+        for (var i = 0; i < tr.length; i++) {
+            // 创建节点
+            var td = document.createElement('td');
+            // 写入内容
+            td.innerHTML = '<a href="javascript:;">删除</a>';
+            td.onclick = function () {
+                // 要删除当前单元格的行
+                // 删除节 removeChild前面必须是父节点才可以
+                tby.removeChild(this.parentNode);
+                interlaced_color();
+            }
+            console.log(td);
+            tr[i].appendChild(td);
+        }
+
+    </script>
+</body>
+
+</html>

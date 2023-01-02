@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除节点</title>
+</head>
+<body>
+    <button>删除</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+        btn.onclick = function () {
+            if (ul.children.length == 0) {
+                // 禁用btn按钮
+                this.disabled = true;
+            }
+            else {
+                ul.removeChild(ul.children[0]);
+            }
+        }
+    </script>
+</body>
+</html>
