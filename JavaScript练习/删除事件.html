@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除事件</title>
+    <style>
+        div {
+            width: 200px;
+            height: 60px;
+            margin: 30px;
+            line-height: 60px;
+            text-align: center;
+            background-color: skyblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>传统方式删除事件</div>
+    <div>方法监听注册方式删除事件</div>
+    <script>
+        var divs = document.querySelectorAll('div');
+        // 如果是表单元素可以通过禁止按钮的形式让事件只执行一次，但是如果是普通元素就得删除事件
+        // 1. 传统方式删除事件
+        divs[0].onclick = function () {
+            alert('hello');
+            divs[0].onclick = null;
+        }
+        // 2. removeEventListener 删除事件
+        function fu () {
+            alert('hello');
+            divs[1].removeEventListener('click', fu)
+        }
+        divs[1].addEventListener('click',fu); // 里面的fn不需要调用加小括号
+    </script>
+</body>
+</html>

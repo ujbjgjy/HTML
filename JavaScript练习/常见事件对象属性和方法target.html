@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e.target</title>
+    <style>
+        .ts {
+            width: 500px;
+            height: 500px;
+            padding: 150px;
+            background-color: blue;
+            box-sizing: border-box;
+            text-align: center;
+            cursor: pointer;
+            font-size: 30px;
+        }
+        .tgt {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 给this 加事件但是点击的是target -->
+    <div class="ts">
+        this
+        <div class="tgt">e.target</div>
+    </div>
+    <script>
+        var div = document.querySelectorAll('div');
+        // 我们给this加事件
+        //  1. e.target 返回的是触发事件的对象(元素) this 返回的是绑定事件的对象(元素)
+        //   区别：e.target 点击了那个元素，就返回那个元素this 那个元素绑定了这个点击事件，那么就返回谁
+        div[0].addEventListener('click', function (e) {
+            // this盒子 绑定了这个点击事件返回this这个盒子
+            console.log(this); 
+            // 谁触发了这个事件就返回谁
+            console.log(e.target); 
+        })
+    </script>
+</body>
+</html>
