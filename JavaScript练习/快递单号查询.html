@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快递单号查询</title>
+    <style>
+        .con {
+            display: none;
+            position: absolute;
+            width: 182px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            font-size: 18px;
+            background-color: #fff;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, .4);
+        }
+
+        .con::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 60px;
+            border: 8px solid transparent;
+            border-top-color: #fff;
+        }
+
+        input {
+            width: 180px;
+            margin-top: 42px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con"></div>
+        <input type="text" placeholder="请输入您的快递单号" name="" id="">
+    </div>
+    <script>
+        var ipt = document.querySelector('input');
+        var con = document.querySelector('.con');
+        ipt.addEventListener('keyup', function (e) {
+            // 将ipt获取的内容给con,但是内容为空时隐藏
+            if (this.value != '') {
+                con.style.display = 'block';
+                con.innerHTML = this.value;
+            }
+            else {
+                con.style.display = 'none';
+            }
+        })
+        ipt.addEventListener('focus', function () {
+            con.style.display = 'block';
+        })
+        ipt.addEventListener('blur', function () {
+            con.style.display = 'none';
+        })
+        // keydown 和 keypress在文本框里面的特点：它们两个事件触发的时候，文字还没有落入文本框中
+        // keyup事件触发的时候，文字已经落入文本框里面了
+    </script>
+</body>
+
+</html>

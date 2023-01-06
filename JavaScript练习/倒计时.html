@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,9 @@
             var inputime = +new Date(time); //Date有参数返回输入的时间
             // 用户输入的时间-现在的时间在除以1000得到秒
             var times = (inputime - nowtime) / 1000; //当前时间距离用户输入时间还有多秒
+            if (times < 0) {
+                return '时间到';
+            }
             // 得到天数
             var d = parseInt(times / 60 / 60 / 24);
             d = d < 10 ? '0' + d : d;
@@ -25,10 +29,18 @@
             s = s < 10 ? '0' + s : s;
             return d + '天' + h + '时' + m + '分' + s + '秒';
         }
-        var inputime = +new Date('2022-12-25 20:00');
-        console.log(countdown(inputime));
+        var inputtime = +new Date('2023-1-6 16:30');
+        console.log(countdown(inputtime));
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.innerHTML = countdown(inputtime);
+            setInterval(function () {
+                document.body.innerHTML = countdown(inputtime);
+            }, 1000);
+        });
     </script>
 </head>
+
 <body>
 </body>
+
 </html>

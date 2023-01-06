@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动的kunkun</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="../练习/images/ikun/ikun30.webp" alt="">
+    <script>
+        var img = document.querySelector('img');
+        // mousemove 只要我们鼠标移动1px 就会触发这个事件
+        document.addEventListener('mousemove', function (e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            img.style.left = x - 40 + 'px';
+            img.style.top = y - 40 + 'px';
+        })
+        document.addEventListener('keyup', function (e) {
+            console.log(123);
+            console.log(e.code);
+            console.log(e.key)
+            if (e.key == 1) {
+                console.log('相同');
+            }
+        })
+    </script>
+</body>
+</html>

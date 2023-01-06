@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻止事件冒泡</title>
+    <style>
+        .father {
+            width: 500px;
+            height: 500px;
+            padding: 150px;
+            background-color: blue;
+            text-align: center;
+            font-size: 30px;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">son</div>
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        son.addEventListener('click', function (e) {
+            alert('son');
+            e.stopPropagation(); // stop 停止 Propagation 传播
+            // e.cancelBubbe = true; 非标准 cancel 取消 bubble泡泡
+        }, false);
+        father.addEventListener('click', function () {
+            alert('father');
+        });
+        document.addEventListener('click', function () {
+            alert('document');
+        });
+    </script>
+</body>
+
+</html>

@@ -8,19 +8,26 @@
     <title>日期</title>
     <script>
         var date = new Date();
-        var year = date.getFullYear(); // 年
-        var month = date.getMonth(); // 月
-        var date_ = date.getDate();
-        var day = date.getDay(); // 周几
-        var hours = date.getHours(); //时
-        var minutes = date.getMinutes(); // 分
-        var seconds = date.getSeconds();
-        var week = ['日', '一', '二', '三', '四', '五', '六'];
-        minutes < 10 ? minutes = '0' + minutes : '';
-        seconds < 10 ? seconds = '0' + seconds : '';
-        var str =year + '年' + (month + 1) + '月' + date_ + '日' + '星期' + week[date.getDay()] + hours + ':' + minutes + ':' + seconds; 
-        console.log(str);
-        document.write(str);
+        // document.write(str);
+        setInterval(function () {
+            var year = date.getFullYear(); // 年
+            var month = date.getMonth(); // 月
+            var date_ = date.getDate();
+            var day = date.getDay(); // 周几
+            var hours = date.getHours(); //时
+            var minutes = date.getMinutes(); // 分
+            var seconds = date.getSeconds();
+            var week = ['日', '一', '二', '三', '四', '五', '六'];
+            minutes < 10 ? minutes = '0' + minutes : '';
+            seconds < 10 ? seconds = '0' + seconds : '';
+            var str = year + '年' + (month + 1) + '月' + date_ + '日' + '星期' + week[date.getDay()] + hours + ':' + minutes + ':' + seconds;
+            document.body.innerHTML = str;
+        });
+        // var s = 0;
+        // setInterval(function () {
+        //     s = date.getSeconds();
+        //     console.log(s);
+        // },1000);
     </script>
 </head>
 

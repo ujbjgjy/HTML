@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禁止复利文字</title>
+</head>
+<body>
+    我是大帅b
+    <script>
+        // 1. contextmenu 我们可以禁用右键菜单
+        document.addEventListener('contextmenu', function (e) {
+            // 阻止默认行为
+            e.preventDefault();
+        })
+        // 2. 禁止选中文字 selectstart
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>
