@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <style>
+        .time div {
+            float: left;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            background-color: #424242;
+            margin: 0 5px;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            font-weight: 550;
+        }
+    </style>
+</head>
+<body>
+    <div class="time">
+        <div class="hour">12</div>
+        <div class="minutes">12</div>
+        <div class="seconds">121</div>
+    </div>
+    <script>
+        var times = document.querySelector('.time');
+        var div = times.children;
+        console.log(div);
+        function countdown(inputTime) {
+            // 得到现在的时间
+            var nowtime = +new Date();
+            // 用户输入的时间-现在得到的时间 再除于1000得到秒
+            var timer = (inputTime - nowtime) / 1000;
+            if (timer < 0) timer = 0;
+            console.log(timer);
+            // 得到小时先把秒转为小时，得到一天的余数为这天过了多少小时
+            var h = parseInt(timer / 60 / 60 % 24);
+            div[0].innerHTML = h < 10 ? '0' + h : h;
+            // 先转为分，在得到分的余数
+            var m = parseInt(timer / 60 % 60);
+            div[1].innerHTML = m < 10 ? '0' + m : m;
+            // 得到秒的余数
+            var s = parseInt(timer % 60);
+            div[2].innerHTML = s < 10 ? '0' + s : s;
+        }
+        var inputTime = +new Date('2023-1-6 17:30');
+        console.log(inputTime)
+        countdown(inputTime);
+        setInterval('countdown(inputTime)', 1000);
+    </script>
+</body>
+</html>
