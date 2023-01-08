@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        console.log(location.search); // 获取参数
+        // div.innerHTML = location.search;
+        // substr('起始的位置', 截取几个字符)
+        var params = location.search.substr(1);
+        // 字符串转数组 split
+        var arr = params.split('=');
+        console.log(arr);
+        // 写中文会乱码
+        div.innerHTML ='<strong>' + arr[1] + '</strong>' + '\t欢迎您大帅b';
+    </script>
+</body>
+</html>

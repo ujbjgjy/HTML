@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offset</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .father {
+            width: 500px;
+            height: 500px;
+            margin: 100px 300px;
+            background-color: skyblue;
+        }
+        .son {
+            width: 150px;
+            height: 150px;
+            background-color: blue;   
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        var father = document.querySelector('.father')
+        var son = document.querySelector('.son');
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+        console.log(father.offsetWidth);
+        console.log(father.offsetHeight);
+        // 它以带定位的父亲为准，如果有父新或者父亲没定位则以body
+        console.log(son.offsetLeft);
+        father.style.position = 'relative';
+        console.log(son.offsetLeft);
+    </script>
+</body>
+</html>

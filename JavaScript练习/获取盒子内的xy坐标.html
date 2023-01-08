@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector('.box');
+        // 事件 mousemove 鼠标移动
+        box.addEventListener('mousemove', function (e) {
+            // 鼠标坐标-box距离页面的上边距和左边距
+            // 盒子内的鼠标坐标是: 盒子距离页面 + 盒子内的鼠标坐标
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            this.innerHTML = 'x坐标：' + x + '<br>' + 'y坐标：' + y;
+        })
+    </script>
+</body>
+</html>

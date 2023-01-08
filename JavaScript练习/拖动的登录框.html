@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖动的登录框</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .login-header {
+            width: 280px;
+            margin: 20px auto;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .login {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            /*
+             通js改的是left和top 然后在通transform让盒子居中，如果用外边距还在去调整外边距的值
+            */
+            transform: translate(-50%, -50%);
+            width: 512px;
+            height: 300px;
+            background-color: #fff;
+        }
+
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .title {
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 24px;
+            cursor: move;
+        }
+
+        .login-input {
+            margin: 10px 0;
+        }
+
+        .login-input label {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align-last: right;
+        }
+
+        .login-input input {
+            width: 350px;
+            height: 40px;
+            padding-left: 10px;
+            line-height: 40px;
+        }
+
+        .login-btn {
+            width: 200px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .login-btn {
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            margin: 60px auto 0;
+            border: 1px solid #ccc;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .login-bg {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-header">点击，弹出登录框</div>
+    <div class="login">
+        <div class="title">登录会员</div>
+        <div class="close">关闭</div>
+        <div class="content">
+            <div class="login-input">
+                <label for="user">用户名：</label>
+                <input type="text" placeholder="请输入用户名" name="" id="user">
+            </div>
+            <div class="login-input">
+                <label for="password">密码：</label>
+                <input type="password" placeholder="请输入登录密码" name="" id="password">
+            </div>
+        </div>
+        <div class="login-btn"><a href="javascript:;">登录会员</a></div>
+    </div>
+    <div class="login-bg"></div>
+    <script>
+        var link = document.querySelector('.login-header');
+        var login = document.querySelector('.login');
+        var login_bg = document.querySelector('.login-bg');
+        var close_login = document.querySelector('.close');
+        var title = document.querySelector('.title');
+        // 点击link登录界面出来
+        link.addEventListener('click', function () {
+            login.style.display = 'block';
+            login_bg.style.display = 'block';
+        })
+        close_login.addEventListener('click', function () {
+            login.style.display = '';
+            login_bg.style.display = '';
+        })
+        function move(e) {
+            login.style.left = e.pageX + 'px';
+            login.style.top = e.pageY + 'px';
+        }
+        // 长按登录会员拖动登录框
+        //  长按鼠标事件 mousedown
+        //  鼠标弹起 mouseup
+        title.addEventListener('mousedown', function (e) {
+            // 获取登录界中的鼠标坐标
+            var x = e.pageX - login.offsetLeft;
+            var y = e.pageY - login.offsetTop;
+            // 获取文档中的鼠标坐标
+            function move(e) {
+                // 将坐标赋给login的left和top
+                // 文档坐标 - 登录界面中的鼠标坐标 = 登界面距离页面中的值
+                login.style.left = e.pageX - x + 'px';
+                login.style.top = e.pageY - y + 'px';
+            }
+            document.addEventListener('mousemove', move);
+
+            // 如果松开鼠标去除mousemove事件
+            document.addEventListener('mouseup', function () {
+                document.removeEventListener('mousemove', move);
+            })
+        })
+    </script>
+</body>
+
+</html>
