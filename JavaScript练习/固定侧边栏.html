@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定侧边栏</title>
+    <style>
+        .w {
+            width: 1226px;
+            margin: 0 auto 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .header {
+            height: 200px;
+            background-color: green;
+        }
+
+        .banner {
+            height: 400px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1200px;
+            background-color: #ff6a00;
+        }
+
+        .sliderbar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 633px;
+        }
+
+        .sliderbar li {
+            width: 70px;
+            height: 70px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-top: -1px;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <ul class="sliderbar">
+        <li>个人中心</li>
+        <li>售后服务</li>
+        <li>人工客服</li>
+        <li>购物车</li>
+        <li class="goto-top" style="display: none;">回顶部</li>
+    </ul>
+    <script>
+        var sliderbar = document.querySelector('.sliderbar');
+        var banner = document.querySelector('.banner');
+        var main = document.querySelector('.main');
+        var goto_top = document.querySelector('.goto-top');
+        var mainTop = main.offsetTop;
+        // 要写在外面 因为页面滚动后offsetTop的值会变化
+        var bannerTop = banner.offsetTop;
+        var sliderbarTop = sliderbar.offsetTop - bannerTop - 20;
+        // 只要页面滚动到主体部分sliderbar就变成固定定位
+        // pageYOffset 页面被滚动的长度
+        document.addEventListener('scroll', function () {
+            if (window.pageYOffset >= bannerTop) {
+                sliderbar.style.position = 'fixed';
+                sliderbar.style.top = sliderbarTop + 'px';
+            }
+            else {
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = '300px';
+            }
+            if (window.pageYOffset >= mainTop) {
+                goto_top.style.display = 'block';
+            }
+            else {
+                goto_top.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

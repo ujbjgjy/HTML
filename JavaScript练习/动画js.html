@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <button>走500</button>
+    <button>走800</button>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        var btn = document.querySelectorAll('button');
+        div.ujbj = '是大帅b';
+        console.log(div.ujbj);
+        console.log('div的left:' + div.offsetLeft); // 只会取整，没有小数，用4舍5入的方式取整
+        var sum = 0;
+        function animaTion(obj, target, callback) {
+            // 清除之前的定时器, 如果之前有调用这个函数，那么obj一定有timer属性要把它清除掉
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                console.dir(obj);
+                // 800 - 796 = 4 不带小数点 = 0.4
+                // 要向上取小数，如果步长是0.几个的就一直+0不会变
+                // 如果目标到达800/800，步长=0
+                var step = (target - obj.offsetLeft) / 10;
+                // 如果是负数往小了取
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                // 如果到达指定距离停止定时器
+                console.log(obj.offsetLeft);
+                console.log(target);
+                // 判断等于800清除定时器，然后再执行下面的但步长已经是0了
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    // 回调函数写定时器结束里面
+                    // 回调函数：当所有程序执行完后再执行这个函数
+                    if (callback) {
+                        // 调用
+                        callback();
+                    }
+                }
+                // 盒子当前距离 + 步长；移动盒子
+                console.log('------------');
+                console.log('step:' + step);
+                // step = 0.4;
+                /*
+                    offsetLeft是不取小数的 距离800 到最后 步长出现0.4的小数
+                    盒子的变成796.4px距离 它会取整变成796px
+                    然后再 + 步长0.4
+                    left = 796.4
+                    再来执行时用offsetLeft来获得距离去掉小数，就又变成796 + 0.4
+                    永远是这个值
+                */
+                console.log(obj.offsetLeft);
+                // 先等于800
+                obj.style.left = obj.offsetLeft + step + 'px';
+                console.log(obj.offsetLeft + step + 'px');
+            }, 15);
+        }
+        btn[0].addEventListener('click', function () {
+            animaTion(div, 500);
+        });
+        btn[1].addEventListener('click', function () {
+            animaTion(div, 800, function () {
+                div.style.backgroundColor = 'skyblue';
+            });
+        });
+        // 缓动动画公式：步长 = (目标值 - 现在的位置) / 10;
+        //  50 - 0 = 100 / 10 = 10;
+        //  50 - 10 = 90 / 10 = 9;
+        //  50 - 19 = 81 / 10 = 8.1;
+        //  50 - 27.1 = 72.9 / 10 = 7.29;
+        //  50 - 34.39 = 15.61 / 10 = 1.561;
+    </script>
+</body>
+
+</html>

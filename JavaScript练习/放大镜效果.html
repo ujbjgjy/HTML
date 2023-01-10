@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放大镜效果</title>
+    <style>
+        .img {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 200px 0 0 200px;
+            border: 1px solid #ccc;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 220px;
+            height: 220px;
+            background-color: #fede4f;
+            opacity: .5;
+            cursor: move;
+        }
+
+        .big {
+            display: none;
+            position: absolute;
+            left: 320px;
+            top: 0;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        .big img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 800px;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <img src="../练习/images/ikun/at5gd-x7dar.png" alt="">
+        <div class="mask"></div>
+        <div class="big">
+            <img src="../练习/images/ikun/at5gd-x7dar.png" alt="" class="bigimg">
+        </div>
+    </div>
+    <script>
+        var img = document.querySelector('.img');
+        var big = document.querySelector('.big');
+        var mask = document.querySelector('.mask');
+        var bigImg = document.querySelector('.bigimg');
+        // 鼠标经过显示
+        img.addEventListener('mouseover', function () {
+            mask.style.display = 'block';
+            big.style.display = 'block';
+            img.addEventListener('mousemove', function (e) {
+                // 获取盒子内的鼠标坐标
+                var bigMAX = bigImg.offsetWidth - big.offsetWidth;
+                // mask.offsetWidth/2 表标减去盒子的一半
+                var x = e.pageX - img.offsetLeft - mask.offsetWidth / 2; // 让指针显示在中心
+                var y = e.pageY - img.offsetTop - mask.offsetHeight / 2;
+                if (x >= 0 && x <= img.offsetWidth - mask.offsetWidth) {
+                    mask.style.left = x + 'px';
+                    bigImg.style.left = -x * bigMAX / (img.offsetWidth - mask.offsetWidth) + 'px';
+                }
+                if (y >= 0 && y <= img.offsetHeight - mask.offsetHeight) {
+                    mask.style.top = y + 'px';
+                    bigImg.style.top = -y * bigMAX / (img.offsetWidth - mask.offsetWidth) + 'px';
+                }
+            })
+        })
+        // 鼠标离开隐藏
+        img.addEventListener('mouseout', function () {
+            mask.style.display = 'none';
+            big.style.display = 'none';
+        })
+    </script>
+</body>
+
+</html>

@@ -4,9 +4,66 @@
     margin: 10px 0 0 220px;
 }
 .foucus {
+    position: relative;
     float: left;
+    overflow: hidden;
     width: 721px;
     height: 455px;
+}
+.foucus ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 800%;
+}
+.foucus ul img {
+    width: 721px;
+    height: 455px;
+}
+.foucus ul li {
+    float: left;
+}
+.arrow-l,
+.arrow-r {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .4);
+    text-align: center;
+    font-size: 30px;
+    border-radius: 5px;
+    color: #fff;
+    z-index: 2;
+}
+.arrow-l {
+    left: 5px;
+}
+.arrow-r {
+    right: 5px;
+}
+/* 小圆圈 */
+.circle {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+}
+.circle li {
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.foucus a:hover {
+    color: #fff;
+}
+.current {
+    background-color: #fff;
 }
 .newsflash {
     float: right;

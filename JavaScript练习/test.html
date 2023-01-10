@@ -6,18 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
+    <script src="animation.js"></script>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
 </head>
 
 <body>
-    <button>12123</button>
-    <button>1213</button>
+    <button>走500</button>
+    <button>走800</button>
+    <div></div>
     <script>
-        function test() {
-            alert(12);
-            btn[1].removeEventListener('click', test);
-        }
+        var div = document.querySelector('div');
         var btn = document.querySelectorAll('button');
-        btn[0].addEventListener('click', test);
+        btn[0].addEventListener('click', function () {
+            animaTion(div, 500, function () {
+                div.style.backgroundColor = 'red';
+            });
+        });
+        btn[1].addEventListener('click', function () {
+            animaTion(div, 800);
+        });
     </script>
 </body>
 

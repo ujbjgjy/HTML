@@ -2719,7 +2719,7 @@
                 购物车
             </div>
         </a>
-        <a href="#goto_top" class="tool_item">
+        <a href="#goto_top" class="tool_item" id="gotoTop">
             <i class="tool_item_icon">
                 <img src="images/tool_bar_6_0.png" alt="">
             </i>
@@ -2730,6 +2730,20 @@
         </a>
     </div>
     <!-- 工具栏模块 end-->
+    <script>
+        var togoTop = document.querySelector('#gotoTop');
+        var home = document.querySelector('.home_banner_box');
+        var homeY = home.offsetTop;
+        togoTop.style.display = 'none';
+        document.addEventListener('scroll', function () {
+            if(window.pageYOffset >= homeY) {
+                togoTop.style.display = 'block';
+            }
+            else {
+                togoTop.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>
