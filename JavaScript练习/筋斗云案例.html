@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筋斗云案例</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            float: left;
+            width: 90px;
+            height: 60px;
+            padding: 0;
+            text-align: center;
+        }
+
+        .nav {
+            position: absolute;
+            left: 50%;
+            top: 100px;
+            width: 800px;
+            height: 60px;
+            transform: translateX(-50%);
+            border: 1px solid #ccc;
+        }
+
+        .cloud {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 100px;
+            height: 60px;
+            background: url(../练习/images/cloud.gif) no-repeat;
+            z-index: -1;
+        }
+    </style>
+    <script src="./animation.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+        <span class="cloud"></span>
+        <ul>
+            <li class="current"><a href="javasrcipt:;">首页新闻</a></li>
+            <li><a href="javasrcipt:;">首页新闻</a></li>
+            <li><a href="javasrcipt:;">首页新闻</a></li>
+            <li><a href="javasrcipt:;">首页新闻</a></li>
+            <li><a href="javasrcipt:;">首页新闻</a></li>
+            <li><a href="javasrcipt:;">首页新闻</a></li>
+            <li><a href="javasrcipt:;">首页新闻</a></li>
+        </ul>
+    </div>
+    <script>
+        var nav = document.querySelector('.nav');
+        var lis = document.querySelectorAll('li');
+        var cloud = document.querySelector('.cloud');
+        var current = document.querySelector('.current');
+        var count = 0;
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].addEventListener('mouseover', function () {
+                animaTion(cloud, this.offsetLeft);
+                this.addEventListener('click', function () {
+                    count = this.offsetLeft;
+                    for (var j = 0; j < lis.length; j++) {
+                        lis[j].children[0].style.color = '';
+                    }
+                    this.children[0].style.color = 'red';
+                 });
+            });
+            lis[i].addEventListener('mouseout', function () {
+                animaTion(cloud, count);
+            });
+        }
+    </script>
+</body>
+
+</html>
