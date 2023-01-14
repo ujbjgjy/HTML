@@ -2,15 +2,18 @@
 * {
     -webkit-tap-highlight-color: transparent;
 }
+
 /* 在移动端浏览器默认的外观ios上加上这个属性才能给按钮和输入框自定义样式 */
 input {
     -webkit-appearance: none;
 }
+
 /* 禁用长按页时的弹出菜单 */
 a,
 img {
     -webkit-touch-callout: none;
 }
+
 body {
     margin: 0 auto;
     min-width: 320px;
@@ -22,7 +25,7 @@ body {
     color: #666;
 }
 
-ul  {
+ul {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -49,6 +52,7 @@ a {
 .app ul li:nth-child(1) {
     width: 8%;
 }
+
 .app ul li:nth-child(1) img {
     width: 10px;
 }
@@ -56,10 +60,12 @@ a {
 .app ul li:nth-child(2) {
     width: 10%;
 }
+
 .app ul li:nth-child(2) img {
     width: 30px;
     vertical-align: middle;
 }
+
 .app ul li:nth-child(3) {
     width: 57%;
 }
@@ -68,6 +74,7 @@ a {
     width: 25%;
     background-color: #f63515;
 }
+
 .search-wrap {
     position: fixed;
     overflow: hidden;
@@ -76,7 +83,9 @@ a {
     min-width: 320px;
     max-width: 620px;
     background-color: #e43130;
+    z-index: 999;
 }
+
 .search-btn {
     position: absolute;
     top: 0;
@@ -87,6 +96,7 @@ a {
     background-size: 20px 18px;
 
 }
+
 .search-login {
     position: absolute;
     top: 0;
@@ -98,6 +108,7 @@ a {
     font-size: 14px;
     color: #fff;
 }
+
 .search {
     position: relative;
     height: 30px;
@@ -106,6 +117,7 @@ a {
     background-color: #fff;
     border-radius: 15px;
 }
+
 .search .jd-icon {
     position: absolute;
     top: 0;
@@ -114,8 +126,9 @@ a {
     height: 15px;
     margin: 8px 8px 0 15px;
     background: url(../images/jd.png) no-repeat;
-    background-size: 20px 15px; 
+    background-size: 20px 15px;
 }
+
 .search .jd-icon::after {
     content: '';
     position: absolute;
@@ -125,6 +138,7 @@ a {
     height: 15px;
     background-color: #e0e0e0;
 }
+
 .search .sou {
     position: absolute;
     top: 0;
@@ -135,52 +149,98 @@ a {
     background: url(../images/jd-sprites.png) no-repeat -80px 0;
     background-size: 200px;
 }
+
 img {
     vertical-align: top;
 }
+
 .slider img {
     width: 100%;
 }
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .brand div {
     float: left;
     width: 33.33%;
 }
+
 .brand img {
     width: 100%;
 }
+
 .nav a {
     display: block;
     float: left;
     width: 20%;
     text-align: center;
 }
+
 .nav a span {
     display: block;
     margin-top: 6.24px;
 }
+
 .nav img {
     width: 41.6px;
     margin-top: 10.4px;
 }
+
 .news a {
     box-sizing: border-box;
 }
+
 .news a:nth-child(1) {
     width: 50%;
 }
+
 .news a:nth-child(2) {
     width: 25%;
 }
+
 .news a:nth-child(3) {
     width: 25%;
 }
+
 .news a:nth-child(n+2) {
     border-left: 1px solid #ccc;
 }
+
 .news a {
     display: block;
     float: left;
 }
+
 .news img {
     width: 100%;
 }

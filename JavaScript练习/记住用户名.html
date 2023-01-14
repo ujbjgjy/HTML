@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="ipt">
+    <input type="checkbox" name="" id="cex"> 记住用户名
+    <script>
+        var ipt = document.querySelector('#ipt');
+        var cex = document.querySelector('#cex');
+        // 判断是存储的有uname
+        if (localStorage.getItem('uname')) {
+            ipt.value = localStorage.getItem('uname');
+            cex.checked = true;
+        }
+        // 当复选框发生改变的时候 change 事件
+        cex.addEventListener('change', function () {
+            if (this.checked) {
+                localStorage.setItem('uname', ipt.value);
+            }
+            else {
+                localStorage.removeItem('uname');
+                cex.checked = false;
+            }
+        });
+    </script>
+</body>
+</html>
