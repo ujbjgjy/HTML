@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 135px;
+            height: 500px;
+            margin-top: 10px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function () {
+            // 滑动效果
+            $('button').eq(0).click(function () {
+                $('div').slideDown();
+            });
+            $('button').eq(1).click(function () {
+                $('div').slideUp();
+            });
+            $('button').eq(2).click(function () {
+                $('div').slideToggle(200);
+            });
+        })
+    </script>
+</head>
+<body>
+    <button>显示</button> <button>隐藏</button> <button>切换</button> 
+    <div></div>
+</body>
+</html>

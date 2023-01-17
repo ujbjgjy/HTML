@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝tab栏切换</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .wrapper {
+            width: 600px;
+            height: 300px;
+            margin: 200px auto;
+            border: 1px solid #333;
+        }
+        .left {
+            float: left;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 300px;
+            line-height: 60px;
+            text-align: center;
+        }
+        .left li {
+            border-top: 1px solid #333;
+            margin-top: -1px;
+        }
+        .content {
+            position: relative;
+            float: right;
+            width: 450px;
+            height: 300px;
+        }
+        .content div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 450px;
+            height: 300px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function () {
+            $('.left li').mouseover(function () {
+                // 返回当前元素的索引
+                var index = $(this).index();
+                console.log(index);
+                // // 显示自己
+                // $('.content div').eq(index).show();
+                // // 除自己所有兄弟隐藏
+                // $('.content div').eq(index).siblings().hide();
+                //也可以这样写
+                $('.content div').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="left">
+            <li><a href="#">你食不食油饼</a></li>
+            <li><a href="#">你荔枝吗</a></li>
+            <li><a href="#">你食不食油饼</a></li>
+            <li><a href="#">你食不食油饼</a></li>
+            <li><a href="#">你食不食油饼</a></li>
+        </ul>
+        <div class="content">
+            <div>
+                <a href="#"><img src="../练习/images/ikun/ikun1.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="../练习/images/ikun/ikun2.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="../练习/images/ikun/ikun3.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="../练习/images/ikun/ikun4.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="../练习/images/ikun/ikun5.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

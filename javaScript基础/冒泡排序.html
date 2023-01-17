@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [8,9,13,5,4,7,1,5,3,21,74,98,77,96,87,96,87,4];
+        // 从第一个数开始比如较
+        //  1. 如果是10个元素要比较的是9个元素，
+        for (var i = 0; i < arr.length - 1; i++) {
+            var flag = true; // 假如是有序
+            // 数组第n个元素比较的趟数
+            //  1. 因为每次比较一趟数就是会减少一个元素所以-i
+            for (var j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    var tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                    flag = false;
+                }
+            }
+            if(flag) break;
+        }
+        console.log(arr);
+        // 1 2 3 4 5
+        // 1 > 2  0 1
+        // 2 > 3  1 2
+        // 3 > 4  2 3
+        // 4 > 5  3 4
+    </script> 
+</body>
+</html>

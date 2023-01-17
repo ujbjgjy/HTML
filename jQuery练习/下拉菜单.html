@@ -49,12 +49,17 @@
 <body>
     <script>
         $(function () {
-            $('.nav>li').mouseover(function () {
-                $(this).children('ul').show();
+            // $('.nav>li').mouseover(function () {
+            //     $(this).children('ul').slideDown(200);
+            // });
+            // $('.nav>li').mouseout(function () {
+            //     $(this).children('ul').slideUp(200);
+            // })
+            // 事件切换 hover 鼠标经过和离开的复合写法,如果只写一个函数鼠标经过和离都会触发这个函数
+            $('.nav>li').hover(function () {
+                // 因stop结束的是上一个动画，所以stop方法必须写到动画的前面
+                $(this).children('ul').stop().slideToggle(100);
             });
-            $('.nav>li').mouseout(function () {
-                $(this).children('ul').hide();
-            })
         })
     </script>
     <ul class="nav">

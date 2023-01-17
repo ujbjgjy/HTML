@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            对有序的数组进行找到
+            1. 要查找的数跟中间值对比
+            2. 中间值：(左下标 +右下标) / 2
+        */
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var  k = 4; // 要查找的数
+        var left = 0;
+        var right = arr.length;
+        while(left <= right) {
+            var mid = Math.floor((left + right) / 2);
+            // 中间值 小于要查找到数，说明左边没有对查找的值
+            if (arr[mid] < k) {
+                left = mid + 1; // 因为已经比较一回了不相等 +1
+            }
+            else if (arr[mid] > k) {
+                right = mid - 1;
+            }
+            else {
+                console.log('打找到了下标为:' + mid, arr[mid]);
+                break;
+            }
+        }
+        if (left > right) {
+            console.log('找不到');
+        }
+    </script>
+</body>
+
+</html>
