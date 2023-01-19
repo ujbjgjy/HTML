@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var rand = +new Date();
+        console.log(rand % 10);
+        // 1 > n >= 0
+        console.log(Math.random());
+        function getRandom(min, max) {
+            // max-min 得到是它中间相差多少的值包含max
+            // 乘一个永远不会等于的一个小数，又加上一个min
+            // 得到的随机值只能是可以等于min但永远不会大于最大值
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+    </script> 
+</body>
+</html>

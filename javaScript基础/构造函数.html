@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+
+<body>
+    <script>
+        function Obj(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            this.description = function (str) {
+                console.log(str);
+            }
+        }
+        // 如果有3个人要执行这里面的代码的话，只需要传入值即可
+        //  要加上 new 对象 才可创建构造函数。调用跟函数一样
+        // new:新
+        var zhangsan = new Obj();
+        zhangsan.uname = '张三';
+        zhangsan.age = 18;
+        // zhangsan.description('法外狂徒')
+        console.log(zhangsan.uname);
+        console.log(zhangsan.age);
+        zhangsan.description('法外狂徒');
+        console.log(Math.PI);
+    </script>
+</body>
+
+</html>

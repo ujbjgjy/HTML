@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 最大值和最小值
+        console.log('***** 最大值和最小值 *****');
+        console.log(Math.min(1, 'ujbj', 3, 4, 5, 6, 7, 8, 9));
+        // 2. 绝对值
+        console.log('***** 绝对值 *****');
+        console.log(Math.abs(1));
+        console.log(Math.abs(-1));
+        console.log(Math.abs('-1')); // 隐式转换 会把字符串型 -1 转为数字型
+        console.log('***** 三个取整的方法 *****');
+        // 3. 取整
+        //  1. floor() floor 地板 向下取整 往最小取值
+        console.log(Math.floor(-1.1));
+        console.log(Math.floor(1.9));
+        //  2. ceil() ceil 天花板
+        console.log(Math.ceil(-1.1));
+        console.log(Math.ceil(1.9));
+        //  3. round() 四舍五入
+        //   四舍五入 其他数字都是四舍五入。但是 0.5特殊 它往大了取
+        console.log(Math.round(1.5)); // 往大取上2
+        console.log(Math.round(-1.5)); // 因为0.5是往大取所以是-1
+        console.log(Math.round(-1.9)); // 这个不是0.5 所经不四舍五入 -2
+    </script>
+</body>
+
+</html>
