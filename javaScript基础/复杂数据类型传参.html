@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数对象
+        function ComplexData(value) {
+            this.name = value;
+        }
+        // 创建函数
+        function fn(x) {
+            console.log('fn_1' + x.name);
+            // 更改x里地址指向的对象
+            x.name = '王二';
+            console.log('fn_2' + x.name);
+        }
+        // 创建构造函数
+        var uname = new ComplexData('张三');
+        console.log(uname.name);
+        // 调用函数
+        fn(uname); // 传入构造函数对象 传的是址
+        console.log(uname.name); // 因为是地址，所以函数里面更改的话也会更改外面的值
+    </script>
+</body>
+</html>
