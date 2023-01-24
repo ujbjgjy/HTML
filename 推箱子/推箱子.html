@@ -34,11 +34,13 @@
         }
 
         .map .wall {
-            background-color: grey;
+            background: url(./images/墙.png) no-repeat 0 0;
+            background-size: 100%;
         }
 
         .map .target {
-            background-color: red;
+            background: url(./images/篮球.png) no-repeat 0 0;
+            background-size: 100%;
         }
 
         .map .box {
@@ -46,7 +48,8 @@
         }
 
         .map .fig {
-            background-color: skyblue;
+            background: url(./images/ikun30.webp) no-repeat 0 0;
+            background-size: 100%;
         }
 
         .map .boxTarget {
@@ -54,7 +57,35 @@
         }
 
         .map .figTarget {
-            background-color: green;
+            background: url(./images/0.gif) no-repeat 0 0;
+            background-size: 100%;
+        }
+
+        .Next-level-bg {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+        }
+        .Next-level {
+            position: absolute;
+            left: 50%;
+            top: 200px;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 240px;
+            background-color: #fff4ce;
+            border: 2px solid #ffa502;
+            border-radius: 20px;
+            line-height: 200px;
+            text-align: center;
+        }
+        .Next-level .btn {
+            width: 150px;
+            height: 50px;
+            background-color: #fff;
+            cursor: pointer;
         }
     </style>
     <script src="./boxFunction.js"></script>
@@ -63,6 +94,11 @@
 
 <body>
     <div class="map">
+    </div>
+    <div class="Next-level-bg">
+        <div class="Next-level">
+            <button class="btn">下一关</button>
+        </div>
     </div>
 </body>
 
