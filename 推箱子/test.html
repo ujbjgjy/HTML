@@ -9,19 +9,12 @@
 </head>
 
 <body>
-    <audio src="F:\音频\小情歌-豆花儿.mp3" autoplay="autoplay" loop="loop"></audio>
-    <button>播放</button>
+    <button>1213</button>
     <script>
         var btn = document.querySelector('button');
-        btn.onclick = function () {
-            var music = new Audio('F:\\音频\\小情歌-豆花儿.mp3');
-            music.play();
+        document.onkeydown = function (e) {
+            console.log(e.key);
         }
-        function test() {
-            var mp3 = document.querySelector('audio');
-            mp3.play();
-        }
-        setInterval(test, 1000);
     </script>
 </body>
 

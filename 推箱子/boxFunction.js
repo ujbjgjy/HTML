@@ -7,9 +7,9 @@ function createMap(map, info, arrMap) {
     for (var i = 0; i < col; i++) {
         for (var j = 0; j < row; j++) {
             var div = document.createElement('div');
-            div.setAttribute('index', arrMap[i][j]);
+            div.setAttribute('index', arrMap[info.level][i][j]);
             map.appendChild(div);
-            switch (arrMap[i][j]) {
+            switch (arrMap[info.level][i][j]) {
                 case info.cle:
                     div.className = 'cle';
                     break;
@@ -21,7 +21,6 @@ function createMap(map, info, arrMap) {
                     break;
                 case info.box:
                     div.className = 'box';
-                    div.innerHTML = '箱子';
                     info.boxNum++;
                     break;
                 case info.fig:
@@ -31,7 +30,6 @@ function createMap(map, info, arrMap) {
                     break;
                 case info.boxTarget:
                     div.className = 'boxTarget';
-                    div.innerHTML = 'b和t';
                     break;
                 case info.figTarget:
                     div.className = 'figTarget';
@@ -47,11 +45,57 @@ function createMap(map, info, arrMap) {
 }
 
 // 获取地图信息
-function getMapInfo(map, arrMap) {
+function getMapInfo(map, arrMap, info) {
     var arrEle = map.querySelectorAll('div');
     for (var i = 0; i < col; i++) {
         for (var j = 0; j < row; j++) {
-            arrMap[i][j] = parseInt(arrEle[i * row + j].getAttribute('index'));
+            arrMap[info.level][i][j] = parseInt(arrEle[i * row + j].getAttribute('index'));
+        }
+    }
+}
+
+// 播放音频
+function playAudio(direction, info, arrMap) {
+    var m_boxTarget = new Audio('./audio/boxTarget.mp3');
+    if (direction == 'ArrowLeft') {
+        if (info.y < 2) return -1;
+        if (arrMap[info.level][info.x][info.y - 2] == info.boxTarget && arrMap[info.level][info.x][info.y - 1] != info.cle) {
+            m_boxTarget.currentTime = 0;
+            m_boxTarget.play();
+        }
+    }
+    else if (direction == 'ArrowRight') {
+        if (info.y + 2 >= row) return -1;
+        if (arrMap[info.level][info.x][info.y + 2] == info.boxTarget && arrMap[info.level][info.x][info.y + 1] != info.cle) {
+            m_boxTarget.currentTime = 0;
+            m_boxTarget.play();
+        }
+    }
+    else if (direction == 'ArrowUp') {
+        if (info.x < 2) return -1;
+        if (arrMap[info.level][info.x - 2][info.y] == info.boxTarget && arrMap[info.level][info.x - 1][info.y] != info.cle) {
+            m_boxTarget.currentTime = 0;
+            m_boxTarget.play();
+        }
+    }
+    else if (direction == 'ArrowDown') {
+        if (info.x + 2 >= row) return -1;
+        if (arrMap[info.level][info.x + 2][info.y] == info.boxTarget && arrMap[info.level][info.x + 1][info.y] != info.cle) {
+            m_boxTarget.currentTime = 0;
+            m_boxTarget.play();
+        }
+    }
+}
+
+// 复制数组
+function copyArray(arr1, arr2) {
+    for(var k = 0; k < arr2.length; k++) {
+        arr1[k] = new Array();
+        for (var i = 0; i < arr2[0].length; i++) {
+            arr1[k][i] = new Array();
+            for (var j = 0; j < arr2[0][0].length; j++) {
+                arr1[k][i][j] = arr2[k][i][j];
+            }
         }
     }
 }
