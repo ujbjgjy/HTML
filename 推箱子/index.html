@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推箱子</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .tips {
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            width: 200px;
+            height: 200px; 
+            padding: 5px;
+            margin-left: -460px;
+            background: linear-gradient(135deg,#ffe985,#fa742b);
+            border: 5px solid #fff4ce;
+            line-height: 2;
+            font-weight: 600;
+            font-size: 16px;
+            color: #9142fb;
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+
+        .map {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+        }
+
+        .map div {
+            float: left;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .map .cle {
+            background-color: #fff;
+        }
+
+        .map .wall {
+            background: url(./images/wall.png) no-repeat 0 0;
+            background-size: 100%;
+        }
+
+        .map .target {
+            background: url(./images/target.png) no-repeat 0 0;
+            background-size: 100%;
+        }
+
+        .map .box {
+            background: url(./images/box.png) no-repeat 0 0;
+            background-size: 100%;
+        }
+
+        .map .fig {
+            background: url(./images/fig.gif) no-repeat 0 0;
+            background-size: 100%;
+        }
+
+        .map .boxTarget {
+            background: url(./images/boxTarget.png) no-repeat 0 0;
+            background-size: 100%;
+        }
+
+        .map .figTarget {
+            background: url(./images/figTarget.gif) no-repeat 0 0;
+            background-size: 100%;
+        }
+
+        .Next-level-bg {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .Next-level {
+            position: absolute;
+            left: 50%;
+            top: 200px;
+            transform: translateX(-50%);
+            width: 240px;
+            height: 260px;
+            background-color: #fff4ce;
+            border: 2px solid #ffa502;
+            border-radius: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+        }
+
+        .Next-level h1 {
+            margin-bottom: 80px;
+        }
+
+        .Next-level .btn {
+            width: 100px;
+            height: 30px;
+            background: linear-gradient(45deg, #fff720, #3cd500);
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+            color: #fff;
+            font-weight: 600;
+        }
+    </style>
+    <script src="./boxFunction.js"></script>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <div class="map">
+    </div>
+    <div class="Next-level-bg">
+        <div class="Next-level">
+            <h1>通关成功!</h1>
+            <button class="btn">重新开始</button>
+        </div>
+    </div>
+    <div class="tips">
+        按下方向键或w,s,d,a来进行移动，esc来重置关卡
+    </div>
+</body>
+
+</html>
