@@ -67,5 +67,4 @@ window.addEventListener('load', function () {
         num++;
         animaTion(container, -num * focus.offsetWidth);
     }, 5000);
-
 })
