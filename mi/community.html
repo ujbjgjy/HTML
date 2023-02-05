@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/base.css">
     <!-- 引入此页面样式文件 -->
     <link rel="stylesheet" href="css/community.css">
+    <!-- 引入js -->
+    <script src="./js/community.js"></script>
 </head>
 
 <body>
@@ -31,10 +33,14 @@
     <div class="community-main clearfix" style="margin-top: 90px;">
         <div class="left-box">
             <div class="main-poster-wrap">
+                <!-- 轮播图 -->
                 <div class="main-poster">
                     <img src="upload/community-poster_2.jpg" alt="">
                     <img src="upload/community-poster_1.jpg" alt="">
                 </div>
+                <!-- 小圆点 -->
+                <ul class="main-poster-dot">
+                </ul>
             </div>
             <div class="left-box-content">
                 <div class="l-item-wrap">
@@ -206,12 +212,12 @@
                     <div class="more"><a href="#"><img src="images/刷新.svg" alt=""></a>换一批</div>
                 </div>
                 <div class="Listcard-list">
-                    <div class="Listcard-item"><span>1</span>小米磁吸无线充电宝上架：两种形态随手切换</div> 
-                    <div class="Listcard-item"><span>2</span>央视网《云顶对话》独家对话雷军：创业30年，如何不断穿越周期</div> 
-                    <div class="Listcard-item"><span>3</span>雷军：我办小米是为了影响全世界 而造车是被逼的</div> 
-                    <div class="Listcard-item"><span>4</span>小米投影仪mini上架：支持NFC一触投屏</div> 
-                    <div class="Listcard-item"><span>5</span>Redmi G Pro游戏本锐龙版屏幕升级:2.5K 240Hz专业电竞屏</div> 
-                    <div class="Listcard-item"><span>6</span>小米发布智能枕头：259元 可联动智能设备</div> 
+                    <div class="Listcard-item"><span>1</span>小米磁吸无线充电宝上架：两种形态随手切换</div>
+                    <div class="Listcard-item"><span>2</span>央视网《云顶对话》独家对话雷军：创业30年，如何不断穿越周期</div>
+                    <div class="Listcard-item"><span>3</span>雷军：我办小米是为了影响全世界 而造车是被逼的</div>
+                    <div class="Listcard-item"><span>4</span>小米投影仪mini上架：支持NFC一触投屏</div>
+                    <div class="Listcard-item"><span>5</span>Redmi G Pro游戏本锐龙版屏幕升级:2.5K 240Hz专业电竞屏</div>
+                    <div class="Listcard-item"><span>6</span>小米发布智能枕头：259元 可联动智能设备</div>
                 </div>
             </div>
             <div class="r-more-function">
@@ -294,7 +300,33 @@
             </div>
         </div>
     </div>
+    <div class="mifans-backup">
+        <div class="mifans-hover">回到顶部</div>
+    </div>
     <!-- 主体部分 end -->
+    <script>
+        var backup = document.querySelector('.mifans-backup');
+        var item = document.querySelector('.l-item-wrap');
+        itemTop = item.offsetTop;
+        document.addEventListener('scroll', function () {
+            // console.log(window.pageYOffset);
+            if (window.pageYOffset >= itemTop) {
+                backup.style.display = 'block';
+            }
+            else {
+                backup.style.display = 'none';
+            }
+        });
+        backup.addEventListener('click', function () {
+            var timer = setInterval(function () {
+                var num = 10;
+                if (document.documentElement.scrollTop == 0) window.clearInterval(timer);
+                var step = Math.ceil(document.documentElement.scrollTop / num);
+                document.documentElement.scrollTop -= step;
+                num--;
+            }, 10);
+        });
+    </script>
 </body>
 
 </html>
