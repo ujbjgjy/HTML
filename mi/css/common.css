@@ -176,8 +176,26 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
 }
 
-.search input:focus {
-    outline: #ff6a00 solid 1px;
+.search-text {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 54px;
+    width: 228px;
+    margin-top: -2px;
+    background-color: #fff;
+    border: 1px solid #ff6700;
+}
+
+.search-text p {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.search-text p:hover {
+    background-color: #fafafa;
 }
 
 /* nav 模块start */
@@ -280,52 +298,10 @@
 .main {
     position: relative;
     height: 670px;
-    background: url(../upload/foucus1.jpg) no-repeat;
+    background: url(../upload/foucus_1.jpg) no-repeat;
     background-size: 1226px 460px;
-    /* 动画名称 */
-    animation-name: dieout;
-    /* 持续时间 */
-    animation-duration: 20s;
-    /* 匀速运动 */
-    animation-timing-function: ease-out;
-    /* 播放在次数 */
-    animation-iteration-count: infinite;
-    /* infinite 表示永久 */
-}
-
-/* keyframes 关键帧 */
-@keyframes dieout {
-    25% {
-        background: url(../upload/foucus1.jpg) no-repeat;
-        background-size: 1226px 460px;
-    }
-
-    /* 切换图片 */
-    35% {
-        background: url(../upload/foucus2.jpg) no-repeat;
-        background-size: 1226px 460px;
-    }
-
-    60% {
-        background: url(../upload/foucus2.jpg) no-repeat;
-        background-size: 1226px 460px;
-    }
-
-    /* 切换图片 */
-    70% {
-        background: url(../upload/foucus3.jpg) no-repeat;
-        background-size: 1226px 460px;
-    }
-
-    95% {
-        background: url(../upload/foucus3.jpg) no-repeat;
-        background-size: 1226px 460px;
-    }
-
-    100% {
-        background: url(../upload/foucus1.jpg) no-repeat;
-        background-size: 1226px 460px;
-    }
+    transition: all 1s ease;
+    cursor: pointer;
 }
 
 /* 头部的两个箭头 */
@@ -373,11 +349,17 @@
     height: 10px;
     margin-left: 10px;
     border-radius: 50%;
-    border: 2px solid rgba(127, 127, 127, .5);
+    border: 2px solid #333;
+    background-color: #666;
+    opacity: .4;
 }
 
-.yuandian div:nth-child(odd) {
-    background-color: rgba(127, 127, 127, .8);
+.yuandian div:hover {
+    background-color: #fff;
+}
+
+.current {
+    background-color: #fff !important; 
 }
 
 /* 头部的两个箭头 */

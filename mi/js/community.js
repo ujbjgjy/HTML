@@ -37,7 +37,6 @@ window.addEventListener('load', function () {
             this.classList.add('current');
             num = this.getAttribute("index");
             animate(poster, -num * wrapWidth);
-            console.log(poster.style.left, num);
         });
     }
     // 轮播图
@@ -48,16 +47,23 @@ window.addEventListener('load', function () {
         if (num == poster.children.length - 1) {
             num = 0;
             poster.style.left = 0;
+            dots.children[num].classList.add('current');
         }
         num++;
         animate(poster, -num * wrapWidth);
+        console.log(dots.children.length);
+        for (var i = 0; i < dots.children.length; i++) {
+            dots.children[i].classList.remove('current');
+        }
+        if (num > 1) dots.children[0].classList.add('current');
+        else dots.children[num].classList.add('current');
     }
     var timer = setInterval(rotation, 5000);
-    // 鼠标悬停时停止轮播图
-    wrap.addEventListener('mouseenter', function () {
-        clearInterval(timer);
-    });
-    wrap.addEventListener('mouseleave', function () {
-        timer = setInterval(rotation, 5000);
-    });
+    // // 鼠标悬停时停止轮播图
+    // wrap.addEventListener('mouseenter', function () {
+    //     clearInterval(timer);
+    // });
+    // wrap.addEventListener('mouseleave', function () {
+    //     timer = setInterval(rotation, 2000);
+    // });
 })

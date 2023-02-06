@@ -51,7 +51,6 @@ window.addEventListener('load', function () {
     }
     this.setInterval(function () {
         if (num == container.children.length - 1) {
-            console.log(num);
             num = 0;
             container.style.left = 0;
         }
