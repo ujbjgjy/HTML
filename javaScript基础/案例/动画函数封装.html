@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+
+        .sliderbar {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            width: 65px;
+            height: 65px;
+            background-color: skyblue;
+            line-height: 65px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .con {
+            position: absolute;
+            left: 65px;
+            top: 0;
+            width: 165px;
+            height: 65px;
+            background-color: skyblue;
+            font-size: 18px;
+            z-index: -1;
+            transform: translateZ(-100px);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn800">800</button>
+    <button class="btn500">500</button>
+    <div class="sliderbar">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <div class="box"></div>
+    <script>
+        function animate(obj, target, callback) {
+            // 当某个元素不停的调用这个函数，这个元素会越来越快
+            // 解决方案：就是让元素只有一个定时器执行
+            // 清除之前的定时器
+            clearInterval(obj.timer);
+            // 不要用var，来给定时器标识符，因为var会创建新的空间
+            // 在元素里面创建属性，
+            obj.timer = setInterval(function () {
+                // 定时器结束条件
+                if (obj.offsetLeft == target) {
+                    // 下次不在执行定时器
+                    clearInterval(obj.timer);
+                    callback() && callback();
+                }
+                // 修改定位的left值时行移动
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                obj.style.left = obj.offsetLeft + step + 'px';
+                console.log(2, step);
+            }, 15);
+        }
+        var box = document.querySelector('.box');
+        document.querySelectorAll('button')[0].addEventListener('click', function () {
+            animate(box, 800, function () {
+                box.style.backgroundColor = 'red';
+            });
+        });
+        document.querySelectorAll('button')[1].addEventListener('click', function () {
+            animate(box, 500, function () {
+                ;
+            });
+        });
+        // mouse 鼠标
+        // enter：enter/leave：离开
+        var sliderbar = document.querySelector('.sliderbar');
+        var con = document.querySelector('.con');
+        sliderbar.addEventListener('mouseenter', function () {
+            animate(con, -165, function () {
+                sliderbar.children[0].innerHTML = '→';
+            });
+        });
+        sliderbar.addEventListener('mouseleave', function () {
+            animate(con, 165, function () {
+                sliderbar.children[0].innerHTML = '←';
+            });
+        });
+    </script>
+</body>
+
+</html>

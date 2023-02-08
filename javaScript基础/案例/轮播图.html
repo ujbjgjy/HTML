@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .focus {
+            position: absolute;
+            left: 50%;
+            top: 100px;
+            width: 960px;
+            height: 540px;
+            margin-left: -480px;
+        }
+
+        .focus ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 600%;
+            height: 540px;
+        }
+
+        .focus li {
+            float: left;
+            width: calc(100% / 6);
+            height: 540px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .arrow-l,
+        .arrow-r {
+            display: none;
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 60px;
+            margin-top: -30px;
+            background-color: rgba(255, 255, 255, .1);
+            z-index: 1;
+            line-height: 60px;
+            text-align: center;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        .arrow-l {
+            left: 10px;
+        }
+
+        .arrow-r {
+            right: 10px;
+        }
+
+        .dots {
+            position: absolute;
+            left: 50px;
+            bottom: 20px;
+            z-index: 1;
+        }
+
+        .dots .dot {
+            float: left;
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            cursor: pointer;
+        }
+
+        .dots .current {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="focus">
+        <a href="javascript:;" class="arrow-l">&lt;</a>
+        <a href="javascript:;" class="arrow-r">&gt;</a>
+        <div class="dots"></div>
+        <ul>
+            <li>
+                <img src="http://rp5i9wyrx.hn-bkt.clouddn.com/wallpaper_1.jpg" />
+            </li>
+            <li>
+                <img src="http://rp5i9wyrx.hn-bkt.clouddn.com/wallpaper_2.jpg" />
+            </li>
+            <li>
+                <img src="http://rp5i9wyrx.hn-bkt.clouddn.com/wallpaper_3.jpg" />
+            </li>
+            <li>
+                <img src="http://rp5i9wyrx.hn-bkt.clouddn.com/wallpaper_4.jpg" />
+            </li>
+            <li>
+                <img src="http://rp5i9wyrx.hn-bkt.clouddn.com/wallpaper_5.jpg" />
+            </li>
+        </ul>
+    </div>
+    <script>
+        // 动画函数
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer); // 清除之前的定时器
+            obj.timer = setInterval(function () {
+                // 停止条件 必须是等于因为，如果是往左走就是负数
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    // 如果为假不会执行，为真会执行右边的
+                    callback && callback();
+                }
+                // 剩余的距离(目标-当前走距离)/10 = 步长
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15);
+        }
+        // 获取元素
+        var arrow_l = document.querySelector('.arrow-l');
+        var arrow_r = document.querySelector('.arrow-r');
+        var focus = document.querySelector('.focus');
+        // 声明变量
+        var focusWidth = focus.offsetWidth;
+        var flag = true;
+        // mouse: 鼠标；enter: 进入 leave：离开
+        focus.addEventListener('mouseenter', function () {
+            arrow_l.style.display = 'block';
+            arrow_r.style.display = 'block';
+            clearInterval(timer);
+        });
+        focus.addEventListener('mouseleave', function () {
+            arrow_l.style.display = 'none';
+            arrow_r.style.display = 'none';
+            timer = setInterval(function () {
+                // 手动调用事件
+                arrow_r.click();
+            }, 2000);
+        });
+        // 动态生成小圆点
+        //  获取小圆点的父级,有多少图片
+        var ul = focus.querySelector('ul');
+        var dots = document.querySelector('.dots');
+        for (var i = 0; i < ul.children.length; i++) {
+            // 创建元素
+            var dot = document.createElement('div');
+            // 设置元素属性
+            dot.setAttribute('index', i);
+            // 添加类名
+            dot.classList.add('dot');
+            // dots 元素里面追加子元素li
+            dots.appendChild(dot);
+            // 排他思想
+            dot.addEventListener('click', function () {
+                for (var i = 0; i < dots.children.length; i++) {
+                    dots.children[i].classList.remove('current');
+                }
+                this.classList.add('current');
+                // 移动图片
+                var index = this.getAttribute('index');
+                num = index;
+                animate(ul, -index * focusWidth);
+            });
+        }
+        dots.children[0].classList.add('current');
+        // 无缝滚动
+        var num = 0;
+        //  拷贝第一张图片
+        var firstNode = ul.children[0].cloneNode(true);
+        ul.appendChild(firstNode);
+        arrow_r.addEventListener('click', function () {
+            if (flag) {
+                flag = false;
+                // 当移动时等于拷贝的那一张，瞬速移动到第一张，然后在移动
+                if (num == ul.children.length - 1) {
+                    num = 0;
+                    ul.style.left = 0;
+                }
+                num++; // 每点击的时候移动一张
+                animate(ul, -num * focusWidth, function () {
+                    flag = true;
+                });
+                // 图片移动小圆点也变化
+                for (var i = 0; i < dots.children.length; i++) {
+                    dots.children[i].classList.remove('current');
+                }
+                dots.children[num % dots.children.length].classList.add('current');
+            }
+        });
+        arrow_l.addEventListener('click', function () {
+            if (flag) {
+                flag = false;
+                // 当移动时等于第一张，瞬速移动到拷贝的那一张，然后在移动
+                if (num == 0) {
+                    num = ul.children.length - 1;
+                    ul.style.left = focusWidth * -num + 'px';
+                }
+                num--; // 每点击的时候移动一张
+                animate(ul, -num * focusWidth, function () {
+                    flag = true;
+                });
+                // 图片移动小圆点也变化
+                for (var i = 0; i < dots.children.length; i++) {
+                    dots.children[i].classList.remove('current');
+                }
+                dots.children[num % dots.children.length].classList.add('current');
+            }
+        });
+        var timer = setInterval(function () {
+            // 手动调用事件
+            arrow_r.click();
+        }, 2000);
+    </script>
+</body>
+
+</html>
