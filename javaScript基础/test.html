@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: saddlebrown;
+        }
+    </style>
 </head>
+
 <body>
+    <div></div>
     <script>
-        console.log('我是大帅b\'');
+        var arr = [1, 2, 3, 4, 5, 6, 9, 87, 85, 64, 2, 36];
+        var newArr = [];
+        var j = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr, arr.length);
     </script>
 </body>
+
 </html>
