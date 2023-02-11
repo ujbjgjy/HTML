@@ -18,15 +18,24 @@
 <body>
     <div></div>
     <script>
-        var arr = [1, 2, 3, 4, 5, 6, 9, 87, 85, 64, 2, 36];
-        var newArr = [];
-        var j = 0;
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] > 10) {
-                newArr[newArr.length] = arr[i];
+        var uname = {
+            name: 'ujbj',
+            age: 20,
+            sayHi: function () {
+                console.log('hello!');
             }
-        }
-        console.log(newArr, arr.length);
+        };
+        uname.sayHi();
+        var dog = {
+            name: '可可',
+            type: '阿拉斯加犬',
+            age: 5,
+            color: '棕红色',
+            skill: function () {
+                console.log('bark');
+                console.log('showFilm');
+            }
+        };
     </script>
 </body>
 

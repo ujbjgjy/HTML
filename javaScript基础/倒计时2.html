@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function countDown(inputDate) {
+            // 输入的时间-当前时间 得到剩余的秒
+            var date = (inputDate - Date.now()) / 1000;
+            // 只求剩余的时分秒
+            var h = parseInt(date / 60 / 60 % 24); // 去除天，余下小时
+            h = h > 0 ? h : '0' + h;
+            var m = parseInt(date / 60 % 60); // 去除小时，余下分
+            m = m > 0 ? m : '0' + m;
+            var s = parseInt(date % 60); // 去除秒，余下秒
+            s = s > 0 ? s : '0' + s;
+            console.log(h + '时' + m + '分' + s + '秒');
+            document.body.innerHTML = h + '时' + m + '分' + s + '秒';
+        }
+        // 用户输入的时间
+        var inputDate = +new Date('2023-2-11 15:50');
+        countDown(inputDate);
+        setInterval(function () {
+            countDown(inputDate);
+        }, 1000);
+    </script>
+</body>
+
+</html>
