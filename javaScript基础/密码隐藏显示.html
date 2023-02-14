@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 320px;
+            height: 200px;
+            margin: 100px auto;
+        }
+        input {
+            width: 300px;
+            height: 50px;
+            padding-left: 20px;
+            border: 0;
+            border-bottom: 1px solid #333;
+            outline: none;
+            font-size: 24px;
+        }
+        label {
+            position: absolute;
+            right: 2px;
+            top: 0;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <label for="">
+            <img src="../练习/images/闭眼.png" alt="" id="ele">
+        </label>
+        <input type="password" name="" id="pwd">
+    </div>
+    <script>
+        var ele = document.querySelector('#ele');
+        var input = document.querySelector('#pwd');
+        var flag = true;
+        ele.onclick = function () {
+            if (flag) {
+                input.type = 'text';
+                ele.src = '../练习/images/睁眼.png'
+                flag = false;
+            }
+            else {
+                input.type = 'password';
+                ele.src = '../练习/images/闭眼.png';
+                flag = true;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 224px;
+            margin: 100px auto;
+            cursor: pointer;
+        }
+        i {
+            font-style: normal;
+            font-size: 24px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            vertical-align: top;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <i>X</i> <img src="../练习/images/二维码.png" alt="">
+    </div>
+    <script>
+        var close = document.querySelector('i');
+        var img = document.querySelector('.box');
+        close.onclick = function () {
+            img.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
