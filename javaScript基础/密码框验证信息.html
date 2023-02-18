@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            padding-left: 20px;
+            background: url(../练习/images/mess.png) no-repeat;
+            color: skyblue;
+            font-size: 12px;
+        }
+
+        .wrong {
+            background: url(../练习/images/wrong.png) no-repeat;
+            color: red;
+        }
+        .right {
+            background: url(../练习/images/right.png) no-repeat;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="password" name="" id="">
+    <span>请输入6~16位密码</span>
+    <script>
+        var input = document.querySelector('input');
+        var span = document.querySelector('span');
+        input.onblur = function () {
+            if (input.value.length < 6 || input.value.length > 16) {
+                span.className = 'wrong';
+                span.innerHTML = '输入错误';
+            }
+            else {
+                span.className = 'right';
+                span.innerHTML = '输入正确';
+            }
+        }
+    </script>
+</body>
+
+</html>

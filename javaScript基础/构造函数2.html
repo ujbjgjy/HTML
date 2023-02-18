@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Fn(uname, type, sex, test) {
+            this.name = uname;
+            this.type = type;
+            this.sex = sex;
+            this.skill = function (sk) {
+                console.log(sk);
+            }
+            this.test = test;
+        }
+        var num = new Fn('元歌', '刺客', '男', function () {
+            console.log('hehe');
+        });
+        console.log(num.name);
+        console.log(num.type);
+        console.log(num.sex);
+        num.skill('十字斩');
+        num.test();
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr,
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" class="cbAll">
+                </th>
+                <th>
+                    商品
+                </th>
+                <th>
+                    价钱
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" class="ipts">
+                </td>
+                <td>
+                    香蕉
+                </td>
+                <td>
+                    10/斤
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="ipts">
+                </td>
+                <td>
+                    香蕉
+                </td>
+                <td>
+                    10/斤
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="ipts">
+                </td>
+                <td>
+                    香蕉
+                </td>
+                <td>
+                    10/斤
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="ipts">
+                </td>
+                <td>
+                    香蕉
+                </td>
+                <td>
+                    10/斤
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var cbAll = document.querySelector('.cbAll');
+        var ipts = document.querySelectorAll('.ipts');
+        // 1. 全选按键
+        cbAll.onclick = function () {
+            for (var i = 0; i < ipts.length; i++) {
+                ipts[i].checked = this.checked;
+            }
+        }
+        // 2. 单选按键
+        for (var i = 0; i < ipts.length; i++) {
+            ipts[i].onclick = function () {
+                // 假如都为真的
+                var flag = true;
+                for (var i = 0; i < ipts.length; i++) {
+                    // 当有一个为假
+                    if (!ipts[i].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

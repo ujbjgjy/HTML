@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var k = 7;
+        var left = 0;
+        var right = arr.length;
+        while(left <= right) {
+            var mid = parseInt((left + right) / 2);
+            if (arr[mid] < k) { // mid 代表左值中最大的数
+                // 如果left最大的值都小于的话说明值在右边
+                // 去除左边的 
+                left = mid + 1;
+            } 
+            else if (arr[mid] > k) { // mid 代表右值中最小的数
+                // 如果right最小的值是大于的话说明值在左边
+                right = mid - 1;
+            }
+            else {
+                console.log('找到了，下标是' + mid);
+                break;
+            }
+        }
+        if (left > right) {
+            console.log('没有这个值');
+        }
+        /*
+        1. 如果只有2个数
+            3 4
+        mid: (3+4)/2=3     
+        left: 3
+        right: 4
+        3 > 4 mid+1==4
+        while(4<=4)
+        */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+        function bubbling(arr) {
+            console.log(arr);
+            for (var i = 0; i < arr.length - 1; i++) {
+                var flag = true;
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                        flag = false;
+                    }
+                }
+                if (flag) return arr;
+            }
+            console.log(arr);
+            return arr;
+        }
+        arr = bubbling(arr);
+        console.log(arr);
+        (function main(){
+            console.log(123);
+        }());
+        {
+            var num = 0;
+        }
+        console.log(num);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            position: absolute;
+            left: 50%;
+            top: 100px;
+            transform: translateX(-50%);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: calc(4 * 192px);
+            cursor: pointer;
+            opacity: .6;
+        }
+
+        li {
+            overflow: hidden;
+            float: left;
+            width: 192px;
+            height: 108px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../练习/images/壁纸_1.jpg) no-repeat;
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <img src="../练习/images/壁纸_1.jpg" alt="">
+        </li>
+        <li>
+            <img src="../练习/images/壁纸_2.jpg" alt="">
+        </li>
+        <li>
+            <img src="../练习/images/壁纸_3.jpg" alt="">
+        </li>
+        <li>
+            <img src="../练习/images/壁纸_4.jpg" alt="">
+        </li>
+    </ul>
+    <script>
+        var imgs = document.querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].addEventListener('click', function () {
+                document.body.style.backgroundImage = 'url('+ this.src +')';
+            });
+        }
+    </script>
+</body>
+
+</html>
