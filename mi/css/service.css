@@ -10,6 +10,7 @@
     border: 1px solid #ff6a00;
     background-color: #fff;
 }
+
 .nav .nav_dt:first-child:hover .nav_tab_list {
     display: block;
 }
@@ -23,6 +24,7 @@
     font-size: 14px;
     color: #424242;
 }
+
 .nav_tab_list .nav_list_title::after {
     content: '\e908';
     position: absolute;
@@ -30,9 +32,11 @@
     font-family: 'icomoon';
     color: #e0e0e0;
 }
+
 .nav_tab_list .nav_list_title:hover {
     background-color: #ff6a00;
 }
+
 .nav_title_dd {
     display: none;
     position: absolute;
@@ -48,9 +52,11 @@
     background-color: #fff;
     box-shadow: 5px 0 10px rgba(0, 0, 0, .3);
 }
+
 .nav_title_dd .col {
     float: left;
 }
+
 .nav_title_dd .col>li {
     width: 248px;
     height: 76.4px;
@@ -58,6 +64,7 @@
     background-color: #fff;
     line-height: 76px;
 }
+
 .nav_title_dd a {
     margin-left: 10px;
     font-size: 14px;
@@ -85,6 +92,31 @@
     display: block;
 }
 
+/* 通知部分 */
+.notify {
+    width: 100%;
+    height: 96px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.notify>img {
+    position: relative;
+    height: 96px;
+}
+
+.notify .close-button {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: rgba(0, 0, 0, .25);
+}
+
 /* 服务中心内容部分 start */
 .service_content_bg {
     background-color: #f5f5f5;
@@ -95,9 +127,11 @@
     line-height: 40px;
     color: #757575;
 }
+
 .breadcrumbs span {
     margin: 0 6px;
 }
+
 .breadcrumbs a:hover {
     color: #ff6700;
 }
@@ -109,6 +143,7 @@
     height: 250px;
     cursor: pointer;
 }
+
 .promotion .container {
     position: absolute;
     left: 0;
@@ -116,6 +151,7 @@
     width: 600%;
     height: 250px;
 }
+
 .promotion .container img {
     float: left;
     width: 1226px;
@@ -138,9 +174,11 @@
     border: 2px solid rgba(0, 0, 0, .2);
     border-radius: 50%;
 }
+
 .yuan_bg {
     background-color: #fff !important;
 }
+
 /* 楼层区 */
 .service_box_hd {
     height: 106px;
@@ -150,6 +188,7 @@
     text-align: center;
     line-height: 106px;
 }
+
 .service_box_bd ul {
     /* 设为1240宽度防止浮动的盒起一行 */
     width: 1240px;
@@ -163,23 +202,27 @@
     background-color: #fff;
     transition: all .8s;
 }
+
 .service_box_bd ul>li a {
     display: block;
     width: 296px;
     height: 277px;
     text-align: center;
 }
+
 .zizhu ul>li a h3 {
     height: 46px;
     line-height: 46px;
     font-size: 18px;
     color: #000;
 }
+
 .zizhu ul>li a span {
     line-height: 14px;
     font: 14px;
     color: #757575;
 }
+
 .zizhu img {
     margin-top: 76px;
 }
@@ -193,13 +236,16 @@
 .service_box .service_box_bd ul>li a:hover span {
     color: #ff6700;
 }
+
 .remen .img {
     height: 180px;
     margin: 35px 0 13px;
 }
+
 .remen .img img {
     width: 180px;
 }
+
 .remen span {
     display: block;
     height: 28px;
@@ -207,27 +253,32 @@
     font-size: 16px;
     color: #666;
 }
+
 .kefu .p_content {
     height: 165px;
     padding-top: 116px;
     background-color: #fff;
 }
+
 .kefu .p_content span {
     display: inline-block;
     margin-left: 20px;
     font-size: 18px;
     color: #000;
 }
+
 .kefu p.tip {
     height: 42px;
     margin: 50px 0 14px;
     font-size: 14px;
 }
+
 /* 弹出的微信图标 */
 .kefu ul>li:nth-child(3),
 .kefu ul>li:nth-child(4) {
     position: relative;
 }
+
 .kefu ul>li:nth-child(3)::after,
 .kefu ul>li:nth-child(4)::after {
     content: '';
@@ -240,15 +291,18 @@
     background: #fff url(../images/二维码.png) no-repeat center center;
     background-size: 140px;
 }
+
 .kefu ul>li:nth-child(3):hover::after,
 .kefu ul>li:nth-child(4):hover::after {
     display: block;
 }
+
 .shouhou .service_box_left {
     float: left;
     width: 614px;
     height: 360px;
 }
+
 .shouhou .service_box_right {
     float: right;
     width: 612px;
@@ -256,31 +310,37 @@
     background-color: #fff;
     text-align: center;
 }
+
 .shouhou .service_box_right p {
     height: 30px;
     margin: 64px 0 15px;
     font-size: 20px;
     color: #000;
-} 
+}
+
 .shouhou .service_box_right span {
     font-size: 16px;
     color: #000;
 }
+
 .shouhou .service_box_right .icon_wrap {
     width: 500px;
     height: 63px;
     margin: 30px 56px 60px;
 }
+
 .shouhou .service_box_right .icon_wrap dl {
     float: left;
     width: 125px;
     height: 63px;
 }
+
 .shouhou .service_box_right .icon_wrap dd {
     height: 45px;
     padding-top: 10px;
     text-align: center;
 }
+
 .shouhou .service_box_right .icon_wrap dt {
     font-size: 14px;
     color: #333;
@@ -292,8 +352,9 @@
     margin: 15px 0;
     font-size: 16px;
     color: #b0b0b0;
-    
+
 }
+
 .shouhou .service_box_right .btn:hover {
     color: #ff6700;
 }
@@ -304,11 +365,13 @@
     margin: 50px auto;
     background-color: pink;
 }
+
 .service_search input {
     width: 594px;
     height: 50px;
     text-indent: 2em;
 }
+
 .service_search .search_btn {
     display: block;
     float: right;
@@ -321,19 +384,23 @@
     line-height: 50px;
     color: #616161;
 }
+
 .service_search .search_btn:hover {
     background-color: #ff6700;
     color: #fff;
 }
+
 .wenti_content {
     height: 290px;
     margin-bottom: 30px;
     background-color: #fff;
 }
+
 .wenti_tab_list {
     height: 67px;
     border-bottom: 1px solid #f5f5f5;
 }
+
 .wenti_tab_list li {
     float: left;
     width: 175px;
@@ -343,17 +410,21 @@
     font-size: 18px;
     color: #333;
 }
-.wenti_tab_list .style_wenti_tab_list {
+
+.wenti_tab_list .wenti_current {
     background-color: #ff6700;
     color: #fff;
 }
+
 .wenti_tab_content {
     padding-top: 50px;
     background-color: #fff;
 }
+
 .wenti_tab_content ul>li {
     float: left;
-    padding-left: 60px;;
+    padding-left: 60px;
+    ;
 }
 
 .wenti_tab_content ul>li a {
@@ -365,12 +436,15 @@
     font-size: 16px;
     color: #000;
 }
+
 .wenti_tab_content ul>li a:hover {
     color: #ff6700;
 }
+
 .wenti_tab_content ul>li a:hover::before {
     background-color: #ff6700;
 }
+
 .wenti_tab_content ul>li a::before {
     content: '';
     position: absolute;
@@ -379,6 +453,11 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, .3);
 }
+
+.wenti_tab_content .wenti_tab_itme {
+    display: none;
+}
+
 /* 服务中心内容部分 end */
