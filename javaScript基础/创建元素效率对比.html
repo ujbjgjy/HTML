@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>div {
+            float: left;
+            margin-right: 20px;
+        }
+
+        body>div>div {
+            width: 200px;
+            height: 2px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inner-str"></div>
+    <div class="create"></div>
+    <div class="inner-arr"></div>
+    <script>
+        // 1. 使用innerHTML字符串拼接的方式创建
+        function innerStr() {
+            var d1 = +new Date();
+            for (var i = 0; i < 1000; i++) {
+                document.body.children[0].innerHTML += '<div style="border-color: red;"></div>';
+            }
+            var d2 = +new Date();
+            console.log('innerStr:' + (d2 - d1));
+        }
+        // 2. 使createElement创建
+        function create() {
+            var d1 = +new Date();
+            for (var i = 0; i < 1000; i++) {
+                var div = document.createElement('div');
+                div.style.borderColor = 'skyblue';
+                document.body.children[1].appendChild(div);
+            }
+            var d2 = +new Date();
+            console.log('creat:' + (d2 - d1));
+        }
+        // 3.使用innerHTML数组的方法创建
+        function innerArr() {
+            var d1 = +new Date();
+            var arr = [];
+            for (var i = 0; i < 1000; i++) {
+                arr.push('<div style="border-color: green;"></div>');
+            }
+            document.body.children[2].innerHTML = arr.join('');
+            var d2 = +new Date();
+            console.log('innerArr:' + (d2 - d1));
+        }
+        innerStr(); // innerHTML使用字符串拼接的方式创建
+        create(); // 使用createElement的方式创建
+        innerArr(); // innerHTML使用数组转字符串的方式创建
+    </script>
+</body>
+
+</html>

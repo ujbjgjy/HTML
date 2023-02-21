@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            display: none;
+            position: relative;
+            width: 170px;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 20px;
+            border: 1px solid #aaa;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+            font-size: 20px;
+        }
+
+        .con::before {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 20px;
+            border: 10px solid transparent;
+            border-top-color: #ffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con"></div>
+        <input type="text" placeholder="请输入要搜索的">
+    </div>
+    <script>
+        var input = document.querySelector('input');
+        var con = document.querySelector('.con');
+        // 1. 如果在input输入文字，同时也要放con
+        //  (1) 只要我按下按键代表我要输入内容，把input里面输入的内容放入con里
+        input.addEventListener('keyup', function (e) {
+            if (this.value == '') {
+                con.style.display = 'none';
+            }
+            else {
+                con.style.display = 'block';
+                con.innerHTML = this.value;
+            }
+        });
+        // 2. 当获取/失去焦点时，显示/隐藏
+        input.addEventListener('focus', function () {
+            // 如果有值，就显示
+            if (input.value !== '') {
+                con.style.display = 'block';
+            }
+
+        });
+        input.addEventListener('blur', function () {
+            con.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 500px;
+            height: 500px;
+            background-color:skyblue;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+     <div class="father">
+        <div class="son"></div>
+     </div>
+     <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        // document.onclick = function () {
+        //     alert('document');
+        // }
+        // father.onclick = function () {
+        //     alert('father');
+        // }
+        // son.onclick = function () {
+        //     alert('son');
+        // }
+        document.addEventListener('click', function () {
+            alert('docment');
+        });
+        father.addEventListener('click', function () {
+            alert('father');
+        });
+        son.addEventListener('click', function (e) {
+            alert('son');
+            e.stopPropagation();
+        });
+     </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" name="" id=""> <button>发送</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            // 当点击时禁止button按钮，并开启定时器倒计时
+            btn.disabled = true;
+            var num = 10;
+            var timer = setInterval(function () {
+                if (!num) {
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                }
+                else {
+                    btn.innerHTML = '剩余' + num + '秒';
+                    console.log(num);
+                    num--;
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

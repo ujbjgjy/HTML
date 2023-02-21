@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: aqua;
+        }
+
+        tr {
+            height: 35px;
+        }
+
+        tr,
+        th,
+        td {
+            border: 1px solid #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>名字</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>地址</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var datas = [
+            {
+                name: '张三',
+                sex: '男',
+                age: 29,
+                address: '上海'
+            },
+            {
+                name: '熊大',
+                sex: '男',
+                age: 12,
+                address: '狗熊岭'
+            },
+            {
+                name: '熊二',
+                sex: '男',
+                age: 11,
+                address: '狗熊岭'
+            },
+            {
+                name: '光头强',
+                sex: '男',
+                age: 34,
+                address: '团结屯'
+            },
+            {
+                name: '高启强',
+                sex: '男',
+                age: 36,
+                address: '京海'
+            },
+            {
+                name: '铁锤',
+                sex: '女',
+                age: 23,
+                address: '山东'
+            }
+        ];
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            for (var k in datas[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
+            }
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">删除</a>';
+            td.children[0].addEventListener('click', function () {
+                tbody.removeChild(this.parentNode.parentNode);
+            });
+            tr.appendChild(td);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: none;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/git图片/狐狸跳舞.gif" width="150px">
+    <script>
+        // 1. 我们在文档里面移动鼠标，所以要给文档加事件documet
+        // 2. mousemove 事件移动鼠标指针就会触发
+        var img = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            img.style.left = e.pageX - 75 + 'px';
+            img.style.top = e.pageY - 50 + 'px';
+        });
+    </script>
+</body>
+
+</html>

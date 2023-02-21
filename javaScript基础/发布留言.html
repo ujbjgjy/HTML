@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            resize: none;
+            outline: none;
+            vertical-align: bottom;
+        }
+
+        ul {
+            width: 200px;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            width: 200px;
+            background-color: skyblue;
+            padding: 5px 0;
+            margin: 10px 0;
+            color: red;
+        }
+
+        li a {
+            float: right;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea cols="30" rows="10"></textarea> <button>发布</button>
+    <ul></ul>
+    <script>
+        var text = document.querySelector('textarea');
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+        btn.addEventListener('click', function () {
+            if (text.value) {
+                var li = document.createElement('li');
+                li.innerHTML = text.value + '<a href="javascript:void(0)">删除         </a>';
+                text.value = '';
+                li.children[0].addEventListener('click', function () {
+                    ul.removeChild(this.parentNode);
+                });
+                ul.insertBefore(li, ul.children[0]);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
