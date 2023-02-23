@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 包含min 不包含max
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        var randomNum = getRandom(1, 100 + 1);
+        alert('随机值为:' + randomNum);
+        var count = 5;
+        while(count--) {
+            var inputNum = prompt('请输入1~100以内的数,包含1和100,只有'+ (count + 1) +'次机会');
+            if (inputNum < randomNum) {
+                alert('small');
+            }
+            else if (inputNum > randomNum) {
+                alert('big');
+            }
+            else {
+                break;
+            }
+        }
+        if (inputNum == randomNum) {
+            alert('恭喜你答对了!')
+        }
+        else {
+            alert('随机值为:' + randomNum);
+        }
+    </script> 
+</body>
+</html>

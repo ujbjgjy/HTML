@@ -7,9 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="password" name="" id="">
     <script>
-
+        var sum = 0;
+        var num = parseInt(prompt('请输入一个数字:'));
+        for (var i = 1; i <= num; i++) {
+            sum += i;
+        }
+        console.log(sum);
+        document.write(sum);
     </script> 
 </body>
 </html>

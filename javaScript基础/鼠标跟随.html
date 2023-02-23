@@ -11,7 +11,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            cursor: none;
+            /* cursor: none; */
         }
     </style>
 </head>
@@ -23,6 +23,10 @@
         // 2. mousemove 事件移动鼠标指针就会触发
         var img = document.querySelector('img');
         document.addEventListener('mousemove', function (e) {
+            // 1. 为什么不是+75,而是-75.
+            //  (1). 因为文档的鼠标指针即img的left值,如果直接赋值,指针会一直在img的边缘处。当我减去鼠标的坐标并赋给left,表示把img的left往左移多少距离,top同理
+            console.log(e.pageX);
+            console.log(img.offsetLeft);
             img.style.left = e.pageX - 75 + 'px';
             img.style.top = e.pageY - 50 + 'px';
         });

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 5;
+        var count = 0;
+        var judge = num;
+        while ( judge != 1) {
+            num = num - num * 0.3;
+            console.log(num);
+            judge = parseInt(num * 10);
+            count++;
+        }
+        console.log(count);
+        document.write(count);
+    </script>
+</body>
+
+</html>
