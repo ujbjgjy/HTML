@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        table {
+            /* width: 600px; */
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr,
+        td {
+            border: 1px solid #dff9fb;
+        }
+
+        th,
+        td {
+            width: 100px;
+            height: 40px;
+        }
+
+        thead {
+            background-color: #00cec9;
+            color: #fff;
+        }
+
+        tbody {
+            background-color: #c7ecee;
+            color: #535c68;
+        }
+
+        input {
+            display: block;
+            width: 80%;
+            height: 100%;
+            outline: none;
+            border: 0;
+            background-color: transparent;
+            color: #535c68;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-bottom: 0;
+        }
+
+        li {
+            height: 35px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            line-height: 35px;
+            font-size: 14px;
+            font-weight: 800;
+            color: #333;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>名字</th>
+                <th>语文</th>
+                <th>数学</th>
+                <th>总分数</th>
+                <th>最大分数</th>
+                <th>最小分数</th>
+                <th>平均数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="text">
+                </td>
+                <td>
+                    <input type="text">
+                </td>
+                <td>
+                    <input type="text"  value="">
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <ul class="menu">
+            <li>完成</li>
+            <li>添加</li>
+            <li></li>
+            <li></li>
+        </ul>
+    </table>
+    <script>
+        // 取消默认的上下文菜单
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+        // 获取元素
+        var tbody = document.querySelector('tbody');
+        var tds = tbody.querySelectorAll('td');
+        var menu = document.querySelector('.menu');
+        var inputs = document.querySelectorAll('input');
+        // 定义变量
+        var count = 0;
+        var target = inputs.children.length;
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener('mousedown', menuShow);
+        }
+        menu.addEventListener('mouseover', function () {
+            clearTimeout(menu.mTimer);
+        });
+        menu.addEventListener('mouseout', function () {
+            menu.mTimer = setTimeout(function () {
+                menu.style.display = 'none';
+            }, 1000);
+        });
+        document.addEventListener('click', function () {
+            menu.style.display = 'none';
+        });
+        // 显示菜单
+        function menuShow(e) {
+            if (e.button == 2) {
+                menu.style.display = 'block';
+                menu.style.left = e.pageX + 'px';
+                menu.style.top = e.pageY + 'px';
+            }
+        }
+        // 添加行事件
+        (function inputEvent() {
+            for (var i = 0; i < menu.children.length; i++) {
+                menu.children[i].setAttribute('index', i);
+                menu.children[i].addEventListener('click', function () {
+                    if (this.innerHTML == '添加') {
+                        createTr();
+                    }
+                    else if (this.innerHTML == '完成') {
+                        if (this.getAttribute('index') != 0) {
+                            target--;
+                            if (target == 0) {
+                                
+                            }
+                        }
+                    }
+                })
+            }
+        }());
+        // 求总和
+        function sum() {
+            var trs = tbody.querySelector('tr');
+            for (var i = 0; i < trs.length; i++) {
+                for (var j = 1; j < trs.children.length; j++) {
+                    // if ()
+                }
+            }
+        }
+        // 添加行事件
+        function createTr() {
+            var tr = document.createElement('tr');
+            for (var i = 0; i < 7; i++) {
+                var td = document.createElement('td');
+                tr.appendChild(td);
+                if (i < 3) {
+                    var input = document.createElement('input');
+                    input.type = 'text';
+                    input.addEventListener('mousedown', menuShow);
+                    td.appendChild(input);
+                }
+                target += 3;
+            }
+            tbody.appendChild(tr);
+        }
+    </script>
+</body>
+
+</html>

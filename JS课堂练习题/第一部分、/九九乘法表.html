@@ -12,7 +12,9 @@
         var str = '';
         for (var i = 1; i <= 9; i++) {
             for(var j = 1; j <= i; j++) {
-                str += j + '*' + i + '=' + j * i + '\t' + '&nbsp;';
+                var sum = j * i;
+                sum = sum < 10 ? '&nbsp;&nbsp;' + sum : sum;
+                str += j + '*' + i + '=' + sum + '\t' + '&nbsp;&nbsp;';
             }
             str += '\n' + '<br>';
         }

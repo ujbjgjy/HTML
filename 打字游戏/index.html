@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./js/index.js"></script>
+    <style>
+        .box {
+            position: absolute;
+            overflow: hidden;
+            left: 50px;
+            top: 25px;
+            border: 1px solid #333;
+        }
+        .text {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: move 5s 1 forwards;
+        }
+        @keyframes move {
+            0% {
+                top: 0;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <div class="box">
+        <div class="text">我是文字</div>
+    </div>
     <script>
-        // 
-    </script> 
+        var box = document.querySelector('.box');
+        box.style.width = window.innerWidth - 100 + 'px';
+        box.style.height = window.innerHeight - 50 + 'px';
+        window.addEventListener('resize', function () {
+            box.style.width = window.innerWidth - 100 + 'px';
+            box.style.height = window.innerHeight - 50 + 'px';
+        })
+        var text = document.querySelector('.text');
+    </script>
 </body>
+
 </html>
