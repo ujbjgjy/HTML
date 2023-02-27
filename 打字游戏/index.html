@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>打字游戏</title>
     <script src="./js/index.js"></script>
     <style>
+        body {
+            background-color: #f5f5f5;
+        }
         .map {
             position: absolute;
             overflow: hidden;
@@ -16,27 +19,50 @@
             transform: translateX(-50%);
             width: 900px;
             height: 500px;
+            background-color: #fff;
             border: 1px solid #333;
         }
         .text {
             position: absolute;
             left: 0;
             top: 0;
-            width: 50px;
+            padding: 2px 5px;
             height: 30px;
             background-color: aqua;
-            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-            animation: move 5s 1 forwards;
             text-align: center;
             line-height: 30px;
         }
-        @keyframes move {
-            0% {
-                top: 0;
-            }
-            100% {
-                top: 900px;
-            }
+        .menu {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50px;
+            z-index: 999;
+            transform: translateX(-50%);
+            width: 300px;
+            padding: 0 20px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+        }
+        .menu div {
+            cursor: pointer;
+            height: 50px;
+            margin-top: 50px;
+            background-color: #fff;
+            border: 3px solid #333;
+            border-radius: 20%;
+        }
+        .bg {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: .3;
         }
     </style>
 </head>
@@ -44,15 +70,12 @@
 <body>
     <div class="map">
     </div>
-    <script>
-        var map = document.querySelector('.map');
-        var text = document.querySelector('.text');
-        document.addEventListener('keypress', function (e) {
-            if (e.key == 'a') { 
-                text.style.display = 'none';
-            }
-        })
-    </script>
+    <div class="menu">
+        <div class="restart">重新开始</div>
+        <div class="over">结束游戏</div>
+    </div>
+    <div class="bg"></div>
+    <div class="fenshu">得分: <span>0</span></div>
 </body>
 
 </html>
