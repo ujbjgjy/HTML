@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    第一个数: <input type="number" name="" id=""> <br>
+    第二个数: <input type="number" name="" id=""> <br>
+    <button> + </button>
+    <button> - </button>
+    <button> * </button>
+    <button> / </button>
+    <div class="sum">结果: <span></span></div>
+    <script>
+        var inps = document.querySelectorAll('input');
+        var btns = document.querySelectorAll('button');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                var sum = document.querySelector('.sum');
+                var a = parseFloat(inps[0].value);
+                var b = parseFloat(inps[1].value);
+                console.log(this.innerHTML);
+                if (this.innerText == '+') {
+                    sum.children[0].innerText = a + b;
+                }
+                else if (this.innerText == '-') {
+                    sum.children[0].innerText = a - b;
+                }
+                else if (this.innerText == '*') {
+                    sum.children[0].innerText = a * b;
+                }
+                else {
+                    sum.children[0].innerText = a / b;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
