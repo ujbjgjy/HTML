@@ -1,43 +1,114 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zn-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>星空</title>
+    <title>Document</title>
     <style>
-        body {
-            background: url(E:/图片/wallpaper_6.jpg) no-repeat center top;
+        @keyframes change {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
         }
 
-        .bg {
+        @keyframes move {
+            100% {
+                right: 1280px;
+                top: 420px;
+            }
+        }
+
+        body {
+            overflow: hidden;
+            background: -webkit-linear-gradient(left, #43c6ac, #191654);
+        }
+
+        .star {
             position: absolute;
             left: 0;
             top: 0;
-            width: 100%;
-            height: 100%;
-            /* backdrop-filter: blur(10px); */
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 10px #54a0ff;
+            animation: change 1s infinite;
+            z-index: 1;
+        }
+
+        .line {
+            position: absolute;
+            right: -200px;
+            top: 0;
+            z-index: 2;
+            width: 200px;
+            height: 2px;
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            transform: rotate(-18deg);
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+            box-shadow: -10px 0 5px #1e90ff;
+            animation: 3s infinite forwards;
+            transition: all .5s;
         }
     </style>
 </head>
 
 <body>
-    <div class="bg"></div>
+    <div class="line"></div>
     <script>
-        var width = document.documentElement.clientWidth
-        var height = document.documentElement.clientHeight;
-        document.body.style.backgroundSize = width + 'px' + ',' + height + 'px';
+        var w = window.innerWidth;
+        var h = window.innerHeight
+        var num = w / 100 * 20;
+        for (var i = 0; i < num; i++) {
+            var star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = w * Math.random() - 50 + 'px';
+            star.style.top = h * Math.random() - 50 + 'px';
+            star.style.transform = 'scale(' + Math.random() * 1.2 + ')';
+            star.style.animationDelay = 5 * Math.random() + 's';
+            document.body.appendChild(star);
+        }
         window.addEventListener('resize', function () {
-            width = document.documentElement.clientWidth
-            height = document.documentElement.clientHeight;
-            if (width <= 800) {
-                document.body.style.backgroundSize = width * 2 + 'px' + ',' + height * 2 + 'px';
+            var stars = document.querySelectorAll('.star');
+            for (var starNum = 0; starNum < stars.length; starNum++) {
+                stars[starNum].remove();
             }
-            else {
-                document.body.style.backgroundSize = width + 'px' + ',' + height + 'px';
+            w = window.innerWidth;
+            h = window.innerHeight
+            num = w / 100 * 20;
+            for (var i = 0; i < num; i++) {
+                var star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = w * Math.random() - 50 + 'px';
+                star.style.top = h * Math.random() - 50 + 'px';
+                star.style.transform = 'scale(' + Math.random() * 1.2 + ')';
+                star.style.animationDelay = 5 * Math.random() - 4 + 's';
+                document.body.appendChild(star);
             }
         });
+        // 给ccs添加动画
+        var scrW = screen.width;
+        var scrH = screen.height;
+        var lineTop = scrW / 3;
+        var style = document.querySelector('style');
+        for (var i = 0; i < 15; i++) {
+            var line = document.createElement('div');
+            line.className = 'line';
+            line.style.top = scrH / 3 * Math.random() + 'px';
+            line.style.animationName = 'move' + i;
+            line.style.animationDelay = 10 * Math.random() + 's';
+            document.body.appendChild(line);
+            style.append('@keyframes move' + i + ' {100% {right: 1280px;top: ' + (lineTop + line.offsetTop) + 'px;}}');
+            console.log(line.style.top);
+            console.log(line.offsetTop);
+        }
     </script>
 </body>
 

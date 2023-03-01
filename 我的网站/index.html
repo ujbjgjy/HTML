@@ -1,15 +1,148 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zn-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ujbj-test</title>
+    <style>
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        @keyframes change {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        body {
+            overflow: hidden;
+            background: -webkit-linear-gradient(left, #43c6ac, #191654);
+        }
+
+        .star {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 10px #54a0ff;
+            animation: change 1s infinite;
+            z-index: 1;
+        }
+
+        .line {
+            position: absolute;
+            right: -200px;
+            top: 0;
+            z-index: 2;
+            width: 200px;
+            height: 2px;
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            transform: rotate(-18deg);
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+            box-shadow: -10px 0 5px #1e90ff;
+            animation: 3s infinite forwards;
+            transition: all .5s;
+        }
+
+        .list-game {
+            position: fixed;
+            left: 50%;
+            top: 100px;
+            width: 400px;
+            margin-left: -200px;
+            text-align: center;
+        }
+
+        .list-game .game {
+            height: 50px;
+            line-height: 50px;
+            margin-top: 30px;
+            background-color: rgb(61, 131, 174, .8);
+            border-radius: 50px;
+            font-size: 24px;
+            backdrop-filter: blur(10px);
+            transition: all 1s;
+        }
+
+        .list-game .game:hover {
+            transform: scale(1.2);
+        }
+        
+    </style>
 </head>
+
 <body>
-    <a href="./打字游戏/index.html">打字游戏</a> 
-    <a href="./推箱子/index.html">推箱子</a>
-    <ul class="box">
+    <ul class="list-game">
+        <li class="game"><a href="./推箱子/index.html" target="_blank">推箱子</a></li>
+        <li class="game"><a href="./打字游戏/index.html" target="_blank">打字游戏</a></li>
     </ul>
+    <div class="info"></div>
+    <script>
+        var w = window.innerWidth;
+        var h = window.innerHeight
+        var num = w / 100 * 20;
+        for (var i = 0; i < num; i++) {
+            var star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = w * Math.random() - 50 + 'px';
+            star.style.top = h * Math.random() - 50 + 'px';
+            star.style.transform = 'scale(' + Math.random() * 1.2 + ')';
+            star.style.animationDelay = 5 * Math.random() + 's';
+            document.body.appendChild(star);
+        }
+        window.addEventListener('resize', function () {
+            var stars = document.querySelectorAll('.star');
+            for (var starNum = 0; starNum < stars.length; starNum++) {
+                stars[starNum].remove();
+            }
+            w = window.innerWidth;
+            h = window.innerHeight
+            num = w / 100 * 20;
+            for (var i = 0; i < num; i++) {
+                var star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = w * Math.random() - 50 + 'px';
+                star.style.top = h * Math.random() - 50 + 'px';
+                star.style.transform = 'scale(' + Math.random() * 1.2 + ')';
+                star.style.animationDelay = 5 * Math.random() - 4 + 's';
+                document.body.appendChild(star);
+            }
+        });
+        // 给ccs添加动画
+        var scrW = screen.width;
+        var scrH = screen.height;
+        var lineTop = scrW / 3;
+        var style = document.querySelector('style');
+        for (var i = 0; i < 15; i++) {
+            var line = document.createElement('div');
+            line.className = 'line';
+            line.style.top = scrH / 3 * Math.random() + 'px';
+            line.style.animationName = 'move' + i;
+            line.style.animationDelay = 10 * Math.random() + 's';
+            document.body.appendChild(line);
+            style.append('@keyframes move' + i + ' {100% {right: 1280px;top: ' + (lineTop + line.offsetTop) + 'px;}}');
+        }
+    </script>
 </body>
+
 </html>
