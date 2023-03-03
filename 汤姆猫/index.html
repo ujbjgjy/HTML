@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汤姆猫</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .tom {
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            transform: translateX(-50%);
+            width: 300px;
+        }
+
+        button {
+            position: absolute;
+            left: 50%;
+            margin-left: 150px;
+            border: 0;
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/Animations/foot_right/foot_right_0.jpg" alt="" class="tom">
+    <button class="cymbal"><img src="images/Buttons/cymbal.png" alt=""></button>
+    <button class="drink"><img src="images/Buttons/drink.png" alt=""></button>
+    <button class="eat"><img src="images/Buttons/eat.png" alt=""></button>
+    <button class="fart"><img src="images/Buttons/fart.png" alt=""></button>
+    <button class="pie"><img src="images/Buttons/pie.png" alt=""></button>
+    <button class="scratch"><img src="images/Buttons/scratch.png" alt=""></button>
+    <script>
+        var num = 0;
+        var img = document.querySelector('.tom');
+        var str = './images/Animations/drink/drink_0.jpg';
+        var btn = document.querySelectorAll('button');
+        var flag = true;
+        function playImg(allNum, callback) {
+            if (flag) {
+                // flag =
+                clearInterval(img.timer);
+                img.timer = setInterval(function () {
+                    if (num > allNum) {
+                        num = 0;
+                        callback && callback();
+                    }
+                    console.log(num);
+                    str = str.replace(String(num), String((num + 1) == allNum + 1 ? 0 : num + 1));
+                    img.src = str;
+                    num++;
+                }, 100);
+            }
+        }
+        playImg(80);
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].style.top = i * 80 + 40 + 'px';
+            btn[i].addEventListener('click', function () {
+                if (this.className == 'cymbal') {
+                    str = './images/Animations/angry/angry_0.jpg';
+                    playImg(25, function () {
+                        flag = false;
+                    });
+                }
+                else if (this.className == 'drink') {
+                    str = './images/Animations/drink/drink_0.jpg';
+                    playImg(80);
+                }
+                else if (this.className == 'eat') {
+                    str = './images/Animations/eat/eat_0.jpg';
+                    playImg(39);
+                }
+                else if (this.className == 'fart') {
+                    str = './images/Animations/fart/fart_0.jpg';
+                    playImg(27);
+                }
+                else if (this.className == 'pie') {
+                    str = './images/Animations/pie/pie_0.jpg';
+                    playImg(23);
+                }
+                else if (this.className == 'scratch') {
+                    str = './images/Animations/scratch/scratch_0.jpg';
+                    playImg(55);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

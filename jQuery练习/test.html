@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            height: 100%;
-            background: url(images/wallhaven-rr288w.jpg) no-repeat top center;
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
         }
     </style>
+    <script src="./jQuery.js"></script>
 </head>
 <body>
-
+    <video src="E:\Video\v-13.mp4" width="900" muted></video>
+    <script>
+        var video = document.querySelector('video');
+        video.play();
+        $(video).hide();
+    </script>
 </body>
 </html>

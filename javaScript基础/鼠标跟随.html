@@ -7,28 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        img {
-            position: absolute;
-            left: 0;
-            top: 0;
-            /* cursor: none; */
-        }
     </style>
 </head>
 
 <body>
-    <img src="images/git图片/hulitiaowu.gif" width="150px">
     <script>
         // 1. 我们在文档里面移动鼠标，所以要给文档加事件documet
         // 2. mousemove 事件移动鼠标指针就会触发
-        var img = document.querySelector('img');
+        var huliImg = document.createElement('img');
+        huliImg.style.position = 'absolute';
+        huliImg.style.zIndex = '999999999';
+        huliImg.className = 'huli-img';
+        huliImg.src = 'http://oss-cn-hangzhou.aliyuncs.com/public-cli/free/9f8fb1f0251f94970d17fd54db95f3bb1677823468.gif';
+        huliImg.width = '150';
+        document.body.appendChild(huliImg);
         document.addEventListener('mousemove', function (e) {
             // 1. 为什么不是+75,而是-75.
             //  (1). 因为文档的鼠标指针即img的left值,如果直接赋值,指针会一直在img的边缘处。当我减去鼠标的坐标并赋给left,表示把img的left往左移多少距离,top同理
-            console.log(e.pageX);
-            console.log(img.offsetLeft);
-            img.style.left = e.pageX - 75 + 'px';
-            img.style.top = e.pageY - 50 + 'px';
+            huliImg.style.left = e.pageX - 75 + 'px';
+            huliImg.style.top = e.pageY - 50 + 'px';
         });
     </script>
 </body>

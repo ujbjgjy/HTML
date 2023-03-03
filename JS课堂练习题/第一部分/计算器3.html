@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    第一个数：<input type="text" name="" id=""> <br>
+    第二个数：<input type="text" name="" id=""> <br>
+    <button>+</button>
+    <button>-</button>
+    <button>*</button>
+    <button>/</button>
+    <br>结果：<span></span>
+    <script>
+        var btn = document.querySelectorAll('button');
+        for (var i = 0; i < 4; i++) {
+            btn[i].addEventListener('click', function () {
+                var ipt = document.querySelectorAll('input');
+                var a = parseInt(ipt[0].value);
+                var b = parseInt(ipt[1].value);
+                var span = document.querySelector('span');
+                if (this.innerHTML == '+') {
+                    span.innerHTML = a + b;
+                }
+                else if (this.innerHTML == '-') {
+                    span.innerHTML = a - b;
+                }
+                else if (this.innerHTML == '*') {
+                    span.innerHTML = a * b;
+                }
+                else {
+                    span.innerHTML = a / b;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

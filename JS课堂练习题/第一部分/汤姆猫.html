@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../images/Animations/angry/angry_0.jpg" alt="" width="300">
+    <button>123</button>
+    <script>
+        var img = document.querySelector('img');
+        var num = 0;
+        var str = '../images/Animations/angry/angry_0.jpg';
+        function playImg(sum) {
+            clearInterval(img.timer);
+            img.timer = setInterval(() => {
+                if (num > sum) {
+                    num = 0;
+                }
+                str = str.replace(String(num), String((num + 1) == sum + 1 ? 0 : num + 1));
+                img.src = str;
+                num++;
+            }, 100);
+        }
+        playImg(25);
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', () => {
+            str = '../images/Animations/cymbal/cymbal_0.jpg';
+            playImg(12);
+        });
+    </script>
+</body>
+
+</html>
