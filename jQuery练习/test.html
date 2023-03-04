@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,35 @@
     <title>Document</title>
     <style>
         div {
+            float: left;
             width: 200px;
             height: 200px;
+            margin-right: 20px;
             background-color: skyblue;
         }
     </style>
     <script src="./jQuery.js"></script>
 </head>
+
 <body>
-    <video src="E:\Video\v-13.mp4" width="900" muted></video>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
     <script>
-        var video = document.querySelector('video');
-        video.play();
-        $(video).hide();
+        $(function () {
+            $('div').css('backgroundColor', 'red');
+        })
+        console.log('%c', 'color: red;');
+        console.log(
+            '%c %s %c %s',
+            'border: 1px solid white;border-radius: 3px 0 0 3px;padding: 2px 5px;color: white;background-color: green;',
+            '英华网课助手 Plus 启动器',
+            'border: 1px solid white;border-radius: 0 3px 3px 0;padding: 2px 5px;color: black;background-color: white;border-left: none;',
+            'v0.0.1'
+        );
+
     </script>
 </body>
+
 </html>

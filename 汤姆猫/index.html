@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <img src="./images/Animations/foot_right/foot_right_0.jpg" alt="" class="tom">
+    <img src="./images/Animations/angry/angry_0.jpg" alt="" class="tom">
     <button class="cymbal"><img src="images/Buttons/cymbal.png" alt=""></button>
     <button class="drink"><img src="images/Buttons/drink.png" alt=""></button>
     <button class="eat"><img src="images/Buttons/eat.png" alt=""></button>
@@ -39,56 +39,74 @@
     <button class="pie"><img src="images/Buttons/pie.png" alt=""></button>
     <button class="scratch"><img src="images/Buttons/scratch.png" alt=""></button>
     <script>
-        var num = 0;
-        var img = document.querySelector('.tom');
-        var str = './images/Animations/drink/drink_0.jpg';
-        var btn = document.querySelectorAll('button');
-        var flag = true;
-        function playImg(allNum, callback) {
-            if (flag) {
-                // flag =
-                clearInterval(img.timer);
-                img.timer = setInterval(function () {
-                    if (num > allNum) {
-                        num = 0;
-                        callback && callback();
-                    }
-                    console.log(num);
-                    str = str.replace(String(num), String((num + 1) == allNum + 1 ? 0 : num + 1));
-                    img.src = str;
-                    num++;
-                }, 100);
-            }
+        let tom = document.querySelector('.tom');
+        let btn = document.querySelectorAll('button');
+        function playImg(str, allNum, callback) {
+            clearInterval(tom.playImgTimer);
+            var num = 0;
+            tom.playImgTimer = setInterval(function () {
+                if (num == allNum) {
+                    num = 0;
+                    str = str.replace('_' + allNum, '_' + num);
+                    tom.src = str;
+                    callback && callback();
+                }
+                str = str.replace('_' + num++, '_' + num);
+                tom.src = str;
+            }, 100);
         }
-        playImg(80);
+        let str = './images/Animations/angry/angry_0.jpg';
+        playImg(str, 25);
         for (let i = 0; i < btn.length; i++) {
             btn[i].style.top = i * 80 + 40 + 'px';
             btn[i].addEventListener('click', function () {
                 if (this.className == 'cymbal') {
-                    str = './images/Animations/angry/angry_0.jpg';
-                    playImg(25, function () {
-                        flag = false;
+                    let str = './images/Animations/cymbal/cymbal_0.jpg';
+                    playImg(str, 12, function () {
+                        clearInterval(tom.playImgTimer);
+                        let str = './images/Animations/angry/angry_0.jpg';
+                        playImg(str, 25);
                     });
                 }
                 else if (this.className == 'drink') {
-                    str = './images/Animations/drink/drink_0.jpg';
-                    playImg(80);
+                    let str = './images/Animations/drink/drink_0.jpg';
+                    playImg(str, 80, function () {
+                        clearInterval(tom.playImgTimer);
+                        let str = './images/Animations/angry/angry_0.jpg';
+                        playImg(str, 25);
+                    });
                 }
                 else if (this.className == 'eat') {
-                    str = './images/Animations/eat/eat_0.jpg';
-                    playImg(39);
+                    let str = './images/Animations/eat/eat_0.jpg';
+                    playImg(str, 39, function () {
+                        clearInterval(tom.playImgTimer);
+                        let str = './images/Animations/angry/angry_0.jpg';
+                        playImg(str, 25);
+                    });
                 }
                 else if (this.className == 'fart') {
-                    str = './images/Animations/fart/fart_0.jpg';
-                    playImg(27);
+                    let str = './images/Animations/fart/fart_0.jpg';
+                    playImg(str, 27, function () {
+                        clearInterval(tom.playImgTimer);
+                        let str = './images/Animations/angry/angry_0.jpg';
+                        playImg(str, 25);
+                    });
                 }
                 else if (this.className == 'pie') {
-                    str = './images/Animations/pie/pie_0.jpg';
-                    playImg(23);
+                    let str = './images/Animations/pie/pie_0.jpg';
+                    playImg(str, 23, function () {
+                        clearInterval(tom.playImgTimer);
+                        let str = './images/Animations/angry/angry_0.jpg';
+                        playImg(str, 25);
+                    });
                 }
                 else if (this.className == 'scratch') {
-                    str = './images/Animations/scratch/scratch_0.jpg';
-                    playImg(55);
+                    let str = './images/Animations/scratch/scratch_0.jpg';
+                    playImg(str, 55, function () {
+                        clearInterval(tom.playImgTimer);
+                        let str = './images/Animations/angry/angry_0.jpg';
+                        playImg(str, 25);
+                    });
                 }
             });
         }
