@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+</head>
+<body>
+    <ul>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+    </ul>
+    <ol>
+        <li>1231</li>
+        <li>1232</li>
+        <li>1233</li>
+        <li>1234</li>
+        <li>1235</li>
+    </ol>
+    <script>
+        $(function () {
+            $('ul>li:first').css('color', 'red');
+            $('ul>li:last').css('color', 'blue');
+            $('ul>li:eq(3)').css('color', 'green');
+            $('ol>li:odd').css('color', 'skyblue');
+            $('ol>li:even').css('color', 'pink');
+        })
+    </script>
+</body>
+</html>
