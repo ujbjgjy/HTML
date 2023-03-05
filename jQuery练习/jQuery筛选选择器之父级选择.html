@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: #fff;
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1231</li>
+        <li>1232</li>
+        <li class="son">1233</li>
+        <li>1234</li>
+        <li>1235</li>
+    </ul>
+    <ol>
+        <li>1241</li>
+        <li>1242</li>
+        <li>1243</li>
+        <li>1244</li>
+        <li>1245</li>
+    </ol>
+    <script>
+        $(function () {
+            $('.son').parent().css('backgroundColor', 'skyblue');
+            $('body').find('li').css('color', 'red');
+            $('ol').children('li').css('color', 'green');
+            $('li').eq(2).siblings().css('color', 'pink');
+        });
+    </script>
+</body>
+</html>

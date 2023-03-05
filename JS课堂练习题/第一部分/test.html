@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <img src="../images/Animations/angry/angry_00.jpg" alt="" width="300"> 
+    <img src="../images/Animations/scratch/scratch_0.jpg" alt="" width="300">
+    <button>播放</button>
     <script>
-        var img = document.querySelector('img');
-        console.log(img.onerror);
-        img.onerror = (e) => {
-          img.src = '../images/Animations/angry/angry_0.jpg';
-        };
+        let btn = document.querySelector('button');
+        let tom = document.querySelector('img');
+        let flag = true;
+        let num = 0;
+        function playImg() {
+            if (flag) {
+                clearInterval(tom.timer);
+                tom.timer = setInterval(function () {
+                    if (num == 55) {
+                        num = 0;
+                    }
+                    num++;
+                    tom.src = '../images/Animations/scratch/scratch_' + num + '.jpg';
+                }, 100);
+                flag = false;
+                btn.innerHTML = '暂停';
+            }
+            else {
+                clearInterval(tom.timer);
+                flag = true;
+                btn.innerHTML = '播放';
+            }
+        }
+        btn.addEventListener('click', function () {
+            playImg();
+        });
     </script>
 </body>
+
 </html>
