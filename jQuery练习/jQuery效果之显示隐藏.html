@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示</button> <button>隐藏</button> <button>切换</button>
+    <div></div>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function () {
+            $('button').eq(1).click(function () {
+                $('div').hide('flst');
+            });
+            $('button').eq(0).click(function () {
+                $('div').show(1000, function () {
+                    $(this).css('backgroundColor', 'red');
+                })
+            });
+            $('button').eq(2).click(function () {
+                $('div').toggle('linear', function () {
+                    $(this).css('backgroundColor', 'green');
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>

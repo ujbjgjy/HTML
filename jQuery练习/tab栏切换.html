@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tab栏切换</title>
+    <title>淘宝tab栏切换</title>
     <style>
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
         ul,
         li {
             list-style: none;
@@ -14,76 +19,89 @@
             margin: 0;
         }
 
-        .tab {
-            width: 752px;
-            margin: 200px auto;
+        .wrapper {
+            width: 600px;
+            height: 300px;
+            margin: 50px auto;
+            border: 1px solid #333;
         }
 
-        .tab_list {
-            height: 60px;
-            background-color: #eee;
-            border: 1px solid #ccc;
-        }
-
-        .tab_list li {
+        .left {
             float: left;
+            top: 0;
+            left: 0;
             width: 150px;
-            height: 60px;
+            height: 300px;
             line-height: 60px;
             text-align: center;
-            cursor: pointer;
         }
 
-        .current {
-            background-color: red;
-            color: #fff;
+        .left li {
+            border-top: 1px solid #333;
+            margin-top: -1px;
         }
 
-        .item {
+        .content {
+            position: relative;
+            float: right;
+            width: 450px;
+            height: 300px;
+        }
+
+        .content div {
             display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 450px;
+            height: 300px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
         }
     </style>
     <script src="./jQuery.js"></script>
     <script>
         $(function () {
-            $('.tab_list li').click(function () {
-                // 当前的变色其它的清除，因为兄弟元素只有一个li所以不用选择了
-                $(this).addClass('current').siblings().removeClass('current');
-                // 当前的显示其它的隐藏
-                //  需要要获取当前的索引
-                var index = $(this).index();
-                $('.tab_con .item').eq(index).show().siblings().hide();
-            });
+            $('.left>li').mouseover(function () {
+                let index = $(this).index();
+                // 当前的div显示，我的兄弟隐藏
+                $('.content div').eq(index).show().siblings().hide();
+            })
+            $('button').click(function () {
+                $(this).css('color', 'red').siblings().css('color', '');
+            })
         })
     </script>
 </head>
 
 <body>
-    <div class="tab">
-        <div class="tab_list">
-            <ul>
-                <li class="current">商品介绍</li>
-                <li>规格与包装</li>
-                <li>售后保障</li>
-                <li>商品评价(5000)</li>
-                <li>手机社区</li>
-            </ul>
-        </div>
-        <div class="tab_con">
-            <div class="item" style="display: block;">
-                商品介绍
+    <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button>
+    <div class="wrapper">
+        <ul class="left">
+            <li><a href="#">你食不食油饼</a></li>
+            <li><a href="#">你荔枝吗</a></li>
+            <li><a href="#">你食不食油饼</a></li>
+            <li><a href="#">你食不食油饼</a></li>
+            <li><a href="#">你食不食油饼</a></li>
+        </ul>
+        <div class="content">
+            <div style="display: block;">
+                <a href="#"><img src="../练习/images/ikun/ikun1.jpg" alt=""></a>
             </div>
-            <div class="item">
-                规格与包装
+            <div>
+                <a href="#"><img src="../练习/images/ikun/ikun2.jpg" alt=""></a>
             </div>
-            <div class="item">
-                售后保障
+            <div>
+                <a href="#"><img src="../练习/images/ikun/ikun3.jpg" alt=""></a>
             </div>
-            <div class="item">
-                商品评价
+            <div>
+                <a href="#"><img src="../练习/images/ikun/ikun4.jpg" alt=""></a>
             </div>
-            <div class="item">
-                手机社区
+            <div>
+                <a href="#"><img src="../练习/images/ikun/ikun5.jpg" alt=""></a>
             </div>
         </div>
     </div>

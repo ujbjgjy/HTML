@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .tab_list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 500px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .tab_con li {
+            display: none;
+        }
+
+        .tab_con .current {
+            display: block;
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+</head>
+
+<body>
+    <ul class="tab_list">
+        <li>121</li>
+        <li>122</li>
+        <li>123</li>
+        <li>124</li>
+        <li>125</li>
+    </ul>
+    <ul class="tab_con">
+        <li class="current">我是内容1</li>
+        <li>我是内容2</li>
+        <li>我是内容3</li>
+        <li>我是内容4</li>
+        <li>我是内容5</li>
+    </ul>
+    <script>
+        $(function () {
+            $('.tab_list li').click(function () {
+                let index = $(this).index();
+                $('.tab_con li').eq(index).addClass('current').siblings().removeClass();
+                $(this).css('backgroundColor', 'red').siblings().css('backgroundColor', '');
+            });
+        })
+    </script>
+</body>
+
+</html>
