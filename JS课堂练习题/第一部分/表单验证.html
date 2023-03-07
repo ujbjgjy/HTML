@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id=""> <button>发送</button>
+    <img src="../../练习/images/ikun/ikun30.webp" alt="">
+    <script>
+        let input = document.querySelector('input');
+        let btn = document.querySelector('button');
+        input.onkeypress = function (e) {
+            // Digit0
+            if (e.code.substring(0, 5) == 'Digit') {
+                return true;
+            }
+            return false;
+        };
+        btn.addEventListener('click', function () {
+            btn.disabled = true;
+            let num = 5;
+            btn.innerHTML = num + '秒后重新发送';
+            btn.timer = setInterval(function () {
+                if (num == 0) {
+                    clearInterval(btn.timer);
+                    btn.disabled = false;
+                    btn.innerHTML = '重新发送';
+                    return;
+                    console.log(123);
+                }
+                console.log('hehe');
+                num--;
+                btn.innerHTML = num + '秒后重新发送';
+            }, 1000);
+        });
+        let img = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            img.style.left = e.clientX - 50 + 'px';
+            img.style.top = e.clientY - 50 + 'px';
+        });
+    </script>
+</body>
+
+</html>

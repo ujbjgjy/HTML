@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body {
+            background-color: #000;
+        }
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+        }
+        ul {
+            display: flex;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 610px;
+            height: 305px;
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function () {
+            $('button').eq(0).click(function () {
+                $('div').fadeIn(500);
+            });
+            $('button').eq(1).click(function () {
+                $('div').fadeOut(500);
+            });
+            $('button').eq(2).click(function () {
+                $('div').fadeToggle();
+            });
+            $('button').eq(3).click(function () {
+                $('div').fadeTo(500, 0.5);
+            });
+            $('ul li').hover(function () {
+                $(this).siblings().stop().fadeTo(500, 0.5);
+            }, function () {
+                $(this).siblings().stop().fadeTo(500, 1);
+            });
+        })
+    </script>
+</head>
+<body>
+    <button>淡入</button>
+    <button>淡出</button>
+    <button>切换</button>
+    <button>修改透明度</button>
+    <div></div>
+    <ul>
+        <li><img src="./images/高亮显示/01.jpg" alt=""></li>
+        <li><img src="./images/高亮显示/02.jpg" alt=""></li>
+        <li><img src="./images/高亮显示/03.jpg" alt=""></li>
+        <li><img src="./images/高亮显示/04.jpg" alt=""></li>
+        <li><img src="./images/高亮显示/05.jpg" alt=""></li>
+        <li><img src="./images/高亮显示/06.jpg" alt=""></li>
+    </ul>
+</body>
+</html>

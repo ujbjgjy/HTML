@@ -187,12 +187,17 @@
     <script>
         $(function () {
             // 给nav里面所有的li添加事件，不用for循环给每个li添加，它会内部循环
-            $('.nav>li').mouseover(function () {
-                $(this).children('ul').show();
-            });
-            $('.nav>li').mouseout(function () {
-                $(this).children('ul').hide();
-            });
+            // $('.nav>li').mouseover(function () {
+            //     $(this).children('ul').show();
+            // });
+            // $('.nav>li').mouseout(function () {
+            //     $(this).children('ul').hide();
+            // });
+            // hover 只写一个函数，表示经过会触发，离开也触发
+            $('.nav>li').hover(function () {
+                // 经过时叫当前的显示，离开当前的，触发，上拉
+                $(this).children('ul').stop().slideToggle(100);
+            })
         })
     </script>
 </body>

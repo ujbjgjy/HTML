@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            width: 800px;
+            height: 60px;
+            margin: 50px auto;
+            background: url(./images/王者手风琴/bg.png) no-repeat;
+        }
+
+        ul li {
+            position: relative;
+            float: left;
+            width: 60px;
+            height: 60px;
+        }
+
+        .small {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+        }
+
+        .big {
+            display: none;
+            width: 180px;
+            height: 60px;
+        }
+
+        .king .current {
+            width: 180px;
+        }
+
+        .current .small {
+            display: none;
+        }
+
+        .current .big {
+            display: block;
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function () {
+            $('.king li').mouseenter(function () {
+                // 隐藏小图片显示大图
+                $(this).stop().animate({
+                    width: 180
+                }).children('.small').stop().fadeOut().siblings('.big').stop().fadeIn();
+                // 将其他的小图显示，大图隐藏
+                $(this).siblings('li').stop().animate({
+                    width: 60
+                }).children('.small').stop().fadeIn().siblings('.big').stop().fadeOut();
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <ul class="king">
+        <li class="current">
+            <img src="./images/王者手风琴/m1.jpg" alt="" class="small">
+            <img src="./images/王者手风琴/m.png" alt="" class="big">
+        </li>
+        <li>
+            <img src="./images/王者手风琴/c1.jpg" alt="" class="small">
+            <img src="./images/王者手风琴/c.png" alt="" class="big">
+        </li>
+        <li>
+            <img src="./images/王者手风琴/h1.jpg" alt="" class="small">
+            <img src="./images/王者手风琴/h.png" alt="" class="big">
+        </li>
+        <li>
+            <img src="./images/王者手风琴/l1.jpg" alt="" class="small">
+            <img src="./images/王者手风琴/l.png" alt="" class="big">
+        </li>
+        <li>
+            <img src="./images/王者手风琴/t1.jpg" alt="" class="small">
+            <img src="./images/王者手风琴/t.png" alt="" class="big">
+        </li>
+        <li>
+            <img src="./images/王者手风琴/w1.jpg" alt="" class="small">
+            <img src="./images/王者手风琴/w.png" alt="" class="big">
+        </li>
+        <li>
+            <img src="./images/王者手风琴/z1.jpg" alt="" class="small">
+            <img src="./images/王者手风琴/z.png" alt="" class="big">
+        </li>
+    </ul>
+</body>
+
+</html>
