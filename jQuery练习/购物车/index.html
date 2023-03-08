@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>我的购物车-品优购</title>
-    <meta name="description" content="品优购JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!" />
+    <meta name="description"
+        content="品优购JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!" />
     <meta name="Keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,品优购" />
     <!-- 引入facicon.ico网页图标 -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -15,9 +16,88 @@
     <!-- 引入car css -->
     <link rel="stylesheet" href="css/car.css">
     <!-- 先引入jquery  -->
-    <script src="js/jquery.min.js"></script>
+    <script src="../jQuery.js"></script>
     <!-- 在引入我们自己的js文件 -->
-    <script src="js/car.js"></script>
+    <script>
+        $(function () {
+            // 当全选复选框发生改变时
+            $('.checkall').change(function () {
+                console.log(this.checked);
+                console.log($(this).prop('checked'))
+                $('.j-checkbox, .checkall').prop('checked', $(this).prop('checked'));
+                priceSum();
+            });
+            // 当单个复选框发生改变
+            $('.j-checkbox').change(function () {
+                if ($('.j-checkbox:checked').length == $('.j-checkbox').length) {
+                    $('.checkall').prop('checked', true);
+                }
+                else {
+                    $('.checkall').prop('checked', false);
+                }
+                priceSum();
+            });
+            // 增减商品数量
+            $('.increment').click(function () {
+                let n = $(this).siblings('.itxt').val();
+                n++;
+                $(this).siblings('.itxt').val(n);
+                let p = $(this).parents('.p-num').siblings('.p-price').text();
+                p = p.substring(1);
+                $(this).parent().parent().siblings('.p-sum').text('￥' + (p * n).toFixed(2));
+                priceSum();
+            });
+            $('.decrement').click(function () {
+                let n = $(this).siblings('.itxt').val();
+                if (n == 1) {
+                    return false;
+                }
+                console.log(n);
+                n--;
+                $(this).siblings('.itxt').val(n);
+                let p = $(this).parents('.p-num').siblings('.p-price').text();
+                p = p.substring(1);
+                $(this).parent().parent().siblings('.p-sum').text('￥' + (p * n).toFixed(2));
+                priceSum();
+            });
+            $('.itxt').change(function () {
+                let n = $(this).val();
+                console.log(n);
+                let p = $(this).parents('.p-num').siblings('.p-price').text();
+                p = p.substring(1);
+                $(this).parent().parent().siblings('.p-sum').text('￥' + (p * n).toFixed(2));
+                priceSum();
+            });
+            // 删除模块
+            // 1. 删除自身
+            $('.p-action').click(function () {
+                $(this).parents('.cart-item').remove();
+            });
+            // 2. 删除选中的选中的商品
+            $('.remove-batch').click(function () {
+                // checked获取被中的复选框
+                $('.j-checkbox:checked').parents('.cart-item').remove();
+            });
+            // 3. 清空购物车
+            $('.clear-all').click(function () {
+                $('.cart-item-list').remove();
+            });
+            // 求总和
+            function priceSum() {
+                let sum = 0;
+                let priceSum = 0;
+                $('.j-checkbox:checked').each(function (i, domEle) {
+                    let num = parseInt($(this).parents('.cart-item').find('.itxt').val());
+                    let price = $(this).parents('.cart-item').find('.p-sum').text();
+                    price = parseFloat(price.substring(1));
+                    priceSum += price;
+                    sum += num;
+                });
+                $('.amount-sum em').text(sum);
+                $('.price-sum em').text('￥' + priceSum.toFixed(2));
+            }
+        })
+    </script>
 </head>
 
 <body>
@@ -277,7 +357,8 @@
                     关于我们 | 联系我们 | 联系客服 | 商家入驻 | 营销中心 | 手机品优购 | 友情链接 | 销售联盟 | 品优购社区 | 品优购公益 | English Site | Contact U
                 </p>
                 <p class="mod_copyright_info">
-                    地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn <br> 京ICP备08001421号京公网安备110108007702
+                    地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn <br>
+                    京ICP备08001421号京公网安备110108007702
                 </p>
             </div>
         </div>

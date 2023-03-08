@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function () {
+            let li1 = $('<li>我是append添加的</li>');
+            let li2 = $('<li>我是prepend添加的</li>');
+            $('ul').append(li1);
+            $('ul').prepend(li2);
+            // // 把内容放入目标元素后面
+            // element.after('内容');
+            // // 把内容放放目标元素前面
+            // element.before('内容');
+            let afterEle = $('<div>after</div>');
+            let beforeEle = $('<div>before</div>');
+            $('ul').after(afterEle);
+            $('ul').before(beforeEle);
+            // 删除
+            $('ul>li:eq(0)').remove();
+            $('ul').html('');
+            $('body').empty();
+        });
+    </script>
+</head>
+
+<body>
+    <ul></ul>
+</body>
+
+</html>
