@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            text-align: center;
+            width: 500px;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>添加商品</legend>
+        商品名称: <input type="text" name="" id="goodsName"> <br>
+        商品价格: <input type="text" name="" id="goodsPrice">
+        <button id="add">添加</button>
+    </fieldset>
+    <h1>购物车</h1>
+    <button id="reverse">反选</button> <button id="delBtn">删除</button>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="cheAll"></th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+            </tr>
+        </thead>
+        <tbody id="goodsList">
+        </tbody>
+    </table>
+    <script type="text/html" id="template">
+        <tr>
+            <td><input type="checkbox" id="che"></td>
+            <td>name</td>
+            <td>price</td>
+        </tr>
+    </script>
+    <script>
+        add.addEventListener('click', function () {
+            if (goodsName.value != '' && goodsPrice.value != '') {
+                let x = template.innerHTML.replace('name', goodsName.value).replace('price', goodsPrice.value);
+                goodsList.innerHTML += x;
+                goodsName.value = ''
+                goodsPrice.value = '';
+            }
+            let cheArr = document.querySelectorAll('#che');
+        });
+        cheAll.addEventListener('change', function () {
+            let cheArr = document.querySelectorAll('#che');
+            cheArr.forEach((ele) => {
+                ele.checked = cheAll.checked;
+            });
+        });
+        reverse.addEventListener('click', function () {
+            let cheArr = document.querySelectorAll('#che');
+            cheArr.forEach(ele => {
+                ele.checked = !ele.checked;
+            });
+        });
+        delBtn.addEventListener('click', function () {
+            if (confirm('你确定吗?')) {
+                let cheArr = document.querySelectorAll('#che');
+                cheArr.forEach(ele => {
+                    if (ele.checked) {
+                        ele.parentNode.parentNode.remove();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

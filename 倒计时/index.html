@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计器</title>
+</head>
+
+<body>
+    <div class="timer"></div>
+    <input type="text" name="" id="">
+    <script>
+        function getTimer(inputTime) {
+            let time = (inputTime - Date.now()) / 1000;
+            let h = parseInt(time / 60 / 60 % 24);
+            h = h > 10 ? h : '0' + h;
+            let m = parseInt(time / 60 % 60);
+            m = m > 10 ? m : '0' + m;
+            let s = parseInt(time % 60);
+            s = s > 10 ? s : '0' + s;
+            return h + ':' + m + ':' + s;
+        }
+        let time = document.querySelector('.timer');
+
+        let input = document.querySelector('input');
+        input.addEventListener('blur', function () {
+            let inputTime = +new Date(this.value);
+            time.innerHTML = getTimer(inputTime);
+            let timer = setInterval(() => {
+                time.innerHTML = getTimer(inputTime);
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

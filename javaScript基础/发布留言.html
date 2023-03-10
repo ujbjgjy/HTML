@@ -45,7 +45,7 @@
         btn.addEventListener('click', function () {
             if (text.value) {
                 var li = document.createElement('li');
-                li.innerHTML = text.value + '<a href="javascript:void(0)">删除         </a>';
+                li.innerHTML = text.value + '<a href="javascript:void(0)">删除</a>';
                 text.value = '';
                 li.children[0].addEventListener('click', function () {
                     ul.removeChild(this.parentNode);
@@ -53,7 +53,6 @@
                 ul.insertBefore(li, ul.children[0]);
             }
         });
-
     </script>
 </body>
 

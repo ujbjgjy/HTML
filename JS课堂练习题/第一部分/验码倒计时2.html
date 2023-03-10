@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <button>发送</button>
+    <img src="../images/hulitiaowu.gif" alt="">
+    <script>
+        let input = document.querySelector('input');
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            btn.disabled = true;
+            let num = 5;
+            btn.innerHTML = num + 's重新播放';
+            input.timer = setInterval(() => {
+                if (num == 1) {
+                    btn.disabled = false;
+                    btn.innerHTML = '重新播放';
+                    clearInterval(input.timer);
+                    return;
+                }
+                num--;
+                btn.innerHTML = num + 's重新播放';
+            }, 1000);
+        })
+        let img = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            let w = img.offsetWidth / 2;
+            let h = img.offsetHeight / 2;
+            img.style.left = e.clientX - w + 'px';
+            img.style.top = e.clientY - w + 'px';
+        })
+    </script>
+</body>
+
+</html>

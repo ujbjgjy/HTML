@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function test(num) {
+            if (num > 9) {
+                test(parseInt(num / 10));
+            }
+            // 调用6下自身,
+            // 每次调用函数传在参分别是 123456 12345 ...
+            // 等于1时调用终止，执行下面的打印
+            console.log(num % 10);
+        }
+        let num = 123456;
+        test(num);
+    </script>
+</body>
+
+</html>

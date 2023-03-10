@@ -60,6 +60,7 @@ function playAudio(direction, info, arrMap) {
     if (direction == 'ArrowLeft') {
         if (info.y < 2) return -1;
         if (arrMap[info.level][info.x][info.y - 2] == info.boxTarget && arrMap[info.level][info.x][info.y - 1] != info.cle) {
+            m_boxTarget.pause();
             m_boxTarget.currentTime = 0;
             m_boxTarget.play();
         }
@@ -67,6 +68,7 @@ function playAudio(direction, info, arrMap) {
     else if (direction == 'ArrowRight') {
         if (info.y + 2 >= row) return -1;
         if (arrMap[info.level][info.x][info.y + 2] == info.boxTarget && arrMap[info.level][info.x][info.y + 1] != info.cle) {
+            m_boxTarget.pause();
             m_boxTarget.currentTime = 0;
             m_boxTarget.play();
         }
@@ -74,6 +76,7 @@ function playAudio(direction, info, arrMap) {
     else if (direction == 'ArrowUp') {
         if (info.x < 2) return -1;
         if (arrMap[info.level][info.x - 2][info.y] == info.boxTarget && arrMap[info.level][info.x - 1][info.y] != info.cle) {
+            m_boxTarget.pause();
             m_boxTarget.currentTime = 0;
             m_boxTarget.play();
         }
@@ -81,6 +84,7 @@ function playAudio(direction, info, arrMap) {
     else if (direction == 'ArrowDown') {
         if (info.x + 2 >= row) return -1;
         if (arrMap[info.level][info.x + 2][info.y] == info.boxTarget && arrMap[info.level][info.x + 1][info.y] != info.cle) {
+            m_boxTarget.pause();
             m_boxTarget.currentTime = 0;
             m_boxTarget.play();
         }

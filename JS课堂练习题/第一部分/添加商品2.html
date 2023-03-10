@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            text-align: center;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th,
+        td {
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>添加商品</legend>
+        商品名称: <input type="text" name="" id="goodsName">
+        商品价钱: <input type="text" name="" id="goodsPrice">
+        <button id="addBtn">添加</button>
+    </fieldset> 
+    <h1>购物车</h1>
+    <button id="reverse">反选</button>
+    <button id="delBtn">删除</button>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="" id="checkAll"></th>
+                <th>商品名称</th>
+                <th>商品价钱</th>
+            </tr>
+        </thead>
+        <tbody id="goodsList"></tbody>
+    </table>
+    <script type="text/html" id="template">
+        <tr>
+            <td><input type="checkbox" id="check"></td>
+            <td>name</td>
+            <td>price</td>
+        </tr>
+    </script>
+    <script>
+        addBtn.addEventListener('click', function () {
+            if (goodsName.value != '' && goodsPrice.value != '') {
+                let t = template.innerHTML.replace('name', goodsName.value).replace('pcice', goodsPrice.value);
+                goodsList.innerHTML += t;
+                goodsName.value = '';
+                goodsPrice.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
