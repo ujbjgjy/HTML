@@ -116,4 +116,35 @@ window.addEventListener('load', function () {
         // 手动调用点击事件
         arrow_r.click();
     }, 2000);
-})
+});
+
+// jQuery 
+$(function () {
+    let flag = true;
+    let recomTop = $('.recom').offset().top;
+    $(window).scroll(() => {
+        if ($(document).scrollTop() >= recomTop) {
+            $('.fixedtool').fadeIn();
+        }
+        else {
+            $('.fixedtool').fadeOut();
+        }
+        if (flag) {
+            $('.floor>div').each((i, ele) => {
+                if ($(document).scrollTop() >= $(ele).offset().top) {
+                    $('.fixedtool li').eq(i).addClass('current').siblings().removeClass('current');
+                }
+            });
+        }
+    });
+    $('.fixedtool li').click(function () {
+        flag = false;
+        $(this).addClass('current').siblings().removeClass('current');
+        let current = $('.floor>div').eq($(this).index()).offset().top;
+        $('html, body').stop().animate({
+            scrollTop: current
+        }, () => {
+            flag = true;
+        });
+    });
+});

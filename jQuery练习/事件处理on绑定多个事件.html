@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 150px;
+            height: 100px;
+            background-color: skyblue;
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            height: 20px;
+            background-color: green;
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ol></ol>
+    <script>
+        $(function () {
+            $('ul').on('click', 'li', function () {
+                $('ul li').css('color', 'red');
+            });
+        });
+        // on 可以给未来动态创建的元素绑定事件
+        //  li元素在之前还没有创建 
+        $('ol li').click(function () {
+            alert('click不能弹出');
+        });
+        let li = $('<li>后来创建的</li>');
+        $('ol').append(li);
+        // 用on可以绑定事件
+        $('ol li').on('click', function () {
+            alert('on');
+        });
+    </script>
+</body>
+</html>

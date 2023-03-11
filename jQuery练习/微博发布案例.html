@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+        }
+        .txt {
+            outline-style: none;
+            resize: none;
+            vertical-align: bottom;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: none;
+            border-bottom: 1px dotted #333;
+        }
+
+        a {
+            float: right;
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function () {
+            $('button').on('click', function () {
+                if ($('.txt').val()) {
+                    let li = $('<li>' + $('.txt').val() + '<a href="javascript:;">删除</a></li>');
+                    $('ul').append(li);
+                    li.slideDown();
+                    $('.txt').val('');
+                }
+            });
+            $('ul').on('click', 'a', function () {
+                $(this).parent().slideUp(function () {
+                    $(this).remove();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <textarea name="" class="txt" cols="30" rows="10"></textarea>
+        <button>发布</button>
+        <ul>
+        </ul>
+    </div>
+</body>
+
+</html>
