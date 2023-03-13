@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  省：<select name="" id="" class="item">
+  </select>
+  市：<select name="" id="" class="sub">
+  </select>
+  <script>
+    let datas = {
+      '河南': ['郑州', '洛阳', '驻马店', '漯河', '周口'],
+      '山东': ['济南', '青岛', '淄博', '枣庄', '烟台'],
+      '四川': ['成都', '自贡', '攀枝花', '泸州', '德阳'],
+      '湖北': ['武汉', '黄石', '十堰', '宜昌', '襄阳'],
+      '湖南': ['长沙', '株洲', '湘潭', '衡阳', '邵阳']
+    };
+    let item = document.querySelector('.item');
+    let sub = document.querySelector('.sub');
+    console.log(Object.keys(datas));
+    for(let k in datas) {
+      let op = document.createElement('option');
+      op.innerHTML = k;
+      item.appendChild(op);
+    }
+    item.addEventListener('change', function () {
+      sub.innerHTML = '';
+      let subArr = datas[item.value];
+      subArr.forEach(ele => {
+        let op = document.createElement('option');
+        op.innerHTML = ele;
+        sub.appendChild(op);
+      });
+    });
+  </script>
+</body>
+</html>

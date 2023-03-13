@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="c1" width="900" height="400"></canvas>
+  <script>
+    // 二次贝塞曲线，就是用来画曲线的
+    /*
+      quadraticCurveTo(控制点, 终点) 
+    */
+    let c1 = document.querySelector('#c1');
+    let cxt = c1.getContext('2d');
+    // 绘制
+    cxt.beginPath();
+    // 起点
+    cxt.moveTo(300, 200);
+    cxt.quadraticCurveTo(450, 100, 600, 200);
+    cxt.quadraticCurveTo(650, 240, 600, 280);
+    cxt.quadraticCurveTo(450, 350, 350, 300);
+    cxt.quadraticCurveTo(350, 350, 250, 350);
+    cxt.quadraticCurveTo(300, 350, 320, 280);
+    cxt.quadraticCurveTo(280, 250,300, 200);
+    cxt.stroke();
+    cxt.closePath();
+  </script>
+</body>
+
+</html>

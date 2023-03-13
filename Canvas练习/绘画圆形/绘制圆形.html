@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvas" width="900" height="400"></canvas>
+  <script>
+    // 1. 找到画布
+    let c1 = document.querySelector('#canvas');
+    // 2. 获取画笔
+    let cxt = c1.getContext('2d');
+    // 3. arc(圆心x, 圆心y, 半径, 圆弧起始点, 圆弧终点, 顺时逆时); true为逆时针
+    //    2pi 为整个圆心, 1pi为半圆 ...
+    cxt.arc(50, 50, 50, 0, Math.PI * 2);
+    // 显示画笔
+    cxt.stroke();
+
+    cxt.beginPath();
+    cxt.arc(200, 100, 50, 0, Math.PI * 2);
+    cxt.stroke();
+    cxt.closePath();
+    cxt.beginPath();
+    cxt.arc(175, 85, 5, 0, Math.PI * 2);
+    cxt.stroke();
+    cxt.closePath();
+    cxt.beginPath();
+    cxt.arc(225, 85, 5, 0, Math.PI * 2);
+    cxt.stroke();
+    cxt.closePath();
+    cxt.beginPath();
+    cxt.arc(200, 100, 25, 0, Math.PI);
+    cxt.stroke();
+    cxt.closePath();
+  </script>
+</body>
+</html>

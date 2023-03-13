@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 默认宽高：300 150 -->
+ <canvas id="canvas" width="600" height="300"></canvas> 
+ <script>
+  // 1. 找到画布
+  let c1 = document.querySelector('#canvas');
+  // 2. 获取画布
+  let ctx = c1.getContext('2d');
+  // 3. 画矩形
+  //  3.1 画矩形，但是不填充不显示路径 可以分开写
+  // beiginPath和closePath可以完成路径的分段 告诉画布从那里开始从那里结束
+  //   如果不关闭路径画笔会连着写
+  ctx.beginPath();
+  ctx.rect(10, 10, 200, 200);
+  // 显示路径
+  ctx.stroke();
+  ctx.closePath();
+  // 开启路径 begin 开启 path 路径
+  ctx.beginPath();
+  ctx.rect(210, 10, 200, 200);
+  ctx.fill();
+  // 关闭路径
+  ctx.closePath();
+ </script>
+</body>
+</html>

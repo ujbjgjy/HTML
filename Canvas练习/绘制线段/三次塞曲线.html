@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="1200" height="400"></canvas>
+  <script>
+    let c1 = document.querySelector('#canvas');
+    let cxt = c1.getContext('2d');
+    cxt.beginPath();
+    cxt.fillStyle = 'red';
+    cxt.moveTo(520, 150);
+    // 两个控制点, 最后一个终点
+    cxt.bezierCurveTo(400, 50, 350, 200, 520, 300);
+    cxt.moveTo(520, 150);
+    cxt.bezierCurveTo(640, 50, 690, 200, 520, 300);
+    cxt.stroke();
+    cxt.fill();
+    cxt.closePath();
+    console.log(cxt);
+  </script>
+</body>
+
+</html>

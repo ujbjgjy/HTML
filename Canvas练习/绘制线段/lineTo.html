@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvas" width="900" height="400"></canvas>  
+  <script>
+    let c1 = document.querySelector('#canvas');
+    // 获取画笔
+    let ctx = c1.getContext('2d');
+    ctx.beginPath();
+    // 线的起点
+    ctx.moveTo(200, 200);
+    // 从300开始画
+    ctx.lineTo(300, 300);
+    // x 不变，移动y
+    ctx.lineTo(300, 200);
+    ctx.lineTo(200, 200);
+    ctx.stroke();
+    ctx.closePath(); 
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <canvas id="c1" width="600" height="300"></canvas>
+   <script>
+    // 1. 找到画布
+    let c1 = document.querySelector('#c1');
+    // 2. 获取画笔, Context 上下文
+    let ctx = c1.getContext('2d');
+    // 3. 绘画矩形 绘画的矩形的大小在画布大小的之内
+    //  3.1 矩形填充, 
+    ctx.fillStyle = 'skyblue';
+    ctx.fillRect(100, 100, 200, 100);
+    // 3.1 矩形路径ect(120,cccdsee00, 100);w
+    ctx.strokeRect(120, 120, 200, 100);
+    // 4. clearRect() 清除画布里面的内容
+    let height = 0;
+    let timer = setInterval(() => {
+      height++;
+      ctx.clearRect(100, 100, c1.clientWidth, height++);
+      if (height == c1.clientHeight) {
+        clearInterval(timer);
+      }
+    }, 10);
+   </script>
+</body>
+</html>

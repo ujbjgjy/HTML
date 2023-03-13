@@ -10,13 +10,14 @@
         body {
             background: url(E:/图片/wallpaper_6.jpg) no-repeat center top;
         }
+
         .bg {
             position: absolute;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            /* backdrop-filter: blur(2px); */
+            backdrop-filter: blur(2px);
         }
     </style>
 </head>
@@ -33,7 +34,7 @@
             console.log(w, h);
 
             if (w > h) {
-                while(w / 16 * 9 < h) {
+                while (w / 16 * 9 < h) {
                     w++;
                 }
                 document.body.style.backgroundSize = w + 'px' + ',' + w / 16 * 9 + 'px';
@@ -42,6 +43,7 @@
                 document.body.style.backgroundSize = h / 9 * 16 + 'px' + ',' + h + 'px';
             }
         });
+        
     </script>
 </body>
 

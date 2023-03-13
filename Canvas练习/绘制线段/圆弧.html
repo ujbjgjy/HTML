@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="c1" width="900" height="400"></canvas>
+  <script>
+    let c1 = document.querySelector('#c1');
+    let cxt = c1.getContext('2d');
+    // 开启画笔
+    cxt.beginPath();
+    // 画笔位置 第一个点的位置
+    cxt.moveTo(300, 200);
+    // 圆弧 arcTo(x, y, x, y, 半径); 第二点和第三点的位置
+    cxt.arcTo(300, 300, 200, 300, 100);
+    cxt.stroke();
+    // 关闭画笔
+    cxt.closePath();
+  </script>
+</body>
+</html>
