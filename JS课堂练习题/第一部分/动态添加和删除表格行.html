@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动态添加和删除表格行</title>
+  <style>
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    table {
+      width: 900px;
+      margin: 50px auto;
+      border-collapse: collapse;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    th,
+    td {
+      height: 30px;
+      border: 1px solid #333;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      left: 50px;
+      top: 50px;
+      width: 60px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .menu li {
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .menu li:hover {
+      background-color: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>商品名称</th>
+        <th>数量(件)</th>
+        <th>单价(元)</th>
+        <th>运费(元)</th>
+        <th>合计</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>鼠标垫</td>
+        <td>4</td>
+        <td>10</td>
+        <td>10</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>鼠标垫</td>
+        <td>4</td>
+        <td>10</td>
+        <td>10</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td>50</td>
+      </tr>
+    </tbody>
+  </table>
+  <ul class="menu">
+    <li class="add">添加</li>
+    <li class="del">删除</li>
+    <li></li>
+  </ul>
+  <script>
+    // 取消默认的上下文菜单
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+    // 1. 获取元素
+    let tbody = document.querySelector('tbody');
+    let trs = tbody.children;
+    let menu = document.querySelector('.menu');
+    let menuAdd = menu.querySelector('.add');
+    let menuDel = menu.querySelector('.del');
+    tbody.addEventListener('mousedown', function (e) {
+      if (e.button == 2) {
+        menu.style.display = 'block';
+        menu.style.left = e.pageX + 'px';
+        menu.style.top = e.pageY + 'px';
+        menuOperate(e.target);
+      }
+    });
+    // 2. 菜单操作
+    function menuOperate(target) {
+      menuAdd.addEventListener('click', createTd);
+      menuDel.addEventListener('click', function () {
+        if (tbody.children.length != 1) {
+          target.parentNode.remove();
+        }
+      });
+      menu.addEventListener('mouseenter', function (e) {
+        clearTimeout(menu.timer);
+        menu.style.display = 'block';
+      });
+      menu.addEventListener('mouseleave', function (e) {
+        clearTimeout(menu.timer);
+        e.preventDefault();
+        menu.timer = setTimeout(() => {
+          menu.style.display = 'none';
+        }, 1000);
+      });
+    }
+    // 动态创建表格
+    function createTd() {
+      console.log(123);
+      let tr = document.createElement('tr');
+      for (let i = 0; i < 5; i++) {
+        let td = document.createElement('td');
+        td.innerHTML = '124';
+        if (i == 4) {
+          td.innerHTML = parseInt(tr.children[1].innerHTML) * parseInt(tr.children[2].innerHTML) + parseInt(tr.children[3].innerHTML);
+        }
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    };
+  </script>
+</body>
+
+</html>

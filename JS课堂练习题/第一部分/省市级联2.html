@@ -9,8 +9,8 @@
 </head>
 
 <body>
-  <select name="" id="item"></select>
-  <select name="" id="sub"></select>
+  省：<select name="" id="item"></select>
+  市：<select name="" id="sub"></select>
   <script>
     let datas = {
       '河南': ['郑州', '洛阳', '驻马店', '漯河', '周口'],
@@ -24,19 +24,15 @@
       op.innerHTML = k;
       item.appendChild(op);
     }
-    datas[item.value].forEach(element => {
-      let op = document.createElement('option');
-      op.innerHTML = element;
-      sub.appendChild(op);
-    });
     item.onchange = function () {
       sub.innerHTML = '';
-      datas[item.value].forEach(element => {
+      datas[item.value].forEach(ele => {
         let op = document.createElement('option');
-        op.innerHTML = element;
+        op.innerHTML = ele;
         sub.appendChild(op);
       });
     };
+    item.onchange();
   </script>
 </body>
 

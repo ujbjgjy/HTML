@@ -12,6 +12,7 @@
   省：<select name="" id="item"></select>
   市：<select name="" id="sub"></select>
   <script>
+    // 1. 用对象 创建数据
     let datas = {
       '河南': ['郑州', '洛阳', '驻马店', '漯河', '周口'],
       '山东': ['济南', '青岛', '淄博', '枣庄', '烟台'],
@@ -19,24 +20,26 @@
       '湖北': ['武汉', '黄石', '十堰', '宜昌', '襄阳'],
       '湖南': ['长沙', '株洲', '湘潭', '衡阳', '邵阳']
     };
+    // 2. for in 遍历对象的属性名
     for (let k in datas) {
+      // 创建元素把属性名放入item里面
       let op = document.createElement('option');
       op.innerHTML = k;
       item.appendChild(op);
     }
-    datas[item.value].forEach(element => {
-      let op = document.createElement('option');
-      op.innerHTML = element;
-      sub.appendChild(op);
-    });
+    // 3. 当item发生改变就修改sub里面的东西 
     item.onchange = function () {
+      // 3.1 清空sub里面的内容用innerHTML 用value获取的在表单里面显示的内容
       sub.innerHTML = '';
+      // 3.2 当item.value 的内容有和datas数据属性相同的就去遍历它的数据，并添加到sub里面
       datas[item.value].forEach(element => {
         let op = document.createElement('option');
         op.innerHTML = element;
         sub.appendChild(op);
       });
     };
+    // 4. 手动调用事件，第一次加载
+    item.onchange();
   </script>
 </body>
 
