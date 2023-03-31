@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
             }
             this.classList.add('current');
             num = this.getAttribute('index');
-            foucus.style.backgroundImage = 'url(http://rp5i9wyrx.hn-bkt.clouddn.com/foucus_' + num + '.jpg)';
+            foucus.style.backgroundImage = 'url(upload/foucus_' + num + '.jpg)';
         });
     }
     var timer = setInterval(function () {
@@ -26,7 +26,7 @@ window.addEventListener('load', function () {
             num = 0;
         }
         num++;
-        foucus.style.backgroundImage = 'url(http://rp5i9wyrx.hn-bkt.clouddn.com/foucus_' + num + '.jpg)';
+        foucus.style.backgroundImage = 'url(upload/foucus_' + num + '.jpg)';
         for (var j = 0; j < 5; j++) {
             dots.children[j].classList.remove('current');
         }

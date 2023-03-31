@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let money = 0;
+    let count = 0;
+    while (true) {
+      let re = +prompt(`
+        1. 存钱;
+        2. 取钱;
+        3. 查看;
+        4. 退出;
+      `);
+      if (re === 4) break;
+      switch (re) {
+        case 1:
+          count = +prompt('大哥存多少');
+          money += count;
+          break;
+        case 2:
+          count = +prompt('取多少钱');
+          if (count < re) {
+            alert('你的钱数不够');
+          }
+          else {
+            money -= count;
+          }
+          break;
+        case 3:
+          alert(`你有${money}元`);
+          break;
+        default:
+          alert('你他妈好好输入数字!');
+      }
+    }
+  </script>
+</body>
+
+</html>

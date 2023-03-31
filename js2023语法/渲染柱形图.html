@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .box {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      width: 600px;
+      height: 300px;
+      margin: 100px auto;
+      border-left: 2px solid #333;
+      border-bottom: 2px solid #333;
+    }
+
+    .box>div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100px;
+      background-color: skyblue;
+    }
+    .box>div span {
+      margin-top: -30px;
+    }
+    .box>div h4 {
+      margin-bottom: -40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div>
+      <span>146</span>
+      <h4>第一季度</h4>
+    </div>
+    <div>
+      <span>123</span>
+      <h4>第二季度</h4>
+    </div>
+    <div>
+      <span>233</span>
+      <h4>第三季度</h4>
+    </div>
+  </div>
+  <script>
+    const divs = document.querySelectorAll('.box>div');
+    const spans = document.querySelectorAll('span');
+    const title = document.querySelectorAll('h4'); 
+    for (let i = 0; i < divs.length; i++) {
+      divs[i].style.height = +prompt(title[i].innerHTML) + 'px';
+      spans[i].innerHTML = divs[i].offsetHeight;
+    }
+  </script>
+</body>
+
+</html>

@@ -10,12 +10,18 @@
 
 <body>
   <script>
-    for (let year = 1000; year < 2023; year += 4) {
-      if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
-        console.log('%s是闰年',year);
-      }
-      // console.log('%s是闰年', year);
+    let i = 100;
+    let count = 0
+    while (--i) {
+      count++;
     }
+    console.log(count);
+    count = 0;
+    i = 100;
+    while (i--) {
+      count++;
+    }
+    console.log(count);
   </script>
 </body>
 
