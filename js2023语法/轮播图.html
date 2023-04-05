@@ -126,22 +126,52 @@
       { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
       { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
     ];
+    // 1. 获取元素
     const img = document.querySelector('.slider-wrapper img');
+    const prev = document.querySelector('.toggle .prev')
+    const next = document.querySelector('.toggle .next');
     const footer = document.querySelector('.slider-footer');
-    const p = document.querySelector('.slider-footer p');
+    const slider = document.querySelector('.slider');
+    const p = footer.querySelector('p');
+    // 2. 定义变量
     let num = 0;
-    setInterval(function () {
+    // 3. 右击箭头
+    next.addEventListener('click', function () {
       num++;
       if (num === sliderData.length) {
         num = 0;
       }
+      common();
+    });
+    // 4. 左击箭头
+    prev.addEventListener('click', function () {
+      num--;
+      if (num < 0) {
+        num = sliderData.length - 1;
+      }
+      common();
+    });
+
+    function common() {
       img.src = sliderData[num].url;
       p.innerHTML = sliderData[num].title;
-      footer.style.backgroundColor = sliderData[num].color;
-      // 排他思想，找到之前有的清除掉，并添加现在的
+      footer.style.brackgroundColor = sliderData[num].color;
       document.querySelector('.slider-indicator .active').classList.remove('active');
       document.querySelector(`.slider-indicator li:nth-child(${num + 1})`).classList.add('active');
+    }
+    // 5. 手动调用
+    next.timerId = setInterval(function () {
+      next.click();
     }, 1000);
+    // 6. 鼠标经过离开
+    slider.addEventListener('mouseenter', function () {
+      clearInterval(next.timerId);
+    });
+    slider.addEventListener('mouseleave', function () {
+      next.timerId = setInterval(function () {
+        next.click();
+      }, 1000);
+    });
   </script>
 </body>
 
