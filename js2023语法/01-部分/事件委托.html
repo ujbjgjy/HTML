@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son">我是第1个孩子</div>
+    <div class="son">我是第2个孩子</div>
+    <div class="son">我是第3个孩子</div>
+    <div class="son">我是第4个孩子</div>
+    <div class="son">我是第5个孩子</div>
+    <p>我是p，点击我不变色</p>
+  </div>
+  <script>
+    const father = document.querySelector('.father');
+    // 我点击了father里面的son通过冒泡触发了father的事件。
+    father.addEventListener('click', function (e) {
+      alert("hello!");
+      console.dir(e.target);
+      // 通过e.target.tagName来识别点击了那个元素
+      if (e.target.tagName === 'DIV') {
+        e.target.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+
+</html>
