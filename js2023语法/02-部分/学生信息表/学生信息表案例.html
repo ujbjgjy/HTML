@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>学生信息管理</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <h1>新增学员</h1>
+  <form class="info" autocomplete="off">
+    姓名：<input type="text" class="uname" name="uname" />
+    年龄：<input type="text" class="age" name="age" />
+    性别:
+    <select name="gender" class="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    薪资：<input type="text" class="salary" name="salary" />
+    就业城市：<select name="city" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+    </select>
+    <button class="add">录入</button>
+  </form>
+
+  <h1>就业榜</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 
+        <tr>
+          <td>1001</td>
+          <td>欧阳霸天</td>
+          <td>19</td>
+          <td>男</td>
+          <td>15000</td>
+          <td>上海</td>
+          <td>
+            <a href="javascript:">删除</a>
+          </td>
+        </tr> 
+        -->
+    </tbody>
+  </table>
+  <script>
+    // 获取元素
+    const uname = document.querySelector('.uname')
+    const age = document.querySelector('.age')
+    const gender = document.querySelector('.gender')
+    const salary = document.querySelector('.salary')
+    const city = document.querySelector('.city')
+    const tbody = document.querySelector('tbody')
+    const info = document.querySelector('.info');
+    const inputInfo = document.querySelectorAll('input[name]');
+    console.log(inputInfo);
+    const infoArr = [];
+    // 1. 增加
+    info.addEventListener('submit', function (e) {
+      // 只要点击form表单就会提交，阻止默认行为
+      e.preventDefault();
+      console.log(!inputInfo[0].value, !inputInfo[1].value, !inputInfo[2].value);
+      // (||)只要有一个是空就不录用。(&&)必须是全空录用
+      if (!inputInfo[0].value || !inputInfo[1].value || !inputInfo[2].value) {
+        alert('表单为空');
+      }
+      else {
+        // 获取form里面的信息
+        const obj = {
+          // 在录入信息之前为0
+          StudentID: infoArr.length + 1,
+          uname: uname.value,
+          age: age.value,
+          gender: gender.value,
+          salary: salary.value,
+          city: city.value
+        }
+        infoArr.push(obj);
+        console.log(infoArr);
+        // 重制form表单
+        info.reset();
+        printInfo();
+      }
+    });
+    // 打印信息
+    function printInfo() {
+      // 清空表格并重新打印所有数据
+      tbody.innerHTML = '';
+      infoArr.forEach((el, i) => {
+        const tr = document.createElement('tr');
+        tr.dataset.index = i;
+        tr.innerHTML = `
+          <td>${el.StudentID}</td>
+          <td>${el.uname}</td>
+          <td>${el.age}</td>
+          <td>${el.gender}</td>
+          <td>${el.salary}</td>
+          <td>${el.city}</td>
+          <td>
+            <a href="javascript:">删除</a>
+        </td>
+        `;
+        tbody.append(tr);
+      });
+    }
+    // 2. 删除-事件委托
+    tbody.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && e.target.innerHTML === '删除') {
+        infoArr.splice(+e.target.dataset.index, 1);
+        console.log(infoArr);
+        printInfo();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

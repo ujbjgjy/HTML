@@ -1,5 +1,10 @@
 @charset "UTF-8";
 /** 分类及焦点图 **/
+html {
+  /* 让滚动条变的平滑 */
+  scroll-behavior: smooth;
+}
+
 .xtx_entry {
   height: 500px;
   background-color: #f2f2f2;

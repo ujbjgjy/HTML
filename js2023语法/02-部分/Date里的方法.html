@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const date = new Date();
+    console.log(date.toLocaleString()); // 2023/4/7 22:03
+    console.log(date.toLocaleString().split('/').join('-')); // 2023/4/7 22:03
+    console.log(date.toLocaleDateString()); // 2023/4/7
+    console.log(date.toLocaleTimeString());; // 22:03
+    const str = '1,2,3,4,5';
+    console.log(str.split(','), str);
+  </script>
+</body>
+
+</html>

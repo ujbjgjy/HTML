@@ -1215,21 +1215,63 @@
     </ul>
   </div>
   <script>
-    const elevator = document.querySelector('.xtx-elevator');
-    const entry = document.querySelector('.xtx_entry');
-    const backTop = document.querySelector('#backTop');
-    window.addEventListener('scroll', function () {
-      const n = document.documentElement.scrollTop;
-      elevator.style.opacity = n >= entry.offsetTop ? 1 : 0;
-    });
-    backTop.addEventListener('click', function () {
-      document.documentElement.scrollTo(
-        {
-          top: 0,
-          behavior: 'smooth'
+    // 1. 显示和隐藏电梯栏和返回顶部
+    (function () {
+      const elevator = document.querySelector('.xtx-elevator');
+      const entry = document.querySelector('.xtx_entry');
+      const backTop = document.querySelector('#backTop');
+      window.addEventListener('scroll', function () {
+        const n = document.documentElement.scrollTop;
+        elevator.style.opacity = n >= entry.offsetTop ? 1 : 0;
+      });
+      backTop.addEventListener('click', function () {
+        document.documentElement.scrollTo(
+          {
+            top: 0,
+            behavior: 'smooth'
+          }
+        );
+      });
+    }());
+    // 2. 点击盒子页面回滚的相应位置
+    (function () {
+      const list = document.querySelector('.xtx-elevator-list');
+      list.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A' && e.target.dataset.name) {
+          const old = document.querySelector('.xtx-elevator-list .active');
+          old && old.classList.remove('active');
+          e.target.classList.add('active');
+
+          const top = document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop;
+          document.documentElement.scrollTop = top;
         }
-      );
-    });
+      });
+
+      window.addEventListener('scroll', function () {
+        // 滚动时移出active类
+        const old = document.querySelector('.xtx-elevator-list .active');
+        old && old.classList.remove('active');
+
+        const n = document.documentElement.scrollTop;
+        const xtx_new = document.querySelector('.xtx_goods_new');
+        const xtx_popular = document.querySelector('.xtx_goods_popular');
+        const xtx_brand = document.querySelector('.xtx_goods_brand');
+        const xtx_topic = document.querySelector('.xtx_goods_topic');
+        console.log(n);
+        if (n >= xtx_new.offsetTop && n < xtx_popular.offsetTop) {
+          document.querySelectorAll('[data-name]')[0].classList.add('active');
+        }
+        else if (n >= xtx_popular.offsetTop && n < xtx_brand.offsetTop) {
+          document.querySelectorAll('[data-name]')[1].classList.add('active');
+        }
+        else if (n >= xtx_brand.offsetTop && n < xtx_topic.offsetTop) {
+          document.querySelectorAll('[data-name]')[2].classList.add('active');
+        }
+        else if (n >= xtx_topic.offsetTop) {
+          document.querySelectorAll('[data-name]')[3].classList.add('active');
+        }
+      });
+    }());
   </script>
 </body>
 
