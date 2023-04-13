@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 定义正则表达式语法：
+    const reg = /帅b/; // 这个为正则表达式
+    // 2. 检测方法
+    console.log(reg.test('ujbj是大帅b大帅b'));
+    console.log(/[a-z]/.test('aujbj是大帅bbbb大帅b'));
+    console.log(reg.exec('ujbj是个大帅b'));
+    console.log(/^[a-z]{1,3}$/.test('abca'));
+  </script>
+</body>
+
+</html>
