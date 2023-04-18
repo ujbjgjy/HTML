@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .clock,
+    .hour,
+    .minute,
+    .second {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      /* transform: rotate(); */
+    }
+  </style>
+</head>
+
+<body>
+  <img src="./images/clock.jpg" alt="" class="clock">
+  <img src="./images/hour.png" alt="" class="hour">
+  <img src="./images/minute.png" alt="" class="minute">
+  <img src="./images/second.png" alt="" class="second">
+  <script>
+    const hour = document.querySelector('.hour');
+    const minute = document.querySelector('.minute');
+    const second = document.querySelector('.second');
+    function clock() {
+      // 1. 获取时分秒
+      const date = new Date();
+      const h = date.getHours(); // 获取当前时
+      const m = date.getMinutes(); // 获取当前分
+      const s = date.getSeconds(); // 获取当前秒
+      // 2. 通过获取的时分秒转化为相应的度数
+      // transform: rotate()
+      //  2.1 360/12=30 m/h*30 相当于几分之小时*30deg
+      hour.style.transform = `rotate(${h * 30 + m / 60 * 30}deg)`;
+      // 2.2 360/60=6 s/60*6
+      minute.style.transform = `rotate(${m * 6 + s / 60 * 6}deg)`;
+      // 2.3 360/60=6
+      second.style.transform = `rotate(${s * 6}deg)`;
+    }
+    clock();
+    let clockTimer = setInterval(clock, 1000);
+  </script>
+</body>
+
+</html>

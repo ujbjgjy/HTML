@@ -7,8 +7,13 @@
   <title>Document</title>
 </head>
 <body>
+  <a href="https://baidu.com">百度</a>
   <script>
-    console.log(/^[a-zA-Z0-9-_]*$/.test(''));
-  </script> 
+    const a = document.querySelector('a');
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      location.href = 'E:/图片/wallpaper_6.jpg';
+    });
+  </script>  
 </body>
 </html>
