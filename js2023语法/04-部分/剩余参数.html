@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function sum(str = null, ...arr) {
+      console.log(...arr);
+      for (let i = 0; i < arr.length; i++) {
+        console.log(str + arr[i]);
+      }
+    }
+    sum('我是大帅b:> ', 1, 2, 3, 5, 8);
+    const arr1 = [1, 2, 3];
+    const arr2 = [1, 2, 3];
+    const arr3 = [...arr1, ...arr2];
+    console.log(arr3);
+    console.log(Math.max(...arr1));
+  </script> 
+</body>
+</html> 

@@ -77,7 +77,31 @@
     </div>
   </div>
   <script>
-
+    // 1. tab栏切换
+    const tab_nav = document.querySelector('.tab-nav');
+    const tab_pane = document.querySelectorAll('.tab-pane');
+    tab_nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        tab_nav.querySelector('.active').classList.remove('active');
+        e.target.classList.add('active');
+        tab_pane.forEach(ele => {
+          ele.style.display = 'none';
+        });
+        tab_pane[e.target.dataset.id].style.display = 'block';
+      }
+    });
+    // 2. 用户同意协议
+    const form = document.querySelector('form');
+    const agree = document.querySelector('[name=agree]')
+    const username = document.querySelector('[name=username]');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!agree.checked) {
+        return alert('请勾选用户协议');
+      }
+      location.href = './index.html';
+      localStorage.setItem('xtx-username', username.value);
+    });
   </script>
 </body>
 

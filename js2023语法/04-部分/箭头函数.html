@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 基本写法
+    console.log('**** 基本写法 ****');
+    const fn1 = () => {
+      console.log('这是箭头函数基本写法');
+    }
+    fn1();
+    // 2. 只有一个值，可以省略()
+    console.log('**** 只有一个值，可以省略() ****');
+    const fn2 = str => {
+      console.log(str);
+    }
+    fn2('只有一个值，可以省略()');
+    // 3. 只有一行，return省略
+    console.log('**** 只有一行，return省略 ****');
+    const fn3 = num => num + num
+    console.log(fn3(13));
+    // 4. 可以返回对象
+    fn2('**** 可以返回对象 ****');
+    const fn4 = (uname) => ({ uname: uname })
+    console.log(fn4('ujbj'));
+    // 5. 关于箭头函数指向问题
+    console.log('**** 关于箭头函数指向问题 ****');
+    const obj = {
+      name: this,
+      sayHi: () => {
+        console.log(this);
+      }
+    }
+    console.log(obj.name);
+    obj.sayHi();
+  </script>
+</body>
+
+</html>
