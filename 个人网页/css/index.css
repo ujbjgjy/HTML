@@ -1,0 +1,609 @@
+/* 设置背景图 start */
+
+body {
+  overflow-x: hidden;
+  background: -webkit-linear-gradient(right, #f02fc2, #6094ea);
+}
+
+.w {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.main-wrap {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 9;
+
+
+}
+
+/* 设置背景图 end */
+
+/* 设置星空 start */
+.bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg .star {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 10px #54a0ff;
+  animation: change 1s infinite;
+  z-index: 1;
+}
+
+.bg .line {
+  position: absolute;
+  right: -1.8rem;
+  top: 0;
+  z-index: 2;
+  width: 1.5625rem;
+  height: 2px;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  transform: rotate(-18deg);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  box-shadow: -0.078125rem 0 0.0390625rem #1e90ff;
+  animation: 3s infinite forwards;
+  transition: all .5s;
+}
+
+@keyframes change {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 设置星空 ent */
+
+/********** 网页内容 **********/
+
+/* 导航栏 start */
+.styleNav {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 99;
+  border-radius: 0 0 20px 20px;
+}
+
+.nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+
+  transition: all .3s;
+}
+
+.nav div[class$="nav"] {
+  flex: 1;
+}
+
+.nav .left-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.left-nav .logo {
+  width: 100px;
+  height: 100%;
+  background: url("../images/宇航员.png") no-repeat center;
+  background-size: 100%;
+}
+
+.left-nav #logo-text {
+  font-size: 20px;
+  margin-left: 10px;
+  color: #dff6dd;
+}
+
+.logo h1 {
+  height: 100%;
+}
+
+.logo a {
+  font-size: 0;
+}
+
+.right-nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.right-nav li {
+  line-height: 80px;
+}
+
+.right-nav li>a {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.right-nav li>a:hover {
+  color: #f6bec8;
+}
+
+.right-nav .cur {
+  border-bottom: 3px solid #33c4eb;
+  color: #f6bec8;
+}
+
+
+/* 导航栏 end */
+
+/***** 主体部分 start *****/
+
+/* home start */
+.home {
+  position: relative;
+  text-align: center;
+  color: #000;
+}
+
+/* home end */
+
+/* 首页 start */
+.home-page {
+  position: relative;
+  height: 600px;
+}
+
+.airship-ticket {
+  position: absolute;
+  left: 150%;
+  top: 150px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  text-align: left;
+  color: #b2b6b6;
+  opacity: .8;
+  border-radius: 5px;
+  background-color: #8e5cc3;
+
+  animation: airshipTicket 1s 1 forwards;
+}
+
+.airship-ticket thead {
+  background-color: #c35c5d;
+}
+
+.airship-ticket th {
+  text-align: center;
+}
+
+.airship-ticket th,
+.airship-ticket td {
+  padding: 10px;
+}
+
+.airship-ticket input {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+@keyframes airshipTicket {
+  100% {
+    left: 50%;
+  }
+}
+
+.home-page-title {
+  position: absolute;
+  left: 50%;
+  top: 350px;
+  transform: translateX(-50%);
+
+  font-size: 45px;
+
+  background-image: linear-gradient(135deg, #ec008c, #fc6767);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kitty {
+  position: absolute;
+  top: 100px;
+  right: 10%;
+  width: 200px;
+  height: 200px;
+
+  transition: all 0.5s;
+  animation: kittyMove 5s infinite alternate;
+}
+
+@keyframes kittyMove {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+/* 首页 end */
+
+/* 个人介绍 start */
+.home-introduce {
+  position: relative;
+  height: 700px;
+
+  overflow: hidden;
+}
+
+.box-introduce {
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  transform: translateX(-50%);
+
+  width: 80%;
+  height: 450px;
+
+  display: flex;
+}
+
+.box-introduce ul {
+  flex: 1;
+  padding-right: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.box-introduce ul li {
+  display: flex;
+}
+
+.box-introduce ul li span {
+  flex: 2;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.box-introduce ul li div {
+  flex: 8;
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 20px;
+
+  position: relative;
+  padding: 5px;
+}
+
+.box-introduce ul li div i {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.container-wrap {
+  flex: 1;
+
+  font-family: Arial, sans-serif;
+  padding: 10px;
+
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  background-color: rgba(249, 249, 249, .6);
+}
+
+.container {
+  transition: all 1s;
+  transform: translateX(0);
+
+  line-height: 2;
+  color: #b4a0ff;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: rgba(249, 211, 227, .3);
+
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  text-align: center;
+  padding-bottom: 20px;
+  color: #9c36b5;
+  font-weight: 600;
+}
+
+.profile-img {
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  text-align: left;
+}
+
+.container-wrap .astronaut-container {
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  width: 60px;
+}
+
+/* 个人介绍 end */
+
+/* 我的爱好 start */
+.home-hobby {
+  position: relative;
+  height: 1200px;
+}
+
+.container-hobby {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80%;
+
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, .6);
+}
+
+.container-hobby h1 {
+  text-align: center;
+}
+
+.container-hobby h2 {
+  margin: 20px 0;
+  padding-left: 20px;
+  position: relative;
+  text-align: left;
+
+  font-size: 20px;
+}
+
+.container-hobby h2:before {
+  content: "●";
+  color: #5aa4ae;
+  position: absolute;
+  left: 0;
+}
+
+.container-hobby ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-hobby li {
+  width: 200px;
+}
+
+.container-hobby li>img {
+  width: 100%;
+}
+
+.music-hobby img {
+  border-radius: 50%;
+  border: 5px double #000;
+}
+
+.music-hobby li .text {
+  text-align: center;
+}
+
+.container-hobby .text {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 14px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 弹性伸缩盒子模型显示 */
+  display: -webkit-box;
+  /* 限制一个块元素显示的文本的行数 */
+  -webkit-line-clamp: 3;
+  /* 设置或检索伸缩盒对象的子元素的排序方式 */
+  -webkit-box-orient: vertical;
+}
+
+.container-hobby span {
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+  margin-top: 30px;
+  font-size: 12px;
+}
+
+/* 我的爱好 end */
+
+/* 联系方式 start */
+.home-contact {
+  position: relative;
+  height: 700px;
+}
+
+.contact {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact li .wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(184, 53, 112, .6);
+
+  transition: all .3s;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact li .wrap:before {
+  display: none;
+
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.contact li .wrap:hover {
+  transform: translate(0, -10px);
+}
+
+.contact li .wrap:hover:before {
+  display: block;
+}
+
+
+.contact li .wrap img {
+  width: 60%;
+  height: 60%;
+}
+
+.contact li a {
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 550;
+  font-size: 24px;
+}
+
+/* 留言板 */
+.message-board {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80%;
+  backdrop-filter: blur(5px);
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(249, 249, 249, .3);
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message-form {
+  margin-bottom: 5px;
+}
+
+.message-form textarea {
+  resize: none;
+  outline: none;
+  height: 80px;
+}
+
+.message-form input {
+  margin-bottom: 15px;
+}
+
+.message-form input,
+.message-form textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.message-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.message-form button {
+  width: 100px;
+  height: 30px;
+  margin-top: 20px;
+  border-radius: 5px;
+
+  font-weight: 600;
+  color: #fff;
+  background-color: #00bcf2;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 联系方式 end */
+
+/***** 主体部分 end *****/
+
+/* 底栏 start */
+footer {
+  position: relative;
+  z-index: 99;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 600;
+}
+
+footer a {
+  color: #000;
+}
+
+/* 底栏 end */
